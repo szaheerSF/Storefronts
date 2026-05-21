@@ -1,0 +1,122 @@
+<style>
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  #header_wrapper {
+    border: 0px solid transparent !important;
+  }
+
+  #all_items_view {
+    margin: 0 auto;
+  }
+  .UtileDisplayMedium {
+    font-family: UtileDisplayMedium, sans-serif !important;
+  }
+
+  .landing-page-header {
+    width: 760px;
+    font-size: 96px !important;
+    color: #002855 !important;
+    line-height: 1.15;
+    font-family: "UtileDisplayMedium", sans-serif !important;
+    opacity: 0;
+    animation: 1.5s ease-out 1.5s 1 fadeIn forwards;
+    text-align: center;
+  }
+
+  .catalog-tab-blurb:has(.landingBG) {
+    width: 95% !important;
+    padding: 0 !important;
+  }
+
+  .landingBG {
+    place-items: center;
+  }
+
+  img.landingSE {
+    width: 90%;
+    margin: 20px 50px 6px;
+  }
+
+  img.landingPB {
+    width: 25%;
+    margin: 20px 50px 6px;
+  }
+
+  .useTxt {
+    width: 455px;
+    text-align: center;
+    padding: 30px 0px;
+    font-size: 30px;
+    line-height: 115%;
+    margin: auto;
+  }
+
+  .useTxt a,
+  .questionTxt a {
+    color: #8ac650;
+    text-decoration: none;
+  }
+
+  .questionTxt {
+    width: 475px;
+    text-align: center;
+    display: block;
+    font-size: 15px;
+    margin: auto;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-image: linear-gradient(
+        to right,
+        #96bec800 30%,
+        #96bec8,
+        #96bec800 70%
+      )
+      1;
+  }
+
+  div.landing-body-top {
+    /* margin: 0; */
+    display: block;
+    float: left;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    width: 65%;
+  }
+
+  .landing-body-bottom {
+    display: block;
+  }
+
+  .landing-body-middle {
+    margin: 0;
+    display: block;
+    width: 75%;
+    justify-items: center;
+  }
+</style>
+
+<div class="landingBG">
+  <div class="landing-body-middle">
+    <div class="landing-page-header">
+      Welcome to the <br />
+      Essentia & D8Averse<br />
+      portal.
+    </div>
+    <div class="useTxt">
+      Use this storefront as an easy way to order apparel, supplies, SWAG kits,
+      HR items and much more!
+    </div>
+  </div>
+  <div class="landing-body-bottom">
+    <span class="questionTxt"
+      >If you have any questions, or if you are unable to find what you are
+      looking for, please take a look at the FAQ page.</span
+    >
+  </div>
+</div>

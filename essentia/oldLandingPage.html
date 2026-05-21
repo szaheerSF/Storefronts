@@ -1,0 +1,138 @@
+<style>
+  :root {
+    /* SALMAN CUSTOM CSS: Essentia colors */
+    --global-color-primary: #ec7a08;
+    --global-color-secondary: #0a3046;
+    --global-color-accent: #114381;
+    --global-color-text: #f7fcff;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  #header_wrapper {
+    border: 0px solid transparent !important;
+  }
+
+  #all_items_view {
+    margin: 0 auto;
+  }
+  .UtileDisplayMedium {
+    font-family: UtileDisplayMedium, sans-serif !important;
+  }
+
+  .landing-page-header {
+    width: 760px;
+    font-size: 5rem !important;
+    color: #ec7a08 !important;
+    line-height: 1.15;
+    font-family: "UtileDisplayMedium", sans-serif !important;
+    opacity: 0;
+    animation: 1.5s ease-out 1.5s 1 fadeIn forwards;
+    text-align: center;
+  }
+
+  .catalog-tab-blurb:has(.landingBG) {
+    width: 95% !important;
+    padding: 0 !important;
+  }
+
+  .landingBG {
+    place-items: center;
+  }
+
+  img.landingSE {
+    width: 90%;
+    margin: 20px 50px 6px;
+  }
+
+  img.landingPB {
+    width: 25%;
+    margin: 20px 50px 6px;
+  }
+
+  .useTxt {
+    width: 455px;
+    text-align: center;
+    padding: 30px 0px;
+    font-size: 1.5rem;
+    line-height: 115%;
+    margin: auto;
+    color: #f7fcff;
+  }
+
+  .explore-catalog-btn a:hover {
+    color: var(--global-color-secondary);
+    transition: 0.2s all ease-in-out;
+  }
+
+  .useTxt a,
+  .questionTxt a {
+    color: #0a3046;
+    text-decoration: none;
+  }
+
+  .questionTxt {
+    width: 475px;
+    text-align: center;
+    display: block;
+    font-size: 0.85rem;
+    padding-bottom: 12px;
+    color: var(--global-color-text);
+    margin: auto;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-image: linear-gradient(
+        to right,
+        #96bec800 30%,
+        #ec7a08,
+        #96bec800 70%
+      )
+      1;
+  }
+
+  div.landing-body-top {
+    /* margin: 0; */
+    display: block;
+    float: left;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    width: 65%;
+  }
+
+  .landing-body-bottom {
+    display: block;
+  }
+
+  .landing-body-middle {
+    margin: 0;
+    display: block;
+    width: 75%;
+    justify-items: center;
+  }
+</style>
+
+<div class="landingBG">
+  <div class="landing-body-middle">
+    <div class="landing-page-header">
+      Welcome to the <br />
+      Essentia / D8Averse <br />
+      portal.
+    </div>
+    <div class="useTxt">
+      Use this storefront as an easy way to order apparel, supplies, SWAG kits,
+      HR items and much more!
+    </div>
+  </div>
+  <div class="landing-body-bottom">
+    <span class="questionTxt"
+      >If you have any questions when you are done browsing, or if you are
+      unable to find what you are looking for, please take a look at the FAQ
+      page.</span
+    >
+  </div>
+</div>
