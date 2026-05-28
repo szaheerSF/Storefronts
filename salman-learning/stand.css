@@ -1,0 +1,1114 @@
+/*==============================================================================
+  STANDARDIZED CSS BASE — Multi-Site Template
+  
+  HOW TO USE:
+  1. Fill in Section 1 (Design Tokens) with each site's brand values.
+  2. Do NOT modify Sections 2–7 — these are shared logic across all sites.
+  3. Add site-specific overrides in a separate file that imports this one.
+==============================================================================*/
+
+/*==============================================================================
+  SECTION 1 — DESIGN TOKENS  ← Only section that changes per site
+==============================================================================*/
+
+:root {
+  /* --- Brand Colors (fill in per site) --- */
+  --color-primary: #002666;
+  --color-primary-hover: #0099ff;
+  --color-primary-light: #f7fcff;
+  --color-secondary: #17254d;
+  --color-accent: #edc72e;
+  --color-accent-hover: #9b8220;
+
+  /* --- Background Colors --- */
+  --color-bg: #0359e5;
+  --color-bg-subtle: #035ae5b7 /* 60–80% opacity variant of bg */;
+  --color-border: #e2e8f0;
+
+  /* --- Status / Message Colors --- */
+  --color-success: #339900;
+  --color-warning: #ffcc00;
+  --color-error: #cc3300;
+  --color-info-okay: #99cc33;
+  --color-info-warn: #ff9966;
+
+  /* --- Typography --- */
+  --font-sans: "Montserrat", sans-serif;
+  --font-heading: "Nunito", sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.75rem;
+  --text-4xl: 2.25rem;
+
+  /* --- Spacing Scale --- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* --- Border Radius --- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 36px;
+  --radius-full: 9999px;
+
+  /* --- Shadows --- */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+
+  /* --- Transitions --- */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+
+  /* --- Layout --- */
+  --nav-width: 1280px;
+  --container-max: 1200px;
+  --container-pad: var(--space-6);
+
+  /* --- Header / Footer --- */
+  --header-bg: var(--color-primary);
+  --header-text: var(--color-primary-light);
+  --header-height: /* e.g. 60px | 92px | 110px — varies by site */;
+
+  --footer-bg: var(--color-secondary);
+  --footer-text: var(--color-primary-light);
+  --footer-link: var(--color-accent);
+
+  --dropdown-bg: var(--color-primary-light);
+}
+
+/*==============================================================================
+  SECTION 2 — GLOBAL RESETS & BASE
+==============================================================================*/
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-size: 16px;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+h1 {
+  font-size: 29px;
+}
+h2 {
+  font-size: 22px;
+}
+
+.main,
+.main td,
+.main input,
+.main select,
+.main textarea {
+  font-size: 16px;
+}
+
+.hideit {
+  display: none !important;
+}
+
+/* --- Required field indicator --- */
+.req_fld,
+.req_field {
+  color: var(--color-error);
+  display: inline-block;
+}
+
+/*==============================================================================
+  SECTION 3 — BUTTONS
+  Shared logic
+==============================================================================*/
+
+button,
+button#button_file_upload_remove {
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 25px;
+  letter-spacing: 0px;
+  padding: 6px 24px;
+  margin: auto;
+  vertical-align: middle;
+  position: relative;
+  min-width: max-content;
+  text-align: center;
+  color: var(--color-primary-light);
+  background-color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+  transition:
+    background-color var(--transition-normal),
+    color var(--transition-normal);
+}
+
+button:hover,
+button#button_file_upload_remove:hover {
+  color: var(--color-primary);
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  transition: background-color var(--transition-normal);
+}
+
+/* Pseudo-element hover border effect */
+button::before,
+button#button_file_upload_remove::before {
+  content: " ";
+  background: transparent;
+  top: -2px;
+  left: -2px;
+  padding: 2px;
+  box-sizing: content-box;
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+button:disabled,
+button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Cancel button spacing */
+button#submit_cancel {
+  margin-right: 5%;
+  min-width: 155px;
+}
+
+/* --- Arrow icon helpers (inline directional arrows on buttons) --- */
+.button_arrow_right_text,
+.button_arrow_left_text,
+.button_arrow_down_text {
+  display: none;
+}
+
+.button_arrow_right::after,
+.button_arrow_left::after,
+.button_arrow_down::after {
+  display: inline-block;
+  position: relative;
+  height: 8px;
+  width: 8px;
+  top: -1px;
+  border: 0 solid currentColor;
+  border-width: 0 2px 2px 0;
+  content: "";
+}
+.button_arrow_down::after {
+  transform: rotate(45deg);
+  margin: 0 0 0 8px;
+}
+.button_arrow_left::after {
+  transform: rotate(135deg);
+  margin: 0 8px 0 0;
+}
+.button_arrow_right::after {
+  transform: rotate(-45deg);
+  margin: 0 0 0 8px;
+}
+
+/*==============================================================================
+  SECTION 4 — CATALOG / PRODUCT PAGES  (shared across all sites)
+==============================================================================*/
+
+/* --- Legacy: hide sr_ error text on Basket / Review / Accept pages --- */
+.previewcell pre {
+  display: none;
+}
+
+/* --- Legacy: make Admin Menu Bar semi-transparent for logo visibility --- */
+.menu-knob-bar {
+  opacity: 0.8;
+}
+
+/* --- Prevent catalog content jump on load --- */
+.catalog form {
+  overflow: visible !important;
+}
+
+/* Height/sizing shared on catalog containers */
+.main,
+.catalog,
+form {
+  height: max-content !important;
+}
+
+/* --- Cart icon --- */
+.fa-shopping-basket::before {
+  content: "\f07a" !important;
+  font-size: 36px;
+}
+
+.fa-shopping-basket {
+  color: var(--color-primary);
+  transition: color 0.3s ease-in-out;
+}
+
+.fa-shopping-basket:hover {
+  color: var(--color-error);
+  transition: color 0.3s ease-in-out;
+}
+
+/* --- Cart item count badge --- */
+.item_count,
+span.cart_num_items.no_mobile {
+  font-size: 12px;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #111111;
+  color: #111111;
+  border-radius: var(--radius-full);
+  padding: 1px;
+  position: relative;
+  box-sizing: content-box;
+  top: -21px;
+  right: 14px;
+  background: #ffffff;
+  text-align: center;
+  margin-right: -17px;
+  display: inline-block;
+}
+
+/* --- Product item cards --- */
+.basket-list-item {
+  margin-bottom: 10px !important;
+  font-size: 14px;
+}
+
+.basket-list-item .button {
+  padding: 1px 1px 1px 5px !important;
+}
+
+#submit_catalog_add {
+  margin-top: 5px !important;
+}
+
+#copy4 {
+  display: none;
+}
+
+/* --- Bundle sub-items --- */
+.bundle_subitem_preview img {
+  border: 1px solid gray;
+}
+
+.qtyspec_label {
+  margin-left: 5px !important;
+}
+
+.bundle_subitem_longname {
+  margin-bottom: 6px !important;
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 25px !important;
+}
+
+.bundle_please_note {
+  color: var(--color-error);
+  font-size: 15px;
+}
+
+/* --- Preview images on Basket / Review / Accept pages --- */
+.previewcell img {
+  border: 1px solid var(--color-accent) !important;
+  max-width: 400px !important;
+}
+
+.previewcell a {
+  text-decoration: none;
+  margin: 0px auto;
+  line-height: 50px;
+  text-align: center;
+}
+
+.previewcell * {
+  text-align: center !important;
+}
+
+/* --- Zoom on product images --- */
+.imgwrap > label > img {
+  transition: transform 0.25s;
+  cursor: zoom-in;
+}
+
+input[type="checkbox"].zoomCheck {
+  display: none;
+}
+
+input[type="checkbox"].zoomCheck:checked ~ label > img {
+  cursor: zoom-out;
+  transform: scale(2);
+}
+
+#jquery-lightbox {
+  z-index: 100001 !important;
+}
+
+/*==============================================================================
+  SECTION 5 — PAGE-LEVEL LAYOUTS (shared across all sites)
+==============================================================================*/
+
+/* --- Shared page container styles (billing, shipping, review, etc.) --- */
+.form-body td.submit {
+  background-color: transparent;
+  font-family: var(--font-sans);
+  color: #111111;
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+}
+
+.form-body td.label,
+.form-body td.input {
+  font-size: 16px !important;
+  padding: 8px 5px !important;
+}
+
+.message-block {
+  text-align: center;
+}
+
+.pageinstructions {
+  width: 80%;
+  margin: 0 auto !important;
+  text-align: center;
+}
+
+/* --- Section-specific button spacing --- */
+.main .buttonsbar button,
+.basket-view .buttonsbar button,
+.billing .buttonsbar button,
+.review .buttonsbar button {
+  margin-bottom: 20px;
+}
+
+.buttonsbar {
+  background-color: transparent !important;
+  z-index: 1;
+  position: relative;
+  border-radius: 0 !important;
+}
+
+/* --- Review page --- */
+.review td.data,
+.done td.data {
+  background-color: #eeeeee;
+}
+
+.review div,
+.done div {
+  margin: 0 10px;
+}
+
+/* --- Accept / Done page --- */
+.done .accept-proofs .form-body {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  width: 80%;
+}
+
+.accept-proofs table {
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+/* --- Shipping page --- */
+.shipping .form-body {
+  width: 80%;
+}
+
+form[action="shiptrack.cgi"] {
+  padding-bottom: 25px !important;
+}
+
+/* --- Billing page --- */
+.billing .form-body {
+  margin: 0 auto 20px;
+}
+
+/* --- Mail merge --- */
+.mail-merge header {
+  margin-left: 25px;
+}
+.mail-merge nav.submit {
+  padding-bottom: 30px !important;
+}
+.mail-merge .buttonsbar,
+.mail-merge .buttonsbar a,
+.mail-merge .buttonsbar a:link,
+.mail-merge .buttonsbar * {
+  text-decoration: none !important;
+  text-align: center !important;
+}
+.mail-merge .buttonsbar {
+  margin-bottom: 10px;
+}
+.mail-merge .field-note {
+  display: none !important;
+}
+.mail-merge #throbber {
+  margin-bottom: 20px !important;
+}
+.mail-merge .pagetitle {
+  margin-left: 15px !important;
+}
+
+#listimp-s3-section-5 div {
+  margin-left: 25px;
+}
+#ml-handle-link {
+  margin-left: 25px;
+}
+div.error {
+  margin-bottom: 10px;
+}
+.personal-list-actions {
+  text-align: center !important;
+}
+form[name="clientlist"] div:last-child {
+  padding: 20px !important;
+}
+
+/* --- Delivery methods --- */
+tr.dpt--finalizeRow td.dpt--status {
+  border-bottom: 0 !important;
+}
+
+/* --- Quotes / Side by side --- */
+.buttonsbar,
+.form-body {
+  border-radius: 0 !important;
+}
+#estimate-item-container {
+  padding: 20px 0;
+}
+.submit.center button {
+  margin-bottom: 20px !important;
+}
+#all_options,
+#all_options_container {
+  border: none !important;
+}
+.fileSpec {
+  position: relative;
+  left: 10px;
+}
+.form-subheader {
+  text-align: left !important;
+}
+.uploadIcon {
+  margin-top: 5px !important;
+}
+div#confirm_container button {
+  margin-top: 20px !important;
+}
+.checkbox-table {
+  margin-left: 0 !important;
+}
+.form-body {
+  border-radius: 0 !important;
+}
+
+/* --- Bill Code 10 / Approve Order --- */
+td.label:has(> span#bill\.billcode10label) {
+  white-space: nowrap;
+}
+span.standout {
+  text-shadow: 1px 1px 1px rgb(125 125 125 / 75%) !important;
+}
+p.approve_order {
+  font-size: 1.25em !important;
+  padding: 15px;
+  border-radius: 0.35em;
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255),
+    0 3px 6px rgb(0 0 0 / 40%);
+  text-shadow: 0 1px 0 rgb(0 0 0 / 5%);
+}
+p.approve_order_text {
+  font-size: 1.15em !important;
+  padding: 15px;
+  border-radius: 0.35em;
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255),
+    0 3px 6px rgb(0 0 0 / 40%);
+  text-shadow: 0 1px 0 rgb(0 0 0 / 5%);
+}
+
+/* --- Cancel link in footer --- */
+#footer\2e footercanceltext {
+  padding-right: 15px;
+}
+
+/* --- Basket view --- */
+.basket-view td.previewcell {
+  background-color: transparent !important;
+}
+
+/* --- Input / select base styling --- */
+select,
+input[type="text"],
+input#passwd,
+textarea {
+  border-radius: var(--radius-sm);
+  border: 1px solid #8a8d8f;
+  padding: 6px;
+  font-size: 16px;
+}
+
+input,
+select {
+  border: 2px solid var(--color-primary);
+  font-size: 16px;
+  padding: 3px 5px;
+}
+
+.form-body td.input {
+  vertical-align: middle;
+}
+
+/*==============================================================================
+  SECTION 6 — NAVIGATION (shared patterns; brand colors pull from tokens)
+==============================================================================*/
+
+nav {
+  height: 100%;
+  display: inline-block;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  position: relative;
+  z-index: 80;
+}
+
+nav ul {
+  list-style: none;
+  position: relative;
+  display: inline-table;
+  margin: 0;
+  padding: 0;
+  z-index: 1001;
+}
+
+nav ul::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+nav ul li {
+  float: left;
+  padding: 0;
+}
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  width: -webkit-fill-available;
+}
+nav ul ul li {
+  float: none;
+  position: relative;
+}
+nav ul ul li a {
+  padding: 10px 25px;
+  text-decoration: none;
+  width: -webkit-fill-available;
+}
+nav ul ul ul {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  margin-left: 0;
+}
+
+nav ul li:hover {
+  cursor: pointer;
+}
+
+/* --- Dropdown (account / user menu) --- */
+.dropdown {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  cursor: pointer;
+  z-index: 2;
+  color: var(--color-primary);
+  font-size: 16px;
+}
+
+.dropdown-content {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 40px;
+  text-align: left;
+  z-index: 1;
+  background-color: var(--dropdown-bg);
+  padding: 6px 0;
+  transform: translateY(10px);
+  box-shadow: 0 0 10px 0 var(--color-primary);
+  transition:
+    opacity var(--transition-normal),
+    transform var(--transition-normal),
+    visibility var(--transition-normal);
+}
+
+.dropdown-content a {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 4px 16px;
+  display: block !important;
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--color-primary) !important;
+}
+
+#dropicon:hover .dropdown-content,
+.dropdown:hover .dropdown-content {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Down-arrow caret on dropdown trigger */
+#dropicon::after {
+  display: inline-block;
+  position: relative;
+  height: 9px;
+  width: 9px;
+  top: -3px;
+  border: 0 solid currentColor;
+  border-width: 0 2px 2px 0;
+  content: "";
+  margin: 0 0 0 10px;
+  transform: rotate(45deg);
+}
+
+nav ul li.topli::after {
+  display: inline-block;
+  position: relative;
+  height: 10px;
+  width: 10px;
+  top: -4px;
+  border: 0 solid currentColor;
+  border-width: 0 2px 2px 0;
+  content: "";
+  margin: 0 0 0 10px;
+  transform: rotate(45deg);
+}
+
+nav ul li.subtopli::after {
+  display: inline-block;
+  position: relative;
+  height: 8px;
+  width: 8px;
+  top: -1px;
+  border: 0 solid currentColor;
+  border-width: 0 2px 2px 0;
+  content: "";
+  margin: 0 0 0 10px;
+  transform: rotate(-45deg);
+}
+
+/*==============================================================================
+  SECTION 7 — RESPONSIVE / MEDIA QUERIES
+  Breakpoints are shared across all sites.
+==============================================================================*/
+
+/* --- Desktop (≥ 1025px) --- */
+@media only screen and (min-width: 1025px) {
+  /* Prevent tabs panel from bleeding below footer */
+  .responsive_tabs-shell .responsive_tabs {
+    overflow-y: hidden !important;
+  }
+
+  div.field-container {
+    border-bottom: unset !important;
+  }
+
+  table.bottom-button-container {
+    display: none;
+  }
+
+  /* Sidebar tab navigation */
+  .responsive_tabs-shell {
+    width: unset !important;
+    border-collapse: collapse !important;
+    border: 0 !important;
+    font-family: inherit !important;
+    max-width: 200px !important;
+    background-color: transparent !important;
+    vertical-align: top !important;
+    float: left !important;
+    position: absolute !important;
+    z-index: 1 !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    transition: 0.5s linear;
+  }
+
+  .tab_html_wrapper {
+    display: none;
+  }
+  .responsive_tabs-shell .before {
+    display: none;
+  }
+  div#basket-list-title {
+    display: none;
+  }
+
+  .stretchy_cols.responsive-item.image-row {
+    vertical-align: top !important;
+    display: inline-table;
+  }
+
+  .stretchy_cols {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 20px 3px 0 0 !important;
+    padding: 20px !important;
+    overflow: visible !important;
+    max-height: unset !important;
+    min-height: 200px !important;
+    max-width: 375px !important;
+  }
+
+  span.responsive-tagcheck.tagcheck-bottom {
+    display: inline-flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin-bottom: 8px;
+  }
+
+  div:has(> #submit_catalog_add) {
+    margin-bottom: 20px;
+  }
+
+  .image-container {
+    overflow: hidden;
+    padding: 10px;
+  }
+
+  .image-container img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+  }
+
+  .multisize-table td,
+  .multisize-table th {
+    padding: 0 10px !important;
+  }
+
+  .true-table.multisize-table {
+    max-width: 350px;
+    overflow-x: auto;
+    display: flex;
+  }
+
+  .previewcell img {
+    max-width: 400px !important;
+    border: 1px solid #999999 !important;
+  }
+
+  .items-table th {
+    background-color: inherit;
+    font-weight: bold;
+    margin: 0;
+    padding: 0.33em;
+    font-size: inherit;
+  }
+
+  .items-table td {
+    background-color: transparent;
+    padding: 0.33em;
+    font-size: inherit;
+  }
+
+  .responsive-longname {
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+  }
+
+  .responsive_tabs dfn {
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+  }
+
+  .responsive-choose-info {
+    display: block !important;
+    max-height: 100rem !important;
+    overflow: visible !important;
+    margin-bottom: 10px !important;
+  }
+
+  .catalog-tab-blurb {
+    text-align: left;
+    line-height: 1.5em;
+    font-size: 16px;
+    width: 80% !important;
+    margin-top: 0 !important;
+  }
+
+  .basket-text,
+  .basket-butt {
+    text-align: left;
+    padding-left: 5px;
+    display: table-cell;
+  }
+
+  table:not(.items-table) {
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .main.mail-merge.catalog--container form {
+    max-width: fit-content;
+    margin: auto;
+  }
+
+  input#searchfield_input {
+    padding-left: 25px;
+    width: 150px;
+  }
+
+  .input-wrapper {
+    position: relative;
+    display: inline-block;
+    vertical-align: super;
+  }
+
+  .item-search-block {
+    margin: unset;
+  }
+
+  .form-body .note {
+    font-size: inherit;
+  }
+
+  .select-items .vertical-shell {
+    margin-left: 10px !important;
+  }
+  .select-items .image-container img {
+    margin: 5px 0;
+  }
+  .select-items .pagetitle {
+    margin-left: 10px !important;
+  }
+  .select-items .buttonsbar button {
+    margin-bottom: 20px;
+  }
+
+  #header_logo > img.no_mobile {
+    position: absolute;
+    top: 50px;
+    left: 45px;
+    max-width: 350px;
+  }
+
+  td.right-col {
+    position: relative;
+    padding-bottom: 20px;
+  }
+
+  .imprint-splitview .left-side > .form-body {
+    margin-left: 0;
+    min-width: 300px;
+    max-width: 375px !important;
+    width: 375px !important;
+  }
+
+  #billing-pricetable {
+    visibility: hidden;
+  }
+
+  body.billing-prices-ready #billing-pricetable {
+    visibility: visible;
+  }
+
+  .main.billing.catalog--container {
+    max-width: 675px !important;
+    margin: 30px auto 0 !important;
+  }
+}
+
+/* --- Mobile (≤ 1024px) --- */
+@media only screen and (max-width: 1024px) {
+  .main.select-items,
+  .catalog,
+  form {
+    margin-bottom: 15%;
+  }
+
+  .stretchy_cols {
+    min-height: fit-content !important;
+    max-height: 400px !important;
+    height: fit-content !important;
+  }
+
+  .responsive_tabs-shell {
+    background-color: #fff;
+  }
+
+  div#tab_responsive_tabs {
+    background-color: #ffffff;
+  }
+
+  .responsive_tabs dfn {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  div#tab_0 {
+    margin-top: 50px;
+  }
+
+  .fa-search::before {
+    content: "\f002";
+    font-size: 25px;
+  }
+
+  .select-items #searchfield_input {
+    width: 55vw;
+    height: 40px;
+    box-sizing: border-box;
+    position: absolute;
+    right: calc((100% - 60vw) / 2);
+  }
+
+  .select-items .item-search-block {
+    margin-right: calc((100% - 85vw) / 2) !important;
+    margin: 0 auto;
+    float: right;
+  }
+
+  button#submit_catalog_search {
+    border: none !important;
+    height: 38px;
+    padding: 5px 2px 4px 8px !important;
+    margin: 0 !important;
+  }
+
+  label.fa.fa-search {
+    display: none;
+  }
+
+  li#d_tag,
+  li#d_prodcode {
+    display: none;
+  }
+
+  #d_on_hand_html #d_on_hand_html_label {
+    display: block !important;
+  }
+
+  td#desklogo {
+    padding: 0.5rem 0.625rem 0.625rem !important;
+  }
+
+  .select-items .catalog-tab-blurb {
+    max-width: 95vw !important;
+    overflow: hidden;
+    padding: 15px !important;
+    margin: 30px 0 0 !important;
+    text-align: left;
+  }
+
+  #mobile_link_box a {
+    opacity: 1 !important;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+
+  table thead,
+  table tbody,
+  table tfoot {
+    border: none !important;
+    background-color: transparent !important;
+  }
+}
+
+/* --- Preview wrapper zoom — identical across all sites --- */
+@media (min-width: 320px) {
+  .preview-wrapper {
+    zoom: 40%;
+    transform: scale(0.4);
+    transform-origin: 0 0;
+    -moz-transform: scale(0.4) !important;
+    -moz-transform-origin: 8vw 0 0 !important;
+  }
+}
+
+@media (min-width: 375px) {
+  .preview-wrapper {
+    zoom: 50%;
+    transform: scale(0.5);
+    transform-origin: 0 0;
+    -moz-transform: scale(0.5) !important;
+    -moz-transform-origin: 20vw 0 0 !important;
+  }
+}
+
+@media (min-width: 481px) {
+  .preview-wrapper {
+    zoom: 60%;
+    transform: scale(0.6);
+    transform-origin: 0 0;
+    -moz-transform: scale(0.6) !important;
+    -moz-transform-origin: 0 0 !important;
+  }
+}
+
+@media (min-width: 641px) {
+  .preview-wrapper {
+    zoom: 70%;
+    transform: scale(0.7);
+    transform-origin: 0 0;
+    -moz-transform: scale(0.7) !important;
+    -moz-transform-origin: 0 0 !important;
+  }
+}
+
+@media (min-width: 645px) {
+  .preview-wrapper {
+    zoom: 100%;
+    transform: scale(1);
+    transform-origin: 0 0;
+    -moz-transform: scale(1) !important;
+    -moz-transform-origin: 0 0 !important;
+  }
+}

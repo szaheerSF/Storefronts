@@ -1,0 +1,3482 @@
+<html class="no-js" lang="en" style="overflow: visible">
+  <!--<!
+  [endif]--><head>
+    <style type="text/css">
+      @charset "UTF-8";
+      [ng\:cloak],
+      [ng-cloak],
+      [data-ng-cloak],
+      [x-ng-cloak],
+      .ng-cloak,
+      .x-ng-cloak,
+      .ng-hide {
+        display: none !important;
+      }
+      ng\:form {
+        display: block;
+      }
+      .ng-animate-block-transitions {
+        transition: 0s all !important;
+        -webkit-transition: 0s all !important;
+      }
+      .ng-hide-add-active,
+      .ng-hide-remove {
+        display: block !important;
+      }
+    </style>
+
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, user-scalable=yes, width=device-width"
+    />
+    <!-- omit foundation on catalog page to honor more customer visual settings -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/hub/css-qa/mobile_helper.min.css?v=c039b2d"
+      media="screen and (max-width: 1024px)"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="css/mobile.css?6CD5"
+      media="screen and (max-width: 1024px)"
+    />
+
+    <link
+      rel="stylesheet"
+      href="css/header_responsive.css?EF44"
+      type="text/css"
+      media="screen and (max-width: 1024px)"
+    />
+    <script
+      src="/hub/js-qa/menuItems/angularApps/app/lib/angular/angular.js?v=652a42d"
+      type="text/javascript"
+    ></script>
+    <script
+      src="/hub/js-qa/menuItems/angularApps/app/lib/angular/angular-route.js?v=7b5371a"
+      type="text/javascript"
+    ></script>
+    <title>sandbox-salman Online Ordering</title>
+    <script type="text/javascript">
+      var jsParams = { support_parameters: { pagename: "catalog" } };
+    </script>
+    <script src="/hub/js-qa/utils.js?v=c6b76c0" type="text/javascript"></script>
+    <script
+      src="/hub/js-qa/jquery/jquery-3.7.1.min.js?v=4b7b7e5"
+      type="text/javascript"
+    ></script>
+    <script
+      src="/hub/js-qa/jquery/jquery-migrate-3.5.2.js?v=fb7d0c9"
+      type="text/javascript"
+    ></script>
+    <script
+      src="/hub/js-qa/jquery/jquery.cookie.js?v=a9273af"
+      type="text/javascript"
+    ></script>
+    <!-- include catalog script in header when needed since it  -->
+    <script
+      src="/hub/js-qa/storefrontPages/responsive_catalog.js?v=98104d0"
+      type="text/javascript"
+    ></script>
+    <script
+      src="/hub/js-qa/jquery/jquery.form.js"
+      type="text/javascript"
+    ></script>
+    <script src="/hub/js-qa/modal/main.js" type="text/javascript"></script>
+    <script src="/hub/js-qa/modal/rpcHelper.js" type="text/javascript"></script>
+    <script
+      src="/hub/js-qa/menuItems/supportPopup.js"
+      type="text/javascript"
+    ></script>
+
+    <link
+      id="site_stylesheet"
+      rel="stylesheet"
+      href="css/site.css?6CD5"
+      type="text/css"
+      media="screen and (min-width: 1025px)"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/hub/css-qa/menu-form-table.css?v=1357e55"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/hub/css-qa/fonts/font-awesome.css?v=ed54198"
+    />
+
+    <link
+      id="buttons_stylesheet"
+      rel="stylesheet"
+      href="css/buttons.css?6CD5"
+      type="text/css"
+    />
+    <!--[if IE 7]>
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="/hub/css-qa/fonts/font-awesome-ie7.css?v=652a42d"
+      />
+    <![endif]-->
+
+    <style rel="stylesheet" type="text/css">
+      /*hide any pre-compiled angular code for safety*/
+      [ng\:cloak],
+      [ng-cloak],
+      .ng-cloak {
+        display: none;
+      }
+
+      /*hide the header if requested by responsive page*/
+
+      @media only screen and (max-width: 1024px) {
+        body {
+          background-image: none !important;
+        }
+
+        /* Styling to help with scroll jittering in mobile*/
+        html,
+        body {
+          -webkit-overflow-scrolling: touch !important;
+          height: 100% !important;
+        }
+      }
+      @media only screen and (min-width: 1025px) {
+        .no_desktop {
+          display: none;
+        }
+      }
+
+      .header {
+        padding: 0px;
+        margin: 0px;
+        margin-bottom: 1px;
+        border: 0px;
+        width: 100%;
+      }
+      #header_logo {
+        margin: 0px;
+        padding: 0px;
+      }
+      #header_title {
+        text-align: right;
+        vertical-align: middle;
+      }
+      .header-title-text {
+        font-size: x-small;
+        color: transparent;
+      }
+      #header_title table {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .header-links {
+        font-size: medium;
+        text-align: right;
+      }
+      #header-links-container {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      /*Don't let the user see all our JS at work - fade in body slowly while this happens*/
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="css/header.css?C1FE"
+      type="text/css"
+      media="screen and (min-width: 1025px)"
+    />
+
+    <script type="text/javascript">
+      /* This function allows any other file (template or JS) to access the responsive
+min and max values without needing BOILERPLATE or global variables */
+      var RESPONSIVE = (function () {
+        return {
+          max: function () {
+            return "1024";
+          },
+          min: function () {
+            return "1025";
+          },
+          scrollbars: function () {
+            return 15;
+          },
+        };
+      })();
+    </script>
+    <script
+      src="/hub/js-qa/storefrontPages/responsive_header.js?v=a2517ac"
+      type="text/javascript"
+    ></script>
+
+    <style id="content-branding-colors">
+      :root {
+        --check-primary-color: #49c5f0 !important;
+        --check-primary-hover: #49c5f0dd !important;
+      }
+    </style>
+  </head>
+
+  <body
+    style="opacity: 1; overflow: visible"
+    cz-shortcut-listen="true"
+    data-admin-menu-collapsed="1"
+  >
+    <!-- For mobile header links via the Extra Link Configuration -->
+    <div class="exit_overlay"></div>
+    <div id="mobile_link_box" style="display: none">
+      <i class="fa fa-times" id="mobile_link_closer" style="display: none"
+        >&nbsp;</i
+      >
+    </div>
+    <div class="container">
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="/hub/css-qa/menu-knob_pdna.css?v=abecf7e"
+      />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="/hub/css-qa/modal2.css?v=4d2d494"
+      />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="/hub/css-qa/print.css?v=f799f99"
+      />
+
+      <script
+        src="/hub/js-qa/menu_help_ajax.js?v=f73cdfb"
+        type="text/javascript"
+      ></script>
+      <script
+        src="/hub/js-qa/dragndrop.js?v=7cca90a"
+        type="text/javascript"
+      ></script>
+
+      <script
+        src="/hub/js-qa/ic-msg-edit.js?v=de5b022"
+        type="text/javascript"
+      ></script>
+      <script>
+        var icmsg = null;
+        $(document).ready(function () {
+          icmsg = new ICMsgEditor();
+          icmsg.edit_labels = { hover: "Stop Editing", off: "Edit Messages" };
+
+          icmsg.init();
+        });
+
+        $(document).ready(function () {
+          // dynamically calculate the left offset of the "Show Embedded Message" link
+          $("#embedded_message_popup_control").on("click", function (e) {
+            $("#embedded_message_popup").css(
+              "left",
+              $(e.target).offset().left + "px",
+            );
+          });
+
+          $(".menu-toggle").on("click", function (e) {
+            function stopEditingMessages() {
+              const cookieValue = $.cookie("ic-msg-edit_type");
+
+              // should disable editing
+              if (cookieValue && cookieValue.length && cookieValue !== "off") {
+                $(".ic-msg-toggle").click();
+              }
+            }
+
+            const _isMenuBarCollapsed = document.body.hasAttribute(
+              _MENU_BAR_COLLAPSED_FLAG,
+            );
+
+            if (_isMenuBarCollapsed) {
+              document.body.removeAttribute(_MENU_BAR_COLLAPSED_FLAG);
+              $(".menu-knob").show();
+            } else {
+              document.body.setAttribute(_MENU_BAR_COLLAPSED_FLAG, 1);
+              $(".menu-knob").hide();
+              stopEditingMessages();
+
+              if ($("#embedded_message_popup").is(":visible")) {
+                $("#embedded_message_popup_control").click();
+              }
+
+              $(".form-ed .form-edit-toggle").click();
+            }
+
+            // Set the opposite value of isCollapsed since we toggle it
+            $.cookie(_MENU_BAR_COOKIE_NAME, _isMenuBarCollapsed ? 0 : 1);
+          });
+
+          const _isMenuBarCollapsed = document.body.hasAttribute(
+            _MENU_BAR_COLLAPSED_FLAG,
+          );
+          if (_isMenuBarCollapsed) {
+            $(".menu-knob").hide();
+          } else {
+            $(".menu-knob").show();
+          }
+
+          if ($('#embedded_message_popup[data-message-num="0"]').length) {
+            $("#embedded_message_popup_control").hide();
+          }
+        });
+      </script>
+
+      <div class="menu-knob-bar hide-for-print-simple">
+        <div class="menu-toggle">
+          <i class="fa fa-caret-left"></i>
+          <i class="fa fa-caret-right"></i>
+        </div>
+        <div class="menu-content">
+          <span
+            class="menu-knob-first hide-for-print-simple"
+            style="display: inline"
+          >
+            <a target="menu" href="menu.cgi"
+              ><i
+                id="TMP-TOGGLE_showHideMenuIconLabel"
+                class="fa fa-tachometer hide-for-print-simple"
+              ></i
+              >Dashboard (AWS-US)</a
+            >
+            <a class="ic-msg-toggle hide-for-print-simple" href="javascript:;"
+              >Edit Messages</a
+            ></span
+          ><span class="menu-knob" style="display: none"
+            ><a
+              href="javascript:;"
+              onclick="
+                self
+                  .open(
+                    'menu.cgi?show=item_edit&amp;context=',
+                    'menu_popup',
+                    'status=yes,menubar=yes,resizable=yes,scrollbars=yes',
+                  )
+                  .focus()
+              "
+              >Item Editor</a
+            ></span
+          ><span class="menu-knob" style="display: none"
+            ><a
+              href="javascript:;"
+              onclick="
+                self
+                  .open(
+                    'menu.cgi?newtab=copy_catalog&amp;curtab=copy_catalog&amp;show=tabsettings&amp;context=',
+                    'menu_popup',
+                    'status=yes,menubar=yes,resizable=yes,scrollbars=yes',
+                  )
+                  .focus()
+              "
+              >Catalog Admin</a
+            ></span
+          ><span class="menu-knob" style="display: none"
+            ><a
+              href="javascript:;"
+              onclick="
+                self
+                  .open(
+                    'menu.cgi?show=tabsettings.visual_settings&amp;context=',
+                    'menu_popup',
+                    'status=yes,menubar=yes,resizable=yes,scrollbars=yes',
+                  )
+                  .focus()
+              "
+              >Visual Settings</a
+            ></span
+          ><span class="menu-knob" style="display: none"
+            ><a
+              href="javascript:;"
+              onclick="
+                self
+                  .open(
+                    'menu.cgi?show=tabsettings.tabmanager&amp;context=',
+                    'menu_popup',
+                    'status=yes,menubar=yes,resizable=yes,scrollbars=yes',
+                  )
+                  .focus()
+              "
+              >Tabs and Items Manager</a
+            ></span
+          ><span class="menu-knob" style="display: none">
+            <a
+              id="embedded_message_popup_control"
+              onclick="
+                DHTML.toggle_visibility_with_link(this, {
+                  showlabel: 'Show Embedded Messages',
+                  hidelabel: 'Hide Embedded Messages',
+                  class_name: 'menu-knob-block',
+                })
+              "
+              >Show Embedded Messages</a
+            > </span
+          ><span class="menu-knob" style="display: none"
+            ><a
+              href="https://pagedna.my.site.com/docs/s/contactsupport"
+              target="_blank"
+              >Support</a
+            ></span
+          ><span class="menu-knob" style="display: none"
+            ><a target="menu" href="menu.cgi?user=LOGOUT"
+              >Dashboard Logout</a
+            ></span
+          >
+        </div>
+      </div>
+      <script>
+        const _MENU_BAR_COOKIE_NAME = "menuknob";
+        const _MENU_BAR_COLLAPSED_FLAG = "data-admin-menu-collapsed";
+
+        (function () {
+          if (parseInt($.cookie(_MENU_BAR_COOKIE_NAME)) === 1) {
+            document.body.setAttribute(_MENU_BAR_COLLAPSED_FLAG, 1);
+          }
+        })();
+      </script>
+
+      <a name="top"></a>
+      <div id="header-wrapper">
+        <table class="header" cellspacing="0">
+          <tbody>
+            <tr>
+              <td id="header_logo" class="left middle">
+                <img
+                  src="con/sf-logo-new_no-tag_blue.png"
+                  alt="Site Header"
+                  class="no_mobile"
+                />
+
+                <img
+                  src="con/sf-logo-2023_icon_sf-blue.png"
+                  class="no_desktop"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="full">
+          <div id="red_header_bar"></div>
+
+          <!--BOILERPLATE
+<span class="note"><span class="budgetlbl" style="padding-left:10px" >Remaining Budget: </span><span class="budget">$0.00 </span></span>
+-->
+        </div>
+
+        <table id="header-links-container">
+          <tbody>
+            <tr>
+              <td class="header-links">
+                <span id="pageurl" style="display: none"
+                  >catalog.cgi?token=EES445</span
+                >
+                <a href="index.cgi" style="display: inline">Home</a>&nbsp;<a
+                  href="profile.cgi?force_view=1"
+                  style="display: inline"
+                  >My Profile</a
+                >
+
+                &nbsp;
+                <a id="submit_logout" href="logout.cgi" style="display: inline"
+                  ><span class="ic-msg" id="header.logout_link_text"
+                    >Logout</span
+                  ></a
+                >
+                <span id="logout_userid">szaheer</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <a
+          style="top: 20.5px; pointer-events: none; display: none"
+          id="mobile_cart"
+          href="#"
+        >
+          <i class="fa fa-shopping-basket"></i>
+          <div class="item_count">0</div>
+        </a>
+        <ul style="top: 20.5px; display: none" id="mobile_xtra_links">
+          <i class="fa fa-user"></i>
+        </ul>
+      </div>
+
+      <a name="start"></a>
+
+      <div
+        class="main select-items catalog--container ng-scope"
+        ng-app="responsiveCatalog"
+        ng-controller="itemDetailer"
+        style="height: 805.692px"
+      >
+        <div id="ajax_throbber_overlay" style="opacity: 0.9; display: none">
+          <div id="catalog-ajax-throbber"></div>
+        </div>
+
+        <div class="pagetitle no_mobile">
+          <span class="ic-msg" id="catalog.pagebanner">Catalog:</span>
+        </div>
+        <div class="catalog" style="height: 805.692px">
+          <div id="copy5" class="no_mobile bot-marg">
+            <span class="ic-msg" id="catalog.userinstructions1"></span
+            ><span
+              style="display: none"
+              class="ic-msg-hidden"
+              id="catalog.userinstructions1-args"
+              >arg=corp_longname&amp;arg=tab&amp;arg_corp_longname=ACME+Lending&amp;arg_tab=Business+Cards</span
+            >
+          </div>
+
+          <script
+            src="/hub/js-qa/basket.js?v=c039b2d"
+            type="text/javascript"
+          ></script>
+
+          <form
+            action="catalog.cgi"
+            name="f"
+            method="POST"
+            style="margin: 0px; padding: 0px; height: 805.692px"
+            class="ng-pristine ng-valid"
+          >
+            <input
+              type="hidden"
+              name="empty_search_message"
+              value="(search)"
+            /><input type="hidden" name="input_type" value="input" /><input
+              type="hidden"
+              name="switch_tab"
+              value=""
+            /><input type="hidden" name="corp_tag" value="acme_lend" /><input
+              type="hidden"
+              name="token"
+              value="EES445"
+            /><input type="hidden" name="shownkinds" value="bc_basic" /><input
+              type="hidden"
+              name="shownkinds"
+              value="bc_asian"
+            /><input type="hidden" name="shownkinds" value="bc_award" /><input
+              type="hidden"
+              name="shownkinds"
+              value="bc_photo"
+            /><input type="hidden" name="shownkinds" value="bc_social" /><input
+              type="hidden"
+              name="shownkinds"
+              value="bc_vcard"
+            /><input
+              type="hidden"
+              name="shownkinds"
+              value="bc_custom_styled_type_logo"
+            /><input
+              type="hidden"
+              name="shownkinds"
+              value="bc_custom_styled_type_network"
+            />
+
+            <script>
+              function add_to_basket_onclick() {
+                switchtab(document.f, "tab", "Business Cards", "catalog.cgi");
+              }
+            </script>
+
+            <div class="responsive_tabs-shell">
+              <div class="before" style="pointer-events: auto">
+                <i class="fa fa-bars" style="display: none" id="navTabs"></i>
+                <div class="item-search-block">
+                  <label for="searchfield_input" class="wcag-label"
+                    >Search Products</label
+                  >
+                  <input
+                    type="text"
+                    size="14"
+                    name="searchcat"
+                    id="searchfield_input"
+                    placeholder="(search)"
+                  />
+                  <button
+                    type="submit"
+                    class="button"
+                    id="submit_catalog_search"
+                    onclick="
+                      return disable_buttons(
+                        this,
+                        'button[data-disableable=1]',
+                      );
+                    "
+                    data-disableable="1"
+                    name="do_search"
+                    value="1"
+                  >
+                    <span class="ic-msg" id="Search">Search</span>
+                  </button>
+                </div>
+              </div>
+              <div class="tab_html_wrapper">
+                <style type="text/css">
+                  /* We only want this working in non mobile scenarios....*/
+
+                  @media only screen and (min-width: 1025px) {
+                    /* shell settings */
+                    .responsive_tabs-shell {
+                      /*width: 550px;*/
+                      width: 100%;
+                      margin: 0px auto 0px auto;
+                      border-collapse: collapse;
+                      border: 0px;
+                      font-family: inherit;
+                      padding: 0 0 3px 10px;
+                      margin: 0px;
+                      width: 200px;
+                      background-color: transparent;
+                      vertical-align: top;
+                      float: left;
+                    }
+                    .responsive_tabs-shell .responsive_tabs {
+                      width: 100%;
+                    }
+                    .responsive_tabs-shell .main-section {
+                      padding: 0px;
+                      vertical-align: top;
+                      height: 0px;
+                    }
+                    .responsive_tabs-shell .before,
+                    .responsive_tabs-shell .after {
+                      padding: 2px;
+                      margin: 0px;
+                    }
+                  }
+                  /*.....End non-mobile code....*/
+
+                  /**************This code is both mobile and non mobile****************/
+
+                  /* actual tab settings */
+                  .responsive_tabs .opened {
+                    padding-left: 14px;
+                    padding-top: 1px;
+                    padding-bottom: 1px;
+                  }
+                  .responsive_tabs .closed {
+                    padding-left: 14px;
+                    padding-top: 1px;
+                    padding-bottom: 1px;
+                  }
+
+                  .responsive_tabs .opened:before,
+                  .responsive_tabs .closed:before {
+                    font-family: FontAwesome;
+                    position: absolute;
+                    margin-left: -1%;
+                  }
+
+                  .responsive_tabs .closed:before {
+                    content: "\f0da"; /* fa-caret-right */
+                  }
+                  .responsive_tabs .opened:before {
+                    content: "\f0d7"; /* fa-caret-down */
+                  }
+
+                  .responsive_tabs .closed.temphide:before,
+                  .responsive_tabs .opened.temphide:before {
+                    /*hide arrows during animations*/
+                    display: none;
+                    color: transparent;
+                  }
+
+                  .responsive_tabs {
+                    border: 0px;
+                    padding: 0px;
+                    margin: 0px;
+                    vertical-align: top;
+                    background-color: #ffffff;
+                    font-size: small;
+                  }
+                  .responsive_tabs dfn {
+                    display: block;
+                    font-style: normal;
+                    font-weight: normal;
+                    padding-top: 4px;
+                    padding-bottom: 4px;
+                  }
+
+                  .responsive_tabs a {
+                    text-decoration: none;
+                  }
+                  .responsive_tabs div.off:hover {
+                    background-color: #ffffff;
+                  }
+                  .responsive_tabs div.off:hover a {
+                    color: #02b4cd !important;
+                  }
+                  .responsive_tabs div:hover div {
+                    background-color: #ffffff;
+                  }
+                  .responsive_tabs .innertab-closed div.on,
+                  .responsive_tabs .innertab-closed div.off,
+                  .responsive_tabs .innertab-opened div.on,
+                  .responsive_tabs .innertab-opened div.off {
+                    border: 0px;
+                    margin: 0px;
+                  }
+
+                  /* animate tabs */
+                  .innertab-opened div {
+                    overflow: hidden;
+                    visibility: hidden;
+                  }
+
+                  .innertab-opened div {
+                    visibility: visible;
+                  }
+
+                  .innertab-closed div {
+                    padding: 0;
+                    visibility: hidden;
+                  }
+
+                  /* end animation */
+
+                  .responsive_tabs .innertab-closed {
+                    max-height: 0;
+                    padding-top: 1px;
+                    padding-bottom: 1px;
+                  }
+                  .responsive_tabs div.off,
+                  .responsive_tabs div.on {
+                    padding-left: 14px;
+                    padding-top: 1px;
+                    padding-bottom: 1px;
+                  }
+
+                  .responsive_tabs div div div.off,
+                  .responsive_tabs div div div.on {
+                    max-width: 85%;
+                  }
+
+                  .responsive_tabs div.on {
+                    display: block;
+                    background-color: #ffffff;
+                  }
+                  .responsive_tabs div.on a {
+                    color: #02b4cd !important;
+                    font-weight: bold;
+                  }
+                  .responsive_tabs .innertab-opened,
+                  .responsive_tabs .innertab-closed {
+                    padding-left: 10px;
+                  }
+
+                  .responsive_tabs .opened,
+                  .responsive_tabs .closed {
+                    background-color: #ffffff;
+                  }
+
+                  .responsive_tabs .opened a,
+                  .responsive_tabs .closed a,
+                  .responsive_tabs div.off a,
+                  .responsive_tabs div.off a,
+                  .responsive_tabs .opened:before,
+                  .responsive_tabs .closed:before {
+                    color: #000000;
+                  }
+
+                  .responsive_tabs div.on,
+                  .responsive_tabs div.on {
+                    background-color: #ffffff !important;
+                    font-weight: bold;
+                  }
+
+                  .responsive_tabs div.on a,
+                  .responsive_tabs div.on a {
+                    color: #02b4cd !important;
+                  }
+
+                  .responsive_tabs div.off div {
+                    color: #000000;
+                  }
+
+                  .responsive_tabs div.off {
+                    background-color: #ffffff;
+                  }
+                </style>
+                <script
+                  src="/hub/js-qa/utils.js?v=c6b76c0"
+                  type="text/javascript"
+                ></script>
+                <script
+                  src="/hub/js-qa/tab_handlers.js?v=4d81808"
+                  type="text/javascript"
+                ></script>
+                <input type="hidden" name="tab" value="Business Cards" />
+                <div class="responsive_tabs" id="tab_responsive_tabs" style="">
+                  <i
+                    class="fa fa-times"
+                    id="mobile_tab_closer"
+                    style="display: none"
+                    >&nbsp;</i
+                  >
+                  <script type="text/javascript">
+                    addLoadEvent(function () {
+                      curr_obj = getElement("tab_1");
+                    });
+                  </script>
+
+                  <div class="on" id="tab_0" style="">
+                    <dfn
+                      ><a
+                        href="#"
+                        style="cursor: pointer"
+                        onclick="
+                          switchtab(
+                            document.f,
+                            'tab',
+                            'Business Cards',
+                            'catalog.cgi',
+                          )
+                        "
+                        >Business Cards</a
+                      ></dfn
+                    >
+                  </div>
+                  <div class="off" id="tab_1" style="">
+                    <dfn
+                      ><a
+                        href="#"
+                        style="cursor: pointer"
+                        onclick="
+                          switchtab(
+                            document.f,
+                            'tab',
+                            'Company Apparel',
+                            'catalog.cgi',
+                          )
+                        "
+                        >Company Apparel</a
+                      ></dfn
+                    >
+                  </div>
+                  <div class="off" id="tab_2" style="">
+                    <dfn
+                      ><a
+                        href="#"
+                        style="cursor: pointer"
+                        onclick="
+                          switchtab(
+                            document.f,
+                            'tab',
+                            'Estimate Items',
+                            'catalog.cgi',
+                          )
+                        "
+                        >Estimate Items</a
+                      ></dfn
+                    >
+                  </div>
+                  <div class="off" id="tab_3" style="">
+                    <dfn
+                      ><a
+                        href="#"
+                        style="cursor: pointer"
+                        onclick="
+                          switchtab(document.f, 'tab', 'Kits', 'catalog.cgi')
+                        "
+                        >Kits</a
+                      ></dfn
+                    >
+                  </div>
+                  <div class="off" id="tab_4" style="">
+                    <dfn
+                      ><a
+                        href="#"
+                        style="cursor: pointer"
+                        onclick="
+                          switchtab(
+                            document.f,
+                            'tab',
+                            'Marketing Materials',
+                            'catalog.cgi',
+                          )
+                        "
+                        >Marketing Materials</a
+                      ></dfn
+                    >
+                  </div>
+                  <div class="off" id="tab_5" style="">
+                    <dfn
+                      ><a
+                        href="#"
+                        style="cursor: pointer"
+                        onclick="
+                          switchtab(
+                            document.f,
+                            'tab',
+                            'Postcards and Mailing',
+                            'catalog.cgi',
+                          )
+                        "
+                        >Postcards and Mailing</a
+                      ></dfn
+                    >
+                  </div>
+                  <div class="off" id="tab_6" style="">
+                    <dfn
+                      ><a
+                        href="#"
+                        style="cursor: pointer"
+                        onclick="
+                          switchtab(
+                            document.f,
+                            'tab',
+                            'Stamps and Seals',
+                            'catalog.cgi',
+                          )
+                        "
+                        >Stamps and Seals</a
+                      ></dfn
+                    >
+                  </div>
+                  <div class="off" id="tab_7" style="">
+                    <dfn
+                      ><a
+                        href="#"
+                        style="cursor: pointer"
+                        onclick="
+                          switchtab(
+                            document.f,
+                            'tab',
+                            'Stationery',
+                            'catalog.cgi',
+                          )
+                        "
+                        >Stationery</a
+                      ></dfn
+                    >
+                  </div>
+                  <div class="off" id="tab_8" style="">
+                    <dfn
+                      ><a
+                        href="#"
+                        style="cursor: pointer"
+                        onclick="
+                          switchtab(
+                            document.f,
+                            'tab',
+                            'Stocked Items',
+                            'catalog.cgi',
+                          )
+                        "
+                        >Stocked Items</a
+                      ></dfn
+                    >
+                  </div>
+                  <div class="off" id="tab_9" style="">
+                    <dfn
+                      ><a
+                        href="#"
+                        style="cursor: pointer"
+                        onclick="
+                          switchtab(
+                            document.f,
+                            'tab',
+                            'Trade Shows',
+                            'catalog.cgi',
+                          )
+                        "
+                        >Trade Shows</a
+                      ></dfn
+                    >
+                  </div>
+                  <div class="off" id="tab_10" style="">
+                    <dfn
+                      ><a
+                        href="#"
+                        style="cursor: pointer"
+                        onclick="
+                          switchtab(
+                            document.f,
+                            'tab',
+                            'eDelivery',
+                            'catalog.cgi',
+                          )
+                        "
+                        >eDelivery</a
+                      ></dfn
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="after">
+                <div class="no_mobile" id="basket-list-title">
+                  <span class="ic-msg" id="basket.BASKET_EMPTY"
+                    >You have no items in your order</span
+                  >
+                </div>
+              </div>
+            </div>
+            <script type="text/ng-template" id="allItemsView">
+                    <div class="main-section"><div id="copy3"
+                   style="width:550px; margin: 0px auto 0px auto;">
+              <span class="ic-msg" id="catalog.userinstructions2"></span>
+              </div>
+              <!-- ('', 'above-items') -->
+              <!-- catalog display goes here -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <style type="text/css">
+
+              /* apply the site's image settings - only applying max dimensions here, not defaults */
+
+              .detail_image_wrapper img,
+              .image-container img {
+                border: 1px #DDDDDD solid;
+              }
+
+              /***********************************************/
+              /* break through visual settings, non Mobile stuff*/
+              /***********************************************/
+
+              body {
+                padding: 0 0;
+              }
+
+              .container, body {
+                margin: 0;
+              }
+
+              .container {
+                width: 100%;
+                max-width: 100%;
+                min-width: 100%;
+              }
+
+              .select-items {
+                padding-bottom: 50px;
+                width: 100%;
+                min-width: 100%;
+              }
+
+              .responsive-longname{
+                  font-weight: bold;
+              }
+
+              .no_responsive {
+                display: none!important;
+              }
+
+              /*large monitor default*/
+              .stretchy_cols {
+                display: inline-block;
+                width: 25%;
+                max-width: 24%;
+                max-height: 500px;
+                min-height: 200px;
+                box-sizing: border-box;
+                margin: 40px 0 0 0;
+                padding: 5px; /* may wreck overflow */
+                overflow: hidden;  /*Need to check this with lots of items to be sure nothing is missing*/
+                /* debug with this: */
+                /*border: 1px dashed gray;*/
+                vertical-align: top;
+              }
+
+              .stretchy_cols input { /*the input is an image here*/
+                max-width: 75%;
+                max-height: 75%;
+                height: auto;
+                width: auto;
+                display: block;
+              }
+
+              .stretchy_cols * {
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+              }
+
+              .main-section {
+                margin-top: -40px;  /*compensate for margin of top row of items*/
+              }
+
+              /* prevent user uploaded images from blowing up screen*/
+              .image-container img {
+                width: auto;
+                height: auto;
+                max-width: 230px;
+                max-height: 230px;
+              }
+
+              @media only screen and (max-width: 1337px) {
+                .stretchy_cols {
+                    width: 33%;
+                    max-width: 32%;
+                }
+              }
+
+
+              @media only screen and (min-width: 1280px) {
+                .responsive_tabs .opened:before,
+                .responsive_tabs .closed:before{
+                  margin-left: -10px;
+                }
+              }
+
+              /* Hiding tabs for item details view */
+              .no_desktop_block {
+                display: none;
+              }
+
+              .detail-hide,
+              .all-items-hide {
+                display: none;
+              }
+
+              #item_details_view {
+                  height: 650px;
+                  margin: 50px auto 0;
+                  width: 100%;
+                  vertical-align: top;
+              }
+
+              #item_details_view div[class^="detail_"] {
+                  display: inline-block;
+                  height: 100%;
+                  /*border: 1px dotted black;*/
+                  vertical-align: top;
+                  /*margin: 5vh auto;*/
+              }
+
+              .detail_image_wrapper {
+                  width: 30%;
+                  padding: 0 0;
+                  /*background-color: #EEE;*/
+              }
+              .detail_text_wrapper {
+                  width: 50%;
+                  padding: 0 0;
+                  margin-top: 30px;
+                  /*background-color: #DDD;*/
+              }
+
+              .detail_tagcheck_wrapper {
+                  width: 15%;
+                  padding: 0 0;
+                  /*background-color: #CCC;*/
+                  margin-top: 30px;
+              }
+
+              .detail_closer {
+                font-size: 2rem;
+                text-align: center;
+                padding: 6px 6px 20px 20px;
+                width: 20px;
+                height: 20px;
+                display: inline;
+                position: absolute;
+                right: 2%;
+                margin-top: -40px;
+              }
+
+
+              .catalog-tab-blurb {
+                margin-top: 30px;
+              }
+
+              /*Detail sections*/
+              #d_preview_image,
+              #d_preview_image_large {
+                max-width: 80%;
+                max-height: 80%;
+                margin: 30px auto 0;
+                display: block;
+              }
+
+              #d_preview_image > img {
+                max-width: 100%;
+              }
+
+              #d_longname {
+                font-weight: bold;
+                font-size: 2vw;
+                padding-bottom: 1vw;
+              }
+
+              #d_tag, #d_prodcode {
+                font-size: 1.5vw;
+              }
+
+              #d_tag, #d_prodcode,
+              #d_choose_info, #d_desc2 {
+                font-weight: normal;
+                padding-bottom: 1vw;
+              }
+
+              #d_desc2,
+              #d_choose_info {
+                padding-bottom: 1vw;
+                font-size: 1vw;
+              }
+
+              #d_price_html {
+                font-weight: normal;
+                font-style: italic;
+                font-size: 1vw;
+                padding-top: 2vw;
+              }
+
+              .tmpimg {
+                width: 100%;
+              }
+
+              #item_details_view .qtyspec_label {
+                display: block;
+              }
+
+              #d_tag_check .add-to-basket-btn{
+                margin-top: 20px;
+              }
+
+              #d_tag_check input[type="text"],
+              .item-filter-block select,
+              #d_tag_check select {
+                margin-bottom: 20px;
+                /*padding: .6rem; - gets set later*/
+                width: auto;
+                min-width: 50px;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 16px;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                border-radius: 0;
+              }
+
+              select {
+                white-space: nowrap;
+                overflow: hidden!important;
+                text-overflow: ellipsis;
+                padding: .5rem 1.2rem .5rem .4rem;
+                background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32" height="24" viewBox="0 0 32 24"><polygon points="0,0 32,0 16,24" style="fill: rgb(51, 51, 51)"></polygon></svg>');
+                background-size: 9px 6px;
+                background-position: right 0.5rem center;
+                background-repeat: no-repeat;
+              }
+
+              .multisize-table td,
+              .multisize-table th {
+                padding: 5px 10px;
+              }
+
+              #d_on_hand_html {
+                display: inline;
+              }
+
+              .menu-knob-wrapper {
+                margin-top: 5px;
+              }
+
+              .multi_preview {
+                padding-top: 10px;
+              }
+
+              #ajax_throbber_overlay{
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 1500;
+                width: 100%;
+                height: 100%;
+                background: #FFF;
+                background-size: 100%;
+              }
+
+              #catalog-ajax-throbber {
+                float: none!important;
+                border: none!important;
+                background: none!important;
+                position: relative!important;
+                margin: -50px auto!important;
+                border-radius: 80px!important;
+                background-image: url(/hub/images/loader-large.gif)!important;
+                height: 100px!important;
+                width: 100px!important;
+                background-repeat: no-repeat!important;
+                background-size: contain!important;
+                top: 30vh!important;
+              }
+
+              #basket_button_container #submit_continue {
+                margin-top: 10px;
+              }
+
+              .responsive-choose-info {
+                display: block;
+                display: -webkit-box;
+                max-width: 90%;
+                line-height: 1.1rem;
+                max-height: 3.4rem;
+                margin: 0 auto;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                -moz-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+
+              /**************************************************
+              Here we use the edit file's Item Details Display Fields
+                checkboxes to hide certain item fields...
+              ***************************************************/
+
+              #d_prodcode{display: none!important;}
+
+              #d_tag{display: none!important;}
+
+
+
+
+
+              #d_on_hand_html{display: none!important;}
+
+              #d_on_hand_html_label{display: none!important;}
+
+              /************* Bundle stuff ****************/
+              @media only screen and (min-width: 1025px) {
+                .bundle-qty-selection {
+                  position: absolute;
+                  right: 0;
+                  padding-right: 20px;
+                }
+              }
+
+              .bundle-qty-selection  .add-to-basket-qty-select {
+                /*padding-left: 60px;  /*balance out the above padding*/
+              }
+
+              td.bundle_subitem_subgroupname {
+                text-align: left;
+                font-weight: bold;
+                margin-top: 10px;
+              }
+
+              .bundle_subitem td {
+                display: block;
+              }
+
+              .bundle_subitem_longname select {
+                max-width: 100%;
+                margin-top: 5px;
+              }
+
+              /* Quotes error */
+
+              #CostConfigErrorMessage {
+                color: red;
+                font-weight: bold;
+                font-style: normal;
+                font-size: 2rem;
+              }
+
+              /****Non item details tagcheck select****/
+              .the_actual_qty_select input[type="text"] {
+                margin: 1px auto;
+              }
+
+              .the_actual_qty_select select,
+              .add-to-basket-qty-select select {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                border-radius: 0;
+              }
+
+              .details_only {
+                display: none;
+              }
+
+              </style>
+
+              <!-- normally we would put a script here for the lightbox, but can't thanks to angular views -->
+              <link rel="stylesheet" href="/hub/js/lightbox2/lightbox.css" type="text/css" media="screen" />
+
+
+
+
+
+              <div class="stretchy_cols responsive-item image-row" id="scroll_to_bc_basic">
+              <div class="height-adjuster">
+              <div class="image-container">
+
+              <a href="img/bc_basic.large.jpg?rand=SU0G2A"  rel="lightbox"  ><img alt="Image of Business Card" src="img/bc_basic.jpg"  width="200" height="200"></a>
+              </div>
+
+
+
+              <div class="responsive-longname"><label for="kinds_bc_basic">Business Card</label></div>
+
+
+              <div class="responsive-choose-info">
+                <span></span>
+              </div>
+
+              <div class="note responsive-pricing">
+              </div>
+
+
+              <div class="note responsive-onhand"></div>
+
+              <span class="responsive-tagcheck tagcheck-bottom"><div style="margin: 3px" class="add-to-basket-qty-select"><label for="bc_basic_qty" class="wcag-label">Bc_Basic_Qty</label><select name="bc_basic_qty">
+              <option value="250">250 - $15.00</option>
+              <option value="500">500 - $30.00</option>
+              <option value="1000">1000 - $50.00</option>
+              </select><div class="add-to-basket-btn"><button type="submit" class="button" id="submit_catalog_add" alt="Add to Catalog" onclick="return disable_buttons(this,'button[data-disableable=1]');" data-disableable="1" name="kinds_bc_basic" value="1"><span class="ic-msg" id="Add to Basket">Add</span></button></div></div></span>
+
+              <div class="menu-knob-wrapper"><span class="menu-knob" style="display:inline"><a href="javascript:;" onclick="self.open('menu.cgi?edit=item_edit&amp;tag=bc_basic&amp;curstep=product_info','menu_popup','status=yes,menubar=yes,resizable=yes,scrollbars=yes').focus()">product_info for bc_basic</a></span></div>
+              </div>
+              </div>
+
+
+              <div class="stretchy_cols responsive-item image-row" id="scroll_to_bc_asian">
+              <div class="height-adjuster">
+              <div class="image-container">
+
+              <a href="img/bc_asian.large.jpg?rand=SSYXUK"  rel="lightbox"  ><img alt="Image of Business Card" src="img/bc_asian.jpg"  width="200" height="200"></a>
+              </div>
+
+
+
+              <div class="responsive-longname"><label for="kinds_bc_asian">Business Card</label></div>
+
+
+              <div class="responsive-choose-info">
+                <span>Asian Language Choices</span>
+              </div>
+
+              <div class="note responsive-pricing">
+              </div>
+
+
+              <div class="note responsive-onhand"></div>
+
+              <span class="responsive-tagcheck tagcheck-bottom"><div style="margin: 3px" class="add-to-basket-qty-select"><label for="bc_asian_qty" class="wcag-label">Bc_Asian_Qty</label><select name="bc_asian_qty">
+              <option value="250">250 - $30.00</option>
+              <option value="500">500 - $45.00</option>
+              <option value="1000">1000 - $75.00</option>
+              </select><div class="add-to-basket-btn"><button type="submit" class="button" id="submit_catalog_add" alt="Add to Catalog" onclick="return disable_buttons(this,'button[data-disableable=1]');" data-disableable="1" name="kinds_bc_asian" value="1"><span class="ic-msg" id="Add to Basket">Add</span></button></div></div></span>
+
+              <div class="menu-knob-wrapper"><span class="menu-knob" style="display:inline"><a href="javascript:;" onclick="self.open('menu.cgi?edit=item_edit&amp;tag=bc_asian&amp;curstep=product_info','menu_popup','status=yes,menubar=yes,resizable=yes,scrollbars=yes').focus()">product_info for bc_asian</a></span></div>
+              </div>
+              </div>
+
+
+
+
+              <div class="stretchy_cols responsive-item image-row" id="scroll_to_bc_award">
+              <div class="height-adjuster">
+              <div class="image-container">
+
+              <a href="img/bc_award.large.png?rand=SSYXUK"  rel="lightbox"  ><img alt="Image of Business Card - Award" src="img/bc_award.png"  width="200" height="200"></a>
+              </div>
+
+
+
+              <div class="responsive-longname"><label for="kinds_bc_award">Business Card - Award</label></div>
+
+
+              <div class="responsive-choose-info">
+                <span></span>
+              </div>
+
+              <div class="note responsive-pricing">
+              </div>
+
+
+              <div class="note responsive-onhand"></div>
+
+              <span class="responsive-tagcheck tagcheck-bottom"><div style="margin: 3px" class="add-to-basket-qty-select"><label for="bc_award_qty" class="wcag-label">Bc_Award_Qty</label><select name="bc_award_qty">
+              <option value="250">250 - $15.00</option>
+              <option value="500">500 - $30.00</option>
+              <option value="1000">1000 - $50.00</option>
+              </select><div class="add-to-basket-btn"><button type="submit" class="button" id="submit_catalog_add" alt="Add to Catalog" onclick="return disable_buttons(this,'button[data-disableable=1]');" data-disableable="1" name="kinds_bc_award" value="1"><span class="ic-msg" id="Add to Basket">Add</span></button></div></div></span>
+
+              <div class="menu-knob-wrapper"><span class="menu-knob" style="display:inline"><a href="javascript:;" onclick="self.open('menu.cgi?edit=item_edit&amp;tag=bc_award&amp;curstep=product_info','menu_popup','status=yes,menubar=yes,resizable=yes,scrollbars=yes').focus()">product_info for bc_award</a></span></div>
+              </div>
+              </div>
+
+
+              <div class="stretchy_cols responsive-item image-row" id="scroll_to_bc_photo">
+              <div class="height-adjuster">
+              <div class="image-container">
+
+              <a href="img/bc_photo.large.jpg?rand=SSYXUK"  rel="lightbox"  ><img alt="Image of Business Card - Photo Upload" src="img/bc_photo.jpg"  width="200" height="200"></a>
+              </div>
+
+
+
+              <div class="responsive-longname"><label for="kinds_bc_photo">Business Card - Photo Upload</label></div>
+
+
+              <div class="responsive-choose-info">
+                <span></span>
+              </div>
+
+              <div class="note responsive-pricing">
+              </div>
+
+
+              <div class="note responsive-onhand"></div>
+
+              <span class="responsive-tagcheck tagcheck-bottom"><div style="margin: 3px" class="add-to-basket-qty-select"><label for="bc_photo_qty" class="wcag-label">Bc_Photo_Qty</label><select name="bc_photo_qty">
+              <option value="250">250 - $15.00</option>
+              <option value="500">500 - $30.00</option>
+              <option value="1000">1000 - $50.00</option>
+              </select><div class="add-to-basket-btn"><button type="submit" class="button" id="submit_catalog_add" alt="Add to Catalog" onclick="return disable_buttons(this,'button[data-disableable=1]');" data-disableable="1" name="kinds_bc_photo" value="1"><span class="ic-msg" id="Add to Basket">Add</span></button></div></div></span>
+
+              <div class="menu-knob-wrapper"><span class="menu-knob" style="display:inline"><a href="javascript:;" onclick="self.open('menu.cgi?edit=item_edit&amp;tag=bc_photo&amp;curstep=product_info','menu_popup','status=yes,menubar=yes,resizable=yes,scrollbars=yes').focus()">product_info for bc_photo</a></span></div>
+              </div>
+              </div>
+
+
+
+
+              <div class="stretchy_cols responsive-item image-row" id="scroll_to_bc_social">
+              <div class="height-adjuster">
+              <div class="image-container">
+
+              <a href="img/bc_social.large.png?rand=SSYXUK"  rel="lightbox"  ><img alt="Image of Business Card" src="img/bc_social.png"  width="200" height="200"></a>
+              </div>
+
+
+
+              <div class="responsive-longname"><label for="kinds_bc_social">Business Card</label></div>
+
+
+              <div class="responsive-choose-info">
+                <span>With Social Media Backer</span>
+              </div>
+
+              <div class="note responsive-pricing">
+              </div>
+
+
+              <div class="note responsive-onhand"></div>
+
+              <span class="responsive-tagcheck tagcheck-bottom"><div style="margin: 3px" class="add-to-basket-qty-select"><label for="bc_social_qty" class="wcag-label">Bc_Social_Qty</label><select name="bc_social_qty">
+              <option value="250">250 - $30.00</option>
+              <option value="500">500 - $45.00</option>
+              <option value="1000">1000 - $75.00</option>
+              </select><div class="add-to-basket-btn"><button type="submit" class="button" id="submit_catalog_add" alt="Add to Catalog" onclick="return disable_buttons(this,'button[data-disableable=1]');" data-disableable="1" name="kinds_bc_social" value="1"><span class="ic-msg" id="Add to Basket">Add</span></button></div></div></span>
+
+              <div class="menu-knob-wrapper"><span class="menu-knob" style="display:inline"><a href="javascript:;" onclick="self.open('menu.cgi?edit=item_edit&amp;tag=bc_social&amp;curstep=product_info','menu_popup','status=yes,menubar=yes,resizable=yes,scrollbars=yes').focus()">product_info for bc_social</a></span></div>
+              </div>
+              </div>
+
+
+              <div class="stretchy_cols responsive-item image-row" id="scroll_to_bc_vcard">
+              <div class="height-adjuster">
+              <div class="image-container">
+
+              <a href="img/bc_vcard.large.png?rand=SSYXUK"  rel="lightbox"  ><img alt="Image of Business Card" src="img/bc_vcard.png"  width="200" height="200"></a>
+              </div>
+
+
+
+              <div class="responsive-longname"><label for="kinds_bc_vcard">Business Card</label></div>
+
+
+              <div class="responsive-choose-info">
+                <span>vCard</span>
+              </div>
+
+              <div class="note responsive-pricing">
+              </div>
+
+
+              <div class="note responsive-onhand"></div>
+
+              <span class="responsive-tagcheck tagcheck-bottom"><div style="margin: 3px" class="add-to-basket-qty-select"><label for="bc_vcard_qty" class="wcag-label">Bc_Vcard_Qty</label><select name="bc_vcard_qty">
+              <option value="250">250 - $30.00</option>
+              <option value="500">500 - $45.00</option>
+              <option value="1000">1000 - $75.00</option>
+              </select><div class="add-to-basket-btn"><button type="submit" class="button" id="submit_catalog_add" alt="Add to Catalog" onclick="return disable_buttons(this,'button[data-disableable=1]');" data-disableable="1" name="kinds_bc_vcard" value="1"><span class="ic-msg" id="Add to Basket">Add</span></button></div></div></span>
+
+              <div class="menu-knob-wrapper"><span class="menu-knob" style="display:inline"><a href="javascript:;" onclick="self.open('menu.cgi?edit=item_edit&amp;tag=bc_vcard&amp;curstep=product_info','menu_popup','status=yes,menubar=yes,resizable=yes,scrollbars=yes').focus()">product_info for bc_vcard</a></span></div>
+              </div>
+              </div>
+
+
+
+
+              <div class="stretchy_cols responsive-item image-row" id="scroll_to_bc_custom_styled_type_logo">
+              <div class="height-adjuster">
+              <div class="image-container">
+
+              <a href="img/bc_custom_styled_type_logo.large.png?rand=SSYXUK"  rel="lightbox"  ><img alt="Image of Custom Business Card" src="img/bc_custom_styled_type_logo.png"  width="200" height="200"></a>
+              </div>
+
+
+
+              <div class="responsive-longname"><label for="kinds_bc_custom_styled_type_logo">Custom Business Card</label></div>
+
+
+              <div class="responsive-choose-info">
+                <span>Upload your Logo</span>
+              </div>
+
+              <div class="note responsive-pricing">
+              </div>
+
+
+              <div class="note responsive-onhand"></div>
+
+              <span class="responsive-tagcheck tagcheck-bottom"><div style="margin: 3px" class="add-to-basket-qty-select"><label for="bc_custom_styled_type_logo_qty" class="wcag-label">Bc_Custom_Styled_Type_Logo_Qty</label><select name="bc_custom_styled_type_logo_qty">
+              <option value="250">250 - $30.00</option>
+              <option value="500">500 - $45.00</option>
+              <option value="1000">1000 - $75.00</option>
+              </select><div class="add-to-basket-btn"><button type="submit" class="button" id="submit_catalog_add" alt="Add to Catalog" onclick="return disable_buttons(this,'button[data-disableable=1]');" data-disableable="1" name="kinds_bc_custom_styled_type_logo" value="1"><span class="ic-msg" id="Add to Basket">Add</span></button></div></div></span>
+
+              <div class="menu-knob-wrapper"><span class="menu-knob" style="display:inline"><a href="javascript:;" onclick="self.open('menu.cgi?edit=item_edit&amp;tag=bc_custom_styled_type_logo&amp;curstep=product_info','menu_popup','status=yes,menubar=yes,resizable=yes,scrollbars=yes').focus()">product_info for bc_custom_styled_type_logo</a></span></div>
+              </div>
+              </div>
+
+
+              <div class="stretchy_cols responsive-item image-row" id="scroll_to_bc_custom_styled_type_network">
+              <div class="height-adjuster">
+              <div class="image-container">
+
+              <a href="img/bc_custom_styled_type_network.large.png?rand=SSYXUK"  rel="lightbox"  ><img alt="Image of People Network Business Card" src="img/bc_custom_styled_type_network.png"  width="200" height="200"></a>
+              </div>
+
+
+
+              <div class="responsive-longname"><label for="kinds_bc_custom_styled_type_network">People Network Business Card</label></div>
+
+
+              <div class="responsive-choose-info">
+                <span>This item allows switching between 2 pricing scales based on if a backer is selected.</span>
+              </div>
+
+              <div class="note responsive-pricing">
+              </div>
+
+
+              <div class="note responsive-onhand"></div>
+
+              <span class="responsive-tagcheck tagcheck-bottom"><div style="margin: 3px" class="add-to-basket-qty-select"><label for="bc_custom_styled_type_network_qty" class="wcag-label">Bc_Custom_Styled_Type_Network_Qty</label><select name="bc_custom_styled_type_network_qty">
+              <option value="250">250 - $30.00</option>
+              <option value="500">500 - $40.00</option>
+              <option value="1000">1000 - $75.00</option>
+              </select><div class="add-to-basket-btn"><button type="submit" class="button" id="submit_catalog_add" alt="Add to Catalog" onclick="return disable_buttons(this,'button[data-disableable=1]');" data-disableable="1" name="kinds_bc_custom_styled_type_network" value="1"><span class="ic-msg" id="Add to Basket">Add</span></button></div></div></span>
+
+              <div class="menu-knob-wrapper"><span class="menu-knob" style="display:inline"><a href="javascript:;" onclick="self.open('menu.cgi?edit=item_edit&amp;tag=bc_custom_styled_type_network&amp;curstep=product_info','menu_popup','status=yes,menubar=yes,resizable=yes,scrollbars=yes').focus()">product_info for bc_custom_styled_type_network</a></span></div>
+              </div>
+              </div>
+
+
+
+
+
+
+
+
+
+              <style type="text/css" rel="stylesheet">
+
+
+              .main, .catalog, .catalog > form {height: 100vh;}
+
+              .catalog #copy3
+              {
+                background-color:transparent;
+                color:#000000;
+              }
+
+
+              .tab-section #basket-list-title
+              {
+                text-align: center;
+                font-size: small;
+              }
+              .tab-section .basket-list-item
+              {
+                font-size: small !important;
+                font-size: 11px;
+              }
+
+              .vertical-shell .after,
+              .rounded-shell .after,
+              .square-shell .after
+              {
+                background-color: inherit !important;
+                color: #000000 !important;
+              }
+
+              .catalog-table
+              {
+                margin: 0px auto 0px auto;
+                width: 550px;
+                border-collapse: separate;
+                background-color:transparent;
+              }
+              .catalog-table th,
+              .catalog-table td
+              {
+                border: 0px transparent solid !important;
+                padding: 3px;
+              }
+              .bundle_subitem {
+                width: 100%;
+              }
+              .bundle_subitem td div {
+                padding: 0px 3px 0px 3px !important;
+                margin: 0px;
+                vertical-align: top !important;
+              }
+              .bundle_subitem_longname {
+                white-space: nowrap;
+              }
+              .bundle_subitem_input {
+                text-align: right !important;
+              }
+              .bundle_subitem_subinputs {
+                padding-bottom: 0px !important;
+              }
+              .bundle_subitem hr
+              {
+                padding: 0px;
+                background-color: black;
+              }
+              .item-filter-block .stretchy_cols {
+                min-height: auto;
+              }
+              .filt-pair-row {
+                text-align: center;
+              }
+              .filt-pair {
+                display: inline-block;
+              }
+
+              @media only screen and (max-width: 1024px) {
+                #basket_button_container{
+                  display: none;
+                }
+              }
+
+              @media only screen and (max-width: 1024px) {
+                .main-section{margin-bottom:40px;}
+                .item-filter-block div {
+                  text-align: center;
+                }
+              }
+              @media only screen and (max-width: 550px) {
+                .main-section{margin-bottom:30px;}
+              }
+              </style>
+              <!-- catalog display end -->
+              <div id="copy2"
+                   style="width:550px; margin: 0px auto 0px auto;">
+              <span class="ic-msg" id="catalog.userinstructions3"> </span>
+              </div>
+
+
+              <div id="copy4" style="background-color:transparent">
+              <span class="ic-msg" id="catalog.userinstructions4"></span>
+              </div>
+              </div>
+            </script>
+            <!-- ngInclude:  -->
+            <div
+              id="all_items_view"
+              ng-include=""
+              src="'allItemsView'"
+              class="ng-scope"
+              style="float: right; width: 82.988%"
+            >
+              <div class="main-section ng-scope" style="pointer-events: auto">
+                <div id="copy3" style="width: 550px; margin: 0px auto 0px auto">
+                  <span class="ic-msg" id="catalog.userinstructions2"></span>
+                </div>
+                <!-- ('', 'above-items') -->
+                <!-- catalog display goes here -->
+
+                <style type="text/css">
+                  /* apply the site's image settings - only applying max dimensions here, not defaults */
+
+                  .detail_image_wrapper img,
+                  .image-container img {
+                    border: 1px #dddddd solid;
+                  }
+
+                  /***********************************************/
+                  /* break through visual settings, non Mobile stuff*/
+                  /***********************************************/
+
+                  body {
+                    padding: 0 0;
+                  }
+
+                  .container,
+                  body {
+                    margin: 0;
+                  }
+
+                  .container {
+                    width: 100%;
+                    max-width: 100%;
+                    min-width: 100%;
+                  }
+
+                  .select-items {
+                    padding-bottom: 50px;
+                    width: 100%;
+                    min-width: 100%;
+                  }
+
+                  .responsive-longname {
+                    font-weight: bold;
+                  }
+
+                  .no_responsive {
+                    display: none !important;
+                  }
+
+                  /*large monitor default*/
+                  .stretchy_cols {
+                    display: inline-block;
+                    width: 25%;
+                    max-width: 24%;
+                    max-height: 500px;
+                    min-height: 200px;
+                    box-sizing: border-box;
+                    margin: 40px 0 0 0;
+                    padding: 5px; /* may wreck overflow */
+                    overflow: hidden; /*Need to check this with lots of items to be sure nothing is missing*/
+                    /* debug with this: */
+                    /*border: 1px dashed gray;*/
+                    vertical-align: top;
+                  }
+
+                  .stretchy_cols input {
+                    /*the input is an image here*/
+                    max-width: 75%;
+                    max-height: 75%;
+                    height: auto;
+                    width: auto;
+                    display: block;
+                  }
+
+                  .stretchy_cols * {
+                    margin-left: auto;
+                    margin-right: auto;
+                    text-align: center;
+                  }
+
+                  .main-section {
+                    margin-top: -40px; /*compensate for margin of top row of items*/
+                  }
+
+                  /* prevent user uploaded images from blowing up screen*/
+                  .image-container img {
+                    width: auto;
+                    height: auto;
+                    max-width: 230px;
+                    max-height: 230px;
+                  }
+
+                  @media only screen and (max-width: 1337px) {
+                    .stretchy_cols {
+                      width: 33%;
+                      max-width: 32%;
+                    }
+                  }
+
+                  @media only screen and (min-width: 1280px) {
+                    .responsive_tabs .opened:before,
+                    .responsive_tabs .closed:before {
+                      margin-left: -10px;
+                    }
+                  }
+
+                  /* Hiding tabs for item details view */
+                  .no_desktop_block {
+                    display: none;
+                  }
+
+                  .detail-hide,
+                  .all-items-hide {
+                    display: none;
+                  }
+
+                  #item_details_view {
+                    height: 650px;
+                    margin: 50px auto 0;
+                    width: 100%;
+                    vertical-align: top;
+                  }
+
+                  #item_details_view div[class^="detail_"] {
+                    display: inline-block;
+                    height: 100%;
+                    /*border: 1px dotted black;*/
+                    vertical-align: top;
+                    /*margin: 5vh auto;*/
+                  }
+
+                  .detail_image_wrapper {
+                    width: 30%;
+                    padding: 0 0;
+                    /*background-color: #EEE;*/
+                  }
+                  .detail_text_wrapper {
+                    width: 50%;
+                    padding: 0 0;
+                    margin-top: 30px;
+                    /*background-color: #DDD;*/
+                  }
+
+                  .detail_tagcheck_wrapper {
+                    width: 15%;
+                    padding: 0 0;
+                    /*background-color: #CCC;*/
+                    margin-top: 30px;
+                  }
+
+                  .detail_closer {
+                    font-size: 2rem;
+                    text-align: center;
+                    padding: 6px 6px 20px 20px;
+                    width: 20px;
+                    height: 20px;
+                    display: inline;
+                    position: absolute;
+                    right: 2%;
+                    margin-top: -40px;
+                  }
+
+                  .catalog-tab-blurb {
+                    margin-top: 30px;
+                  }
+
+                  /*Detail sections*/
+                  #d_preview_image,
+                  #d_preview_image_large {
+                    max-width: 80%;
+                    max-height: 80%;
+                    margin: 30px auto 0;
+                    display: block;
+                  }
+
+                  #d_preview_image > img {
+                    max-width: 100%;
+                  }
+
+                  #d_longname {
+                    font-weight: bold;
+                    font-size: 2vw;
+                    padding-bottom: 1vw;
+                  }
+
+                  #d_tag,
+                  #d_prodcode {
+                    font-size: 1.5vw;
+                  }
+
+                  #d_tag,
+                  #d_prodcode,
+                  #d_choose_info,
+                  #d_desc2 {
+                    font-weight: normal;
+                    padding-bottom: 1vw;
+                  }
+
+                  #d_desc2,
+                  #d_choose_info {
+                    padding-bottom: 1vw;
+                    font-size: 1vw;
+                  }
+
+                  #d_price_html {
+                    font-weight: normal;
+                    font-style: italic;
+                    font-size: 1vw;
+                    padding-top: 2vw;
+                  }
+
+                  .tmpimg {
+                    width: 100%;
+                  }
+
+                  #item_details_view .qtyspec_label {
+                    display: block;
+                  }
+
+                  #d_tag_check .add-to-basket-btn {
+                    margin-top: 20px;
+                  }
+
+                  #d_tag_check input[type="text"],
+                  .item-filter-block select,
+                  #d_tag_check select {
+                    margin-bottom: 20px;
+                    /*padding: .6rem; - gets set later*/
+                    width: auto;
+                    min-width: 50px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    font-size: 16px;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    border-radius: 0;
+                  }
+
+                  select {
+                    white-space: nowrap;
+                    overflow: hidden !important;
+                    text-overflow: ellipsis;
+                    padding: 0.5rem 1.2rem 0.5rem 0.4rem;
+                    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32" height="24" viewBox="0 0 32 24"><polygon points="0,0 32,0 16,24" style="fill: rgb(51, 51, 51)"></polygon></svg>');
+                    background-size: 9px 6px;
+                    background-position: right 0.5rem center;
+                    background-repeat: no-repeat;
+                  }
+
+                  .multisize-table td,
+                  .multisize-table th {
+                    padding: 5px 10px;
+                  }
+
+                  #d_on_hand_html {
+                    display: inline;
+                  }
+
+                  .menu-knob-wrapper {
+                    margin-top: 5px;
+                  }
+
+                  .multi_preview {
+                    padding-top: 10px;
+                  }
+
+                  #ajax_throbber_overlay {
+                    display: block;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    z-index: 1500;
+                    width: 100%;
+                    height: 100%;
+                    background: #fff;
+                    background-size: 100%;
+                  }
+
+                  #catalog-ajax-throbber {
+                    float: none !important;
+                    border: none !important;
+                    background: none !important;
+                    position: relative !important;
+                    margin: -50px auto !important;
+                    border-radius: 80px !important;
+                    background-image: url(/hub/images/loader-large.gif) !important;
+                    height: 100px !important;
+                    width: 100px !important;
+                    background-repeat: no-repeat !important;
+                    background-size: contain !important;
+                    top: 30vh !important;
+                  }
+
+                  #basket_button_container #submit_continue {
+                    margin-top: 10px;
+                  }
+
+                  .responsive-choose-info {
+                    display: block;
+                    display: -webkit-box;
+                    max-width: 90%;
+                    line-height: 1.1rem;
+                    max-height: 3.4rem;
+                    margin: 0 auto;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    -moz-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                  }
+
+                  /**************************************************
+Here we use the edit file's Item Details Display Fields
+  checkboxes to hide certain item fields...
+***************************************************/
+
+                  #d_prodcode {
+                    display: none !important;
+                  }
+
+                  #d_tag {
+                    display: none !important;
+                  }
+
+                  #d_on_hand_html {
+                    display: none !important;
+                  }
+
+                  #d_on_hand_html_label {
+                    display: none !important;
+                  }
+
+                  /************* Bundle stuff ****************/
+                  @media only screen and (min-width: 1025px) {
+                    .bundle-qty-selection {
+                      position: absolute;
+                      right: 0;
+                      padding-right: 20px;
+                    }
+                  }
+
+                  .bundle-qty-selection .add-to-basket-qty-select {
+                    /*padding-left: 60px;  /*balance out the above padding*/
+                  }
+
+                  td.bundle_subitem_subgroupname {
+                    text-align: left;
+                    font-weight: bold;
+                    margin-top: 10px;
+                  }
+
+                  .bundle_subitem td {
+                    display: block;
+                  }
+
+                  .bundle_subitem_longname select {
+                    max-width: 100%;
+                    margin-top: 5px;
+                  }
+
+                  /* Quotes error */
+
+                  #CostConfigErrorMessage {
+                    color: red;
+                    font-weight: bold;
+                    font-style: normal;
+                    font-size: 2rem;
+                  }
+
+                  /****Non item details tagcheck select****/
+                  .the_actual_qty_select input[type="text"] {
+                    margin: 1px auto;
+                  }
+
+                  .the_actual_qty_select select,
+                  .add-to-basket-qty-select select {
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    border-radius: 0;
+                  }
+
+                  .details_only {
+                    display: none;
+                  }
+                </style>
+
+                <!-- normally we would put a script here for the lightbox, but can't thanks to angular views -->
+                <link
+                  rel="stylesheet"
+                  href="/hub/js/lightbox2/lightbox.css"
+                  type="text/css"
+                  media="screen"
+                />
+
+                <div
+                  class="stretchy_cols responsive-item image-row"
+                  id="scroll_to_bc_basic"
+                  style="min-height: 290px; max-height: 290px; height: 290px"
+                >
+                  <div class="height-adjuster">
+                    <div class="image-container">
+                      <a
+                        href="img/bc_basic.large.jpg?rand=SU0G2A"
+                        rel="lightbox"
+                        ><img
+                          alt="Image of Business Card"
+                          src="img/bc_basic.jpg"
+                          width="200"
+                          height="200"
+                      /></a>
+                    </div>
+
+                    <div class="responsive-longname">
+                      <label for="kinds_bc_basic">Business Card</label>
+                    </div>
+
+                    <div class="responsive-choose-info">
+                      <span></span>
+                    </div>
+
+                    <div class="note responsive-pricing"></div>
+
+                    <div class="note responsive-onhand"></div>
+
+                    <span class="responsive-tagcheck tagcheck-bottom"
+                      ><div
+                        style="margin: 3px"
+                        class="add-to-basket-qty-select"
+                      >
+                        <label for="bc_basic_qty" class="wcag-label"
+                          >Bc_Basic_Qty</label
+                        ><select name="bc_basic_qty">
+                          <option value="250">250 - $15.00</option>
+                          <option value="500">500 - $30.00</option>
+                          <option value="1000">1000 - $50.00</option>
+                        </select>
+                        <div class="add-to-basket-btn">
+                          <button
+                            type="submit"
+                            class="button"
+                            id="submit_catalog_add"
+                            alt="Add to Catalog"
+                            onclick="
+                              return disable_buttons(
+                                this,
+                                'button[data-disableable=1]',
+                              );
+                            "
+                            data-disableable="1"
+                            name="kinds_bc_basic"
+                            value="1"
+                          >
+                            <span class="ic-msg" id="Add to Basket">Add</span>
+                          </button>
+                        </div>
+                      </div></span
+                    >
+
+                    <div class="menu-knob-wrapper">
+                      <span class="menu-knob" style="display: none"
+                        ><a
+                          href="javascript:;"
+                          onclick="
+                            self
+                              .open(
+                                'menu.cgi?edit=item_edit&amp;tag=bc_basic&amp;curstep=product_info',
+                                'menu_popup',
+                                'status=yes,menubar=yes,resizable=yes,scrollbars=yes',
+                              )
+                              .focus()
+                          "
+                          >product_info for bc_basic</a
+                        ></span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="stretchy_cols responsive-item image-row"
+                  id="scroll_to_bc_asian"
+                  style="
+                    min-height: 307.594px;
+                    max-height: 307.594px;
+                    height: 307.594px;
+                  "
+                >
+                  <div class="height-adjuster">
+                    <div class="image-container">
+                      <a
+                        href="img/bc_asian.large.jpg?rand=SSYXUK"
+                        rel="lightbox"
+                        ><img
+                          alt="Image of Business Card"
+                          src="img/bc_asian.jpg"
+                          width="200"
+                          height="200"
+                      /></a>
+                    </div>
+
+                    <div class="responsive-longname">
+                      <label for="kinds_bc_asian">Business Card</label>
+                    </div>
+
+                    <div class="responsive-choose-info">
+                      <span>Asian Language Choices</span>
+                    </div>
+
+                    <div class="note responsive-pricing"></div>
+
+                    <div class="note responsive-onhand"></div>
+
+                    <span class="responsive-tagcheck tagcheck-bottom"
+                      ><div
+                        style="margin: 3px"
+                        class="add-to-basket-qty-select"
+                      >
+                        <label for="bc_asian_qty" class="wcag-label"
+                          >Bc_Asian_Qty</label
+                        ><select name="bc_asian_qty">
+                          <option value="250">250 - $30.00</option>
+                          <option value="500">500 - $45.00</option>
+                          <option value="1000">1000 - $75.00</option>
+                        </select>
+                        <div class="add-to-basket-btn">
+                          <button
+                            type="submit"
+                            class="button"
+                            id="submit_catalog_add"
+                            alt="Add to Catalog"
+                            onclick="
+                              return disable_buttons(
+                                this,
+                                'button[data-disableable=1]',
+                              );
+                            "
+                            data-disableable="1"
+                            name="kinds_bc_asian"
+                            value="1"
+                          >
+                            <span class="ic-msg" id="Add to Basket">Add</span>
+                          </button>
+                        </div>
+                      </div></span
+                    >
+
+                    <div class="menu-knob-wrapper">
+                      <span class="menu-knob" style="display: none"
+                        ><a
+                          href="javascript:;"
+                          onclick="
+                            self
+                              .open(
+                                'menu.cgi?edit=item_edit&amp;tag=bc_asian&amp;curstep=product_info',
+                                'menu_popup',
+                                'status=yes,menubar=yes,resizable=yes,scrollbars=yes',
+                              )
+                              .focus()
+                          "
+                          >product_info for bc_asian</a
+                        ></span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="stretchy_cols responsive-item image-row"
+                  id="scroll_to_bc_award"
+                  style="min-height: 290px; max-height: 290px; height: 290px"
+                >
+                  <div class="height-adjuster">
+                    <div class="image-container">
+                      <a
+                        href="img/bc_award.large.png?rand=SSYXUK"
+                        rel="lightbox"
+                        ><img
+                          alt="Image of Business Card - Award"
+                          src="img/bc_award.png"
+                          width="200"
+                          height="200"
+                      /></a>
+                    </div>
+
+                    <div class="responsive-longname">
+                      <label for="kinds_bc_award">Business Card - Award</label>
+                    </div>
+
+                    <div class="responsive-choose-info">
+                      <span></span>
+                    </div>
+
+                    <div class="note responsive-pricing"></div>
+
+                    <div class="note responsive-onhand"></div>
+
+                    <span class="responsive-tagcheck tagcheck-bottom"
+                      ><div
+                        style="margin: 3px"
+                        class="add-to-basket-qty-select"
+                      >
+                        <label for="bc_award_qty" class="wcag-label"
+                          >Bc_Award_Qty</label
+                        ><select name="bc_award_qty">
+                          <option value="250">250 - $15.00</option>
+                          <option value="500">500 - $30.00</option>
+                          <option value="1000">1000 - $50.00</option>
+                        </select>
+                        <div class="add-to-basket-btn">
+                          <button
+                            type="submit"
+                            class="button"
+                            id="submit_catalog_add"
+                            alt="Add to Catalog"
+                            onclick="
+                              return disable_buttons(
+                                this,
+                                'button[data-disableable=1]',
+                              );
+                            "
+                            data-disableable="1"
+                            name="kinds_bc_award"
+                            value="1"
+                          >
+                            <span class="ic-msg" id="Add to Basket">Add</span>
+                          </button>
+                        </div>
+                      </div></span
+                    >
+
+                    <div class="menu-knob-wrapper">
+                      <span class="menu-knob" style="display: none"
+                        ><a
+                          href="javascript:;"
+                          onclick="
+                            self
+                              .open(
+                                'menu.cgi?edit=item_edit&amp;tag=bc_award&amp;curstep=product_info',
+                                'menu_popup',
+                                'status=yes,menubar=yes,resizable=yes,scrollbars=yes',
+                              )
+                              .focus()
+                          "
+                          >product_info for bc_award</a
+                        ></span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="stretchy_cols responsive-item image-row"
+                  id="scroll_to_bc_photo"
+                  style="min-height: 290px; max-height: 290px; height: 290px"
+                >
+                  <div class="height-adjuster">
+                    <div class="image-container">
+                      <a
+                        href="img/bc_photo.large.jpg?rand=SSYXUK"
+                        rel="lightbox"
+                        ><img
+                          alt="Image of Business Card - Photo Upload"
+                          src="img/bc_photo.jpg"
+                          width="200"
+                          height="200"
+                      /></a>
+                    </div>
+
+                    <div class="responsive-longname">
+                      <label for="kinds_bc_photo"
+                        >Business Card - Photo Upload</label
+                      >
+                    </div>
+
+                    <div class="responsive-choose-info">
+                      <span></span>
+                    </div>
+
+                    <div class="note responsive-pricing"></div>
+
+                    <div class="note responsive-onhand"></div>
+
+                    <span class="responsive-tagcheck tagcheck-bottom"
+                      ><div
+                        style="margin: 3px"
+                        class="add-to-basket-qty-select"
+                      >
+                        <label for="bc_photo_qty" class="wcag-label"
+                          >Bc_Photo_Qty</label
+                        ><select name="bc_photo_qty">
+                          <option value="250">250 - $15.00</option>
+                          <option value="500">500 - $30.00</option>
+                          <option value="1000">1000 - $50.00</option>
+                        </select>
+                        <div class="add-to-basket-btn">
+                          <button
+                            type="submit"
+                            class="button"
+                            id="submit_catalog_add"
+                            alt="Add to Catalog"
+                            onclick="
+                              return disable_buttons(
+                                this,
+                                'button[data-disableable=1]',
+                              );
+                            "
+                            data-disableable="1"
+                            name="kinds_bc_photo"
+                            value="1"
+                          >
+                            <span class="ic-msg" id="Add to Basket">Add</span>
+                          </button>
+                        </div>
+                      </div></span
+                    >
+
+                    <div class="menu-knob-wrapper">
+                      <span class="menu-knob" style="display: none"
+                        ><a
+                          href="javascript:;"
+                          onclick="
+                            self
+                              .open(
+                                'menu.cgi?edit=item_edit&amp;tag=bc_photo&amp;curstep=product_info',
+                                'menu_popup',
+                                'status=yes,menubar=yes,resizable=yes,scrollbars=yes',
+                              )
+                              .focus()
+                          "
+                          >product_info for bc_photo</a
+                        ></span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="stretchy_cols responsive-item image-row"
+                  id="scroll_to_bc_social"
+                  style="
+                    min-height: 307.594px;
+                    max-height: 307.594px;
+                    height: 307.594px;
+                  "
+                >
+                  <div class="height-adjuster">
+                    <div class="image-container">
+                      <a
+                        href="img/bc_social.large.png?rand=SSYXUK"
+                        rel="lightbox"
+                        ><img
+                          alt="Image of Business Card"
+                          src="img/bc_social.png"
+                          width="200"
+                          height="200"
+                      /></a>
+                    </div>
+
+                    <div class="responsive-longname">
+                      <label for="kinds_bc_social">Business Card</label>
+                    </div>
+
+                    <div class="responsive-choose-info">
+                      <span>With Social Media Backer</span>
+                    </div>
+
+                    <div class="note responsive-pricing"></div>
+
+                    <div class="note responsive-onhand"></div>
+
+                    <span class="responsive-tagcheck tagcheck-bottom"
+                      ><div
+                        style="margin: 3px"
+                        class="add-to-basket-qty-select"
+                      >
+                        <label for="bc_social_qty" class="wcag-label"
+                          >Bc_Social_Qty</label
+                        ><select name="bc_social_qty">
+                          <option value="250">250 - $30.00</option>
+                          <option value="500">500 - $45.00</option>
+                          <option value="1000">1000 - $75.00</option>
+                        </select>
+                        <div class="add-to-basket-btn">
+                          <button
+                            type="submit"
+                            class="button"
+                            id="submit_catalog_add"
+                            alt="Add to Catalog"
+                            onclick="
+                              return disable_buttons(
+                                this,
+                                'button[data-disableable=1]',
+                              );
+                            "
+                            data-disableable="1"
+                            name="kinds_bc_social"
+                            value="1"
+                          >
+                            <span class="ic-msg" id="Add to Basket">Add</span>
+                          </button>
+                        </div>
+                      </div></span
+                    >
+
+                    <div class="menu-knob-wrapper">
+                      <span class="menu-knob" style="display: none"
+                        ><a
+                          href="javascript:;"
+                          onclick="
+                            self
+                              .open(
+                                'menu.cgi?edit=item_edit&amp;tag=bc_social&amp;curstep=product_info',
+                                'menu_popup',
+                                'status=yes,menubar=yes,resizable=yes,scrollbars=yes',
+                              )
+                              .focus()
+                          "
+                          >product_info for bc_social</a
+                        ></span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="stretchy_cols responsive-item image-row"
+                  id="scroll_to_bc_vcard"
+                  style="
+                    min-height: 307.594px;
+                    max-height: 307.594px;
+                    height: 307.594px;
+                  "
+                >
+                  <div class="height-adjuster">
+                    <div class="image-container">
+                      <a
+                        href="img/bc_vcard.large.png?rand=SSYXUK"
+                        rel="lightbox"
+                        ><img
+                          alt="Image of Business Card"
+                          src="img/bc_vcard.png"
+                          width="200"
+                          height="200"
+                      /></a>
+                    </div>
+
+                    <div class="responsive-longname">
+                      <label for="kinds_bc_vcard">Business Card</label>
+                    </div>
+
+                    <div class="responsive-choose-info">
+                      <span>vCard</span>
+                    </div>
+
+                    <div class="note responsive-pricing"></div>
+
+                    <div class="note responsive-onhand"></div>
+
+                    <span class="responsive-tagcheck tagcheck-bottom"
+                      ><div
+                        style="margin: 3px"
+                        class="add-to-basket-qty-select"
+                      >
+                        <label for="bc_vcard_qty" class="wcag-label"
+                          >Bc_Vcard_Qty</label
+                        ><select name="bc_vcard_qty">
+                          <option value="250">250 - $30.00</option>
+                          <option value="500">500 - $45.00</option>
+                          <option value="1000">1000 - $75.00</option>
+                        </select>
+                        <div class="add-to-basket-btn">
+                          <button
+                            type="submit"
+                            class="button"
+                            id="submit_catalog_add"
+                            alt="Add to Catalog"
+                            onclick="
+                              return disable_buttons(
+                                this,
+                                'button[data-disableable=1]',
+                              );
+                            "
+                            data-disableable="1"
+                            name="kinds_bc_vcard"
+                            value="1"
+                          >
+                            <span class="ic-msg" id="Add to Basket">Add</span>
+                          </button>
+                        </div>
+                      </div></span
+                    >
+
+                    <div class="menu-knob-wrapper">
+                      <span class="menu-knob" style="display: none"
+                        ><a
+                          href="javascript:;"
+                          onclick="
+                            self
+                              .open(
+                                'menu.cgi?edit=item_edit&amp;tag=bc_vcard&amp;curstep=product_info',
+                                'menu_popup',
+                                'status=yes,menubar=yes,resizable=yes,scrollbars=yes',
+                              )
+                              .focus()
+                          "
+                          >product_info for bc_vcard</a
+                        ></span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="stretchy_cols responsive-item image-row"
+                  id="scroll_to_bc_custom_styled_type_logo"
+                  style="
+                    min-height: 307.594px;
+                    max-height: 307.594px;
+                    height: 307.594px;
+                  "
+                >
+                  <div class="height-adjuster">
+                    <div class="image-container">
+                      <a
+                        href="img/bc_custom_styled_type_logo.large.png?rand=SSYXUK"
+                        rel="lightbox"
+                        ><img
+                          alt="Image of Custom Business Card"
+                          src="img/bc_custom_styled_type_logo.png"
+                          width="200"
+                          height="200"
+                      /></a>
+                    </div>
+
+                    <div class="responsive-longname">
+                      <label for="kinds_bc_custom_styled_type_logo"
+                        >Custom Business Card</label
+                      >
+                    </div>
+
+                    <div class="responsive-choose-info">
+                      <span>Upload your Logo</span>
+                    </div>
+
+                    <div class="note responsive-pricing"></div>
+
+                    <div class="note responsive-onhand"></div>
+
+                    <span class="responsive-tagcheck tagcheck-bottom"
+                      ><div
+                        style="margin: 3px"
+                        class="add-to-basket-qty-select"
+                      >
+                        <label
+                          for="bc_custom_styled_type_logo_qty"
+                          class="wcag-label"
+                          >Bc_Custom_Styled_Type_Logo_Qty</label
+                        ><select name="bc_custom_styled_type_logo_qty">
+                          <option value="250">250 - $30.00</option>
+                          <option value="500">500 - $45.00</option>
+                          <option value="1000">1000 - $75.00</option>
+                        </select>
+                        <div class="add-to-basket-btn">
+                          <button
+                            type="submit"
+                            class="button"
+                            id="submit_catalog_add"
+                            alt="Add to Catalog"
+                            onclick="
+                              return disable_buttons(
+                                this,
+                                'button[data-disableable=1]',
+                              );
+                            "
+                            data-disableable="1"
+                            name="kinds_bc_custom_styled_type_logo"
+                            value="1"
+                          >
+                            <span class="ic-msg" id="Add to Basket">Add</span>
+                          </button>
+                        </div>
+                      </div></span
+                    >
+
+                    <div class="menu-knob-wrapper">
+                      <span class="menu-knob" style="display: none"
+                        ><a
+                          href="javascript:;"
+                          onclick="
+                            self
+                              .open(
+                                'menu.cgi?edit=item_edit&amp;tag=bc_custom_styled_type_logo&amp;curstep=product_info',
+                                'menu_popup',
+                                'status=yes,menubar=yes,resizable=yes,scrollbars=yes',
+                              )
+                              .focus()
+                          "
+                          >product_info for bc_custom_styled_type_logo</a
+                        ></span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="stretchy_cols responsive-item image-row"
+                  id="scroll_to_bc_custom_styled_type_network"
+                  style="
+                    min-height: 342.781px;
+                    max-height: 342.781px;
+                    height: 342.781px;
+                  "
+                >
+                  <div class="height-adjuster">
+                    <div class="image-container">
+                      <a
+                        href="img/bc_custom_styled_type_network.large.png?rand=SSYXUK"
+                        rel="lightbox"
+                        ><img
+                          alt="Image of People Network Business Card"
+                          src="img/bc_custom_styled_type_network.png"
+                          width="200"
+                          height="200"
+                      /></a>
+                    </div>
+
+                    <div class="responsive-longname">
+                      <label for="kinds_bc_custom_styled_type_network"
+                        >People Network Business Card</label
+                      >
+                    </div>
+
+                    <div class="responsive-choose-info">
+                      <span
+                        >This item allows switching between 2 pricing scales
+                        based on if a backer is selected.</span
+                      >
+                    </div>
+
+                    <div class="note responsive-pricing"></div>
+
+                    <div class="note responsive-onhand"></div>
+
+                    <span class="responsive-tagcheck tagcheck-bottom"
+                      ><div
+                        style="margin: 3px"
+                        class="add-to-basket-qty-select"
+                      >
+                        <label
+                          for="bc_custom_styled_type_network_qty"
+                          class="wcag-label"
+                          >Bc_Custom_Styled_Type_Network_Qty</label
+                        ><select name="bc_custom_styled_type_network_qty">
+                          <option value="250">250 - $30.00</option>
+                          <option value="500">500 - $40.00</option>
+                          <option value="1000">1000 - $75.00</option>
+                        </select>
+                        <div class="add-to-basket-btn">
+                          <button
+                            type="submit"
+                            class="button"
+                            id="submit_catalog_add"
+                            alt="Add to Catalog"
+                            onclick="
+                              return disable_buttons(
+                                this,
+                                'button[data-disableable=1]',
+                              );
+                            "
+                            data-disableable="1"
+                            name="kinds_bc_custom_styled_type_network"
+                            value="1"
+                          >
+                            <span class="ic-msg" id="Add to Basket">Add</span>
+                          </button>
+                        </div>
+                      </div></span
+                    >
+
+                    <div class="menu-knob-wrapper">
+                      <span class="menu-knob" style="display: none"
+                        ><a
+                          href="javascript:;"
+                          onclick="
+                            self
+                              .open(
+                                'menu.cgi?edit=item_edit&amp;tag=bc_custom_styled_type_network&amp;curstep=product_info',
+                                'menu_popup',
+                                'status=yes,menubar=yes,resizable=yes,scrollbars=yes',
+                              )
+                              .focus()
+                          "
+                          >product_info for bc_custom_styled_type_network</a
+                        ></span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <style type="text/css" rel="stylesheet">
+                  .main,
+                  .catalog,
+                  .catalog > form {
+                    height: 100vh;
+                  }
+
+                  .catalog #copy3 {
+                    background-color: transparent;
+                    color: #000000;
+                  }
+
+                  .tab-section #basket-list-title {
+                    text-align: center;
+                    font-size: small;
+                  }
+                  .tab-section .basket-list-item {
+                    font-size: small !important;
+                    font-size: 11px;
+                  }
+
+                  .vertical-shell .after,
+                  .rounded-shell .after,
+                  .square-shell .after {
+                    background-color: inherit !important;
+                    color: #000000 !important;
+                  }
+
+                  .catalog-table {
+                    margin: 0px auto 0px auto;
+                    width: 550px;
+                    border-collapse: separate;
+                    background-color: transparent;
+                  }
+                  .catalog-table th,
+                  .catalog-table td {
+                    border: 0px transparent solid !important;
+                    padding: 3px;
+                  }
+                  .bundle_subitem {
+                    width: 100%;
+                  }
+                  .bundle_subitem td div {
+                    padding: 0px 3px 0px 3px !important;
+                    margin: 0px;
+                    vertical-align: top !important;
+                  }
+                  .bundle_subitem_longname {
+                    white-space: nowrap;
+                  }
+                  .bundle_subitem_input {
+                    text-align: right !important;
+                  }
+                  .bundle_subitem_subinputs {
+                    padding-bottom: 0px !important;
+                  }
+                  .bundle_subitem hr {
+                    padding: 0px;
+                    background-color: black;
+                  }
+                  .item-filter-block .stretchy_cols {
+                    min-height: auto;
+                  }
+                  .filt-pair-row {
+                    text-align: center;
+                  }
+                  .filt-pair {
+                    display: inline-block;
+                  }
+
+                  @media only screen and (max-width: 1024px) {
+                    #basket_button_container {
+                      display: none;
+                    }
+                  }
+
+                  @media only screen and (max-width: 1024px) {
+                    .main-section {
+                      margin-bottom: 40px;
+                    }
+                    .item-filter-block div {
+                      text-align: center;
+                    }
+                  }
+                  @media only screen and (max-width: 550px) {
+                    .main-section {
+                      margin-bottom: 30px;
+                    }
+                  }
+                </style>
+                <!-- catalog display end -->
+                <div id="copy2" style="width: 550px; margin: 0px auto 0px auto">
+                  <span class="ic-msg" id="catalog.userinstructions3"> </span>
+                </div>
+
+                <div id="copy4" style="background-color: transparent">
+                  <span class="ic-msg" id="catalog.userinstructions4"></span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <!-- ngInclude:  -->
+              <div
+                id="item_details_view"
+                ng-include=""
+                src="'itemDetailsView'"
+                class="detail-hide ng-scope"
+              >
+                <span
+                  class="fa fa-times detail_closer ng-scope"
+                  ng-click="hideDetails()"
+                ></span>
+                <div class="detail_image_wrapper ng-scope">
+                  <!-- image and catalog images all go here -->
+                  <div id="d_preview_image"></div>
+                </div>
+                <div class="detail_text_wrapper ng-scope">
+                  <!-- all text info for item goes here -->
+                  <div id="d_longname"></div>
+                  <ul style="list-style: none; padding-left: 0">
+                    <li id="d_tag"></li>
+                    <li id="d_prodcode"></li>
+                  </ul>
+                  <div id="d_qtyunit"></div>
+                  <div id="d_choose_info"></div>
+                  <div id="d_desc2"></div>
+                  <div id="d_price_html"></div>
+                  <div id="d_on_hand_html"></div>
+                </div>
+                <div class="detail_tagcheck_wrapper ng-scope">
+                  <!-- all qtyspec choices and the add button go here -->
+                  <div id="d_tag_check"></div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-section tab-lower"></div>
+            <script type="text/ng-template" id="itemDetailsView">
+              <span class="fa fa-times detail_closer" ng-click="hideDetails()"></span>
+              <div class="detail_image_wrapper">
+                <!-- image and catalog images all go here -->
+                <div id="d_preview_image">
+                </div>
+              </div>
+              <div class="detail_text_wrapper">
+                  <!-- all text info for item goes here -->
+                <div id="d_longname"></div>
+                <ul style="list-style:none; padding-left: 0;">
+                  <li id="d_tag"></li>
+                  <li id="d_prodcode"></li>
+                </ul>
+                <div id="d_qtyunit"></div>
+                <div id="d_choose_info"></div>
+                <div id="d_desc2"></div>
+                <div id="d_price_html"></div>
+                <div id="d_on_hand_html"></div>
+              </div>
+              <div class="detail_tagcheck_wrapper">
+                <!-- all qtyspec choices and the add button go here -->
+                <div id="d_tag_check"></div>
+              </div>
+            </script>
+
+            <div class="buttonsbar no_responsive" id="lower_buttons"></div>
+          </form>
+        </div>
+
+        <link
+          rel="stylesheet"
+          href="css/catalog.css?CD73"
+          type="text/css"
+          none=""
+        />
+
+        <script
+          src="/hub/js-qa/jquery/attrchange.js?v=26d4a36"
+          type="text/javascript"
+        ></script>
+
+        <script type="text/javascript">
+          ///////////////////////////////////////////////
+          // Angular JS
+          ///////////////////////////////////////////////
+
+          // init our App
+          var responsiveCatalog = angular.module("responsiveCatalog", [
+            "ngRoute",
+          ]);
+
+          // let us know if the device is touch-screen:
+          function is_touch_device() {
+            return "ontouchstart" in window;
+          }
+
+          shownItemAnchor = 0; // global for use by detail hide and show
+
+          var kindsJSON = {};
+
+          // setup controller
+          responsiveCatalog.controller("itemDetailer", [
+            "$scope",
+            function ($scope, $templateCache) {
+              // used as cache when detaching then restoring the tag checks
+              // on the main catalog view (non-details view) for
+              // the responsive catalog
+              var tag_checks = [];
+              var tag_check_siblings = [];
+
+              var tabShell = $(".responsive_tabs-shell"),
+                mainDiv = $(".select-items"),
+                trackHeight = true,
+                allViewHeight = 0; // set in attrchange, but must be declared here for hideDetails
+
+              function safeHeight(node) {
+                return $(node).height() || 0;
+              }
+              function safeOuterHeight(node) {
+                return $(node).outerHeight() || 0;
+              }
+
+              // After responsive_catalog.js rescales the main div, grab that height for later use.
+              $(function () {
+                $(".select-items, .catalog, .catalog > form").attrchange({
+                  trackValues: true,
+                  callback: function (evnt) {
+                    if (!trackHeight) {
+                      return;
+                    }
+                    if (evnt.attributeName == "style") {
+                      if (evnt.newValue.search(/height/i) > -1) {
+                        var allViewHeight = safeHeight(mainDiv);
+                      } else {
+                        jsLog("We did not find a height scaling change");
+                      }
+                    } else {
+                      jsLog("We did not find a style attr change");
+                    }
+                  },
+                });
+              });
+              allViewHeight = safeHeight(mainDiv);
+
+              // Show details for a single item.
+              $scope.getDetails = function (tag) {
+                trackHeight = false;
+
+                // Store where we were in the catalog before scrolling up to show details:
+                shownItemAnchor = $("body").scrollTop();
+
+                // Hide / Show logic
+                $("#basket_button_container").addClass("no_mobile");
+                $(".footer").hide();
+                $("#item_details_view").removeClass("detail-hide");
+                $("#all_items_view").addClass("all-items-hide");
+                tabShell.addClass("no_desktop_block");
+                mainDiv
+                  .add($(".catalog > form, .catalog"))
+                  .height(safeHeight($("#item_details_view")));
+                $(window).on("resize", function () {
+                  if (!$("#item_details_view").hasClass("detail-hide")) {
+                    mainDiv
+                      .add($(".catalog > form, .catalog"))
+                      .height(safeHeight($("#item_details_view")));
+                  }
+                });
+
+                var topDetailAnchor = is_touch_device()
+                  ? $(".before").offset().top
+                  : 0;
+                if (
+                  ($(window).height() < 568 && is_touch_device()) ||
+                  $(window).width() < windowSansScrollBars
+                ) {
+                  topDetailAnchor =
+                    tabShell.offset().top + (safeHeight(tabShell) - 10);
+                }
+                $("body").animate({ scrollTop: topDetailAnchor }, 10);
+
+                var deetImage = $(".detail_image_wrapper"),
+                  deetText = $(".detail_text_wrapper"),
+                  deetTagcheck = $(".detail_tagcheck_wrapper");
+
+                //return the numeric index for the item in the details array based on tag, attr, etc.
+                function getIndex(keyname, toSearch) {
+                  for (var i = toSearch.length - 1; i >= 0; i--) {
+                    if (keyname in toSearch[i]) {
+                      return i;
+                    }
+                  }
+                }
+
+                try {
+                  var deetKeyList =
+                    kindsJSON.itemDetails[getIndex(tag, kindsJSON.itemDetails)][
+                      tag
+                    ];
+                } catch (e) {
+                  console.info(e);
+                  console.info(
+                    "Error finding kindsJSON: Bundle items must use Item Details View if there are 50 items or more in the tab",
+                  );
+                  return false;
+                }
+
+                var detailObj = {};
+                keys_to_capture = [
+                  "tag",
+                  "longname",
+                  "prodcode",
+                  "qtyunit",
+                  "choose_info",
+                  "desc2",
+                  "preview_image",
+                  "preview_image_large",
+                  "tag_check",
+                  "price_html",
+                  "on_hand_html",
+                  "catalog_preview",
+                ];
+
+                for (var key = keys_to_capture.length - 1; key >= 0; key--) {
+                  var tmpKey = keys_to_capture[key],
+                    tmpNdx = getIndex(keys_to_capture[key], deetKeyList),
+                    tmpVal = deetKeyList[tmpNdx][keys_to_capture[key]] || "";
+                  detailObj[tmpKey] = tmpVal;
+                }
+
+                // Let us see our object in use
+                console.dir(detailObj);
+
+                // Now put our item specific values into the HTML
+                /////////////////////////////////////////////////
+
+                // Img:
+                $("#d_preview_image").html(detailObj["catalog_preview"]);
+                $("#d_preview_image")
+                  .children(0)
+                  .removeAttr("width")
+                  .removeAttr("height");
+                // The <a> with the image doesn't exist on load, so init lightbox once we getDetails
+                $('a[rel="lightbox"]').lightBox({
+                  fixedNavigation: true,
+                  enablePaging: false,
+                });
+
+                // Text:
+                $("#d_longname").html(detailObj["longname"]);
+                $("#d_tag").html(detailObj["tag"]);
+                $("#d_prodcode").html(detailObj["prodcode"]);
+                $("#d_choose_info").html(detailObj["choose_info"]);
+                $("#d_desc2").html(detailObj["desc2"]);
+                $("#d_price_html").html(detailObj["price_html"] || "");
+                $("#d_on_hand_html").html(detailObj["on_hand_html"]);
+                if ($("#d_on_hand_html").contents().length == 1) {
+                  $("#d_on_hand_html").prepend(
+                    '<span id="d_on_hand_html_label">On Hand:</span>',
+                  );
+                }
+
+                // kindsJSON provides its own input fields for items in details view.
+                // Save the current inputs (tag checks), as well as their prior siblings and
+                // detach them, and they will be restored when the details view is closed.
+                tag_checks = $(".responsive-tagcheck.tagcheck-bottom");
+                tag_check_siblings = tag_checks.prev();
+                tag_checks.detach();
+
+                // Allow clicking header to close details
+                $("#header-wrapper").on("click", function () {
+                  $(".detail_closer").trigger("click");
+                  $(this).off();
+                });
+
+                // Allow Escape key to close deatils tools
+                $(document).on("keyup", function (e) {
+                  if (e.which == 27) {
+                    $(".detail_closer").trigger("click");
+                  }
+                });
+
+                // Show a quotes error in the price HTML if one comes back
+                if ($("#CostConfigErrorMessage").length) {
+                  $("#d_tag_check").hide();
+                  $("#d_price_html").css("display", "block!important");
+                } else {
+                  // TagCheck:
+                  $("#d_tag_check").show();
+                  $("#d_tag_check").html(detailObj["tag_check"]);
+                }
+
+                // Show elements which only need showing during the item details view
+                $(".details_only").css("display", "block");
+              };
+
+              $scope.hideDetails = function () {
+                trackHeight = true;
+
+                if (!$("#all_items_view").hasClass("all-items-hide")) {
+                  return;
+                }
+
+                // Go back to the old view showing all items in the tab
+                $("html").hide();
+                $(".details_only").css("display", "none");
+                $("body").animate({ scrollTop: shownItemAnchor }, 1);
+                $("html").show();
+                $("#d_preview_image").removeAttr("src");
+                $("#item_details_view").addClass("detail-hide");
+                $("#all_items_view").removeClass("all-items-hide");
+                tabShell.removeClass("no_desktop_block");
+                $("#basket_button_container").removeClass("no_mobile");
+                // blank the tag check and hide it
+                $("#d_tag_check").html("").hide();
+
+                // Restore tag checks (qty selections, add to basket buttons, etc)
+                $(tag_check_siblings).each(function (ix, elem) {
+                  elem.after(tag_checks[ix]);
+                });
+
+                mainDiv.height(allViewHeight);
+
+                var taller = Math.max(
+                  tabShell.outerHeight(),
+                  safeOuterHeight($("#all_items_view")),
+                );
+                if (window.innerWidth > RESPONSIVE.max()) {
+                  taller += safeOuterHeight($("#copy2"));
+                  taller += safeOuterHeight($("#copy3"));
+                  taller += safeOuterHeight($("#copy4"));
+                  taller += safeOuterHeight($("#copy5"));
+                  taller += safeOuterHeight($(".pagetitle.no_mobile"));
+                }
+                $(".select-items, .catalog, .catalog > form").height(
+                  taller + 50,
+                );
+
+                $(".footer").show();
+                $(".bundle-qty-selection").removeClass(
+                  "bundle-in-mobile-details",
+                );
+              };
+
+              // Tells whether Enter key triggered the event.
+              const _isEnterKey = function (event) {
+                if (!event) {
+                  return false;
+                }
+
+                const key = event.which || event.keyCode;
+
+                if (key === 13) {
+                  return true;
+                }
+
+                return false;
+              };
+
+              // Does the same as getDetails but can be triggered only by a keyboard action.
+              $scope.getDetailsADA = function (tag, event) {
+                if (!_isEnterKey(event)) {
+                  return true;
+                }
+
+                $scope.getDetails(tag);
+              };
+            },
+          ]);
+        </script>
+
+        <script
+          src="/hub/js-qa/storefrontPages/catalog.js?v=4d81808"
+          type="text/javascript"
+        ></script>
+        <script
+          src="/hub/js-qa/lightbox2/lightbox.js?v=9bc43a0"
+          type="text/javascript"
+        ></script>
+      </div>
+      <!-- class=main -->
+
+      <script>
+        function footer_cancel_callback() {
+          document.location.replace("cancel.cgi");
+          return false;
+        }
+      </script>
+
+      <link
+        rel="stylesheet"
+        href="css/footer.css?EE11"
+        type="text/css"
+        media="screen and (min-width: 1025px)"
+      />
+
+      <a name="bottom"></a>
+
+      <div class="footer" style="">
+        <table class="middle-row" cellspacing="0">
+          <tbody>
+            <tr>
+              <td class="right-col" style="text-align: right">
+                <form>
+                  <button
+                    type="submit"
+                    class="button"
+                    id="submit_cancel"
+                    onclick="
+                      return disable_buttons(
+                        this,
+                        'button[data-disableable=1]',
+                        { callback: footer_cancel_callback },
+                      );
+                    "
+                    data-disableable="1"
+                    name="cancel"
+                    value="1"
+                  >
+                    <span class="ic-msg" id="buttons.footer_cancel"
+                      >Cancel Order</span
+                    >
+                  </button>
+                </form>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- class="footer" -->
+
+      <div class="footnote">
+        <span class="ic-msg" id="footer.footerfootnote"> </span>
+      </div>
+    </div>
+    <!-- class=container -->
+
+    <div
+      id="embedded_message_popup"
+      class="menu-knob-block no_mobile"
+      style="
+        position: fixed;
+        overflow: auto;
+        height: 400px;
+        display: none;
+        top: 31px;
+        left: 819px;
+        width: 400px;
+      "
+    >
+      <b>Embedded Messages</b>
+      <br />
+      <div>
+        <span class="ic-msg-link" id="CatalogViewState.ADMIN_ITEM_BLURB"
+          >(Hidden from Standard users)</span
+        >
+        <span class="note">[CatalogViewState.ADMIN_ITEM_BLURB]</span>
+      </div>
+    </div>
+    <script>
+      function _set_msg_popup() {
+        var control = getElement("embedded_message_popup_control").parentNode;
+        var linkpos = getElement(control).absolutePosition();
+        var o = getElement("embedded_message_popup");
+        o.style.display = "block";
+        o.style.position = "fixed";
+        o.style.top = "31px";
+        o.style.left = "" + linkpos.left + "px";
+        o.style.width = "400px";
+        o.style.display = "none";
+      }
+      addLoadEvent(function () {
+        setTimeout("_set_msg_popup()", 1); // .001 sec wait
+      });
+    </script>
+  </body>
+</html>

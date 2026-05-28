@@ -1,0 +1,169 @@
+body {
+  min-height: 100vh;
+}
+
+body > .container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+input[type="text"],
+input[type="password"],
+select,
+input[type="password"]#passwd {
+  border-radius: 6px !important;
+  border: 1px solid #ec7a08;
+  padding: 6px;
+}
+
+.input input,
+.input select,
+.input option {
+  color: #000;
+}
+
+.main {
+  font-size: 16px;
+}
+
+/* ************************************************************** LOGIN */
+
+.main.login br + br {
+  display: none;
+}
+
+.main.login .submit {
+  padding-top: 30px;
+}
+
+/* ************************************************************ PROFILE */
+
+div:has(> .top-button-container) {
+  margin-top: 30px;
+}
+
+.profile_track_button_cell {
+  display: none;
+}
+
+/* ************************************************************ CATALOG */
+
+#all_items_view .main-section {
+  gap: 24px;
+}
+
+.catalog-tab-blurb:not(:has(#catalog-search-terms)) {
+  margin-top: unset;
+  max-width: 600px;
+}
+
+.main-section > i {
+  flex-basis: 100%;
+}
+
+/* ************************************************************** ITEMS */
+
+.stretchy_cols {
+  border-top: 5px solid #ec7a08b9;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+  margin: unset;
+  overflow: visible;
+}
+
+.stretchy_cols:hover {
+  border-top: 5px solid #ec7a08;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.36);
+  transition: 0.3s all ease-in-out;
+}
+
+.responsive-onhand {
+  margin-top: 5px;
+}
+
+#scroll_to_faq {
+  display: none;
+}
+
+/* *********************************************************** SHIPPING */
+
+.ship-address:has(#ship_company) {
+  display: none;
+}
+
+input#ship_company {
+  width: 239px;
+}
+
+/* ************************************************************* REVIEW */
+
+#bill-sect .label {
+  white-space: nowrap;
+}
+
+/* *********************************************************** UNSORTED */
+
+.note {
+  font-family: Afacad, sans-serif;
+}
+
+.add-to-basket-qtyspec {
+  border: 1px solid #ec7a08;
+  border-radius: 6px;
+  padding: 0.85rem;
+  width: fit-content;
+}
+
+.add-to-basket-qtyspec:focus-within {
+  outline: 1px auto #f7fcff;
+}
+
+.add-to-basket-qtyspec select {
+  border: 0;
+  outline: 0;
+  color: black;
+}
+
+input.sbs_update_field.sbs_block_field:read-only,
+td.input input:read-only {
+  background-color: #f7fcff;
+  outline: 0;
+}
+
+div.form-body div.title > h1 {
+  padding: 0;
+}
+
+.main {
+  flex-grow: 1;
+  width: 50vw;
+}
+
+button:disabled,
+button:disabled:hover {
+  background-color: #333;
+  cursor: not-allowed;
+}
+
+#billing-info tbody,
+#billing-info tr {
+  display: block;
+}
+
+#billing-info td.label {
+  width: unset;
+}
+
+#billing-info p {
+  border-top: 5px solid #ec7a08;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  font-weight: normal;
+  padding: 20px;
+}
+
+.approve_order_text .standout {
+  color: #f7fcff;
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+}
