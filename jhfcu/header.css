@@ -11,7 +11,14 @@
   --nav-width: 1280px;
 
   /* --- Brand Colors --- */
-  --color-primary: #002666; /* Royal Blue - Header-Nav*/
+  /*
+    05/28/26
+    Customer requested the Royal Blue & Saphire colors be swapped. Stating that the saphire blue is too strong. 
+    OLD COLORS:display:
+    --color-primary: #002666;
+    --color-bg: #0359e5;
+  */
+  --color-primary: #0359e5; /* Royal Blue - Header-Nav*/
   --color-primary-hover: #0099ff; /* Azure - Body Section*/
   --color-primary-light: #f7fcff; /* Cloud white - Text in header + DD tab*/
 
@@ -19,7 +26,7 @@
   --color-accent: #edc72e; /* Sunshine - Buttons */
 
   /* --- Base Colors --- */
-  --color-bg: #0359e5; /* Saphire - Catalog bg */
+  --color-bg: #002666; /* Saphire - Catalog bg */
   --color-bg-subtle: rgba(3, 89, 229, 80%); /* Saphire - 60% opacity */
   --color-border: #e2e8f0; /* Borders & dividers */
 
@@ -414,7 +421,7 @@ form {
     align-items: stretch;
     /* border-radius: 20px; */
     box-sizing: border-box !important;
-    box-shadow: 0px 61px 90px 41px var(--color-primary);
+    box-shadow: 0px 61px 90px 20px var(--color-primary);
     margin-bottom: 50px !important;
     padding: 50px;
   }
@@ -442,9 +449,9 @@ form {
   }
 
   /* Hide billing price table until prices are adjusted by JS */
-  #billing-pricetable {
+  /* #billing-pricetable {
     visibility: hidden;
-  }
+  } */
 
   body.billing-prices-ready #billing-pricetable {
     visibility: visible;
@@ -1816,7 +1823,7 @@ form {
 
   .height-adjuster {
     border-radius: var(--radius-lg);
-    background-color: var(--color-primary-light);
+    background-color: #fff;
     position: relative;
     display: block;
     margin-top: 1px !important;
@@ -1901,6 +1908,11 @@ form {
      }*/
 
   .catalog-tab-blurb {
+    color: var(--color-primary);
+    background-color: white;
+    border-radius: var(--radius-sm);
+    min-height: 50px;
+    max-width: var(--nav-width);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1908,7 +1920,15 @@ form {
     line-height: 1.5em;
     font-size: 16px;
     width: 80% !important;
-    margin-top: 0 !important;
+    margin-top: 1em !important;
+    justify-content: center;
+    box-shadow: var(--shadow-primary);
+    padding: 10px !important;
+  }
+
+  .error,
+  .copy3,
+  #catalog-tab-blurb {
   }
 
   .item_count,

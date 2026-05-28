@@ -6,14 +6,6 @@
     --global-color-accent: #114381;
     --global-color-text: #f7fcff;
   }
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
   #header_wrapper {
     border: 0px solid transparent !important;
   }
@@ -28,7 +20,7 @@
   .landing-page-header {
     width: 760px;
     font-size: 5rem !important;
-    color: #ec7a08 !important;
+    color: #070707 !important;
     line-height: 1.15;
     font-family: "Lato", sans-serif !important;
     opacity: 0;
@@ -62,7 +54,7 @@
     font-size: 1.5rem;
     line-height: 115%;
     margin: auto;
-    color: #f7fcff;
+    color: #080808;
     opacity: 0;
     animation: 1s ease-out 3s 1 fadeIn forwards;
   }
@@ -167,7 +159,7 @@
   <div class="landing-body-middle">
     <div class="landing-page-header">
       Welcome to the <br />
-      Essentia / D8Averse <br />
+      Johns Hopkins Credit Union <br />
       portal.
     </div>
     <div class="useTxt">
@@ -177,8 +169,8 @@
   </div>
   <div class="landing-body-bottom">
     <span class="questionTxt"
-      >If you have any questions when you are done browsing, or if you are
-      unable to find what you are looking for, please take a look at the
+      >Have questions? We have answers. Find quick answers to common questions
+      on our
       <a
         class="faq-link"
         href="https://www.nationsprint.com/clients/essentia-inc/catalog.cgi?tab=FAQ"
@@ -188,10 +180,7 @@
     >
     <button class="explore-catalog-btn">
       <!-- Method for switching tabs -->
-      <a
-        onclick="
-          switchtab(document.f, 'tab', 'Checks/Deposit Slips', 'catalog.cgi')
-        "
+      <a onclick="switchtab(document.f, 'tab', 'Print', 'catalog.cgi')"
         >Explore Catalog</a
       >
     </button>

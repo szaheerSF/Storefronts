@@ -1,0 +1,388 @@
+/*************************TABLE OF CONTENTS *******************************/
+/************************************************************************************
+
+  CUSTOM COLOR THEME 
+  CUSTOM FONTS
+  GLOBAL 
+  LOGIN
+  PROFILE
+  DIVISIONS
+  SHIPTRACK
+  CATALOG
+  IMPRINT
+  SHIP MAIL EDELIVER
+
+
+  - If you are making changes here, changes may need to be made in 
+  the Site Header > Additional CSS Content.
+
+*****************************************************************************************
+*****************************************************************************************
+*****************************************************************************************
+****************************************************************************************/
+
+/****************************************************************************************
+***This code can be edited by a site builder to influence the site for mobile devices.***
+***If you are making changes here, you may want to make changes to the additional CSS****
+***Content field in the Site Header of the menu.*****************************************
+****************************************************************************************/
+
+/****************************************************************************************
+*********************************** CUSTOM COLOR THEME **********************************
+****************************************************************************************/
+
+:root {
+  /* static site icon link color */
+  --links-fa-color: #000;
+  --links-fa-color-hover: #ec7a08;
+
+  /* site background header color */
+  --header-bkgd-color: #ec7a08; /*#898989*/
+  --header-link-bkgd-color: #f7fcff;
+
+  /* static site text link color */
+  --links-txt-color: #4ea8de;
+  --links-txt-color-hover: #d94ede;
+
+  /* tab blurb text color */
+  --tab-blurb-text-color: #000000;
+}
+
+/****************************************************************************************
+*********************************** CUSTOM HEADER BACKGROUND ****************************
+****************************************************************************************/
+
+:root {
+  /* Optional Header image. Upload image to the file Uploader, and add filename after the  ../con/  directory. */
+  --custom-header-image: url(../con/index_header_bg_v5.jpg);
+}
+
+/****************************************************************************************
+*********************************** CUSTOM FONT(S) **************************************
+****************************************************************************************/
+
+/* 
+IMPORTED URL FONTS SHOULD BE ADDED TO THE 
+SITE HEADER > SITE META DATA > OTHER METADATA
+*/
+
+:root {
+  --custom-font: "Montserrat", sans-serif;
+}
+
+/****************************************************************************************
+**************************************** GLOBAL *****************************************
+****************************************************************************************/
+
+/*** profile and basket icon color ***/
+.fa-shopping-basket,
+.fa-user {
+  color: var(--links-fa-color);
+}
+.fa-shopping-basket:hover,
+.fa-user:hover {
+  color: var(--links-fa-color-hover);
+}
+
+/*** Catalog Preview - fit mobile ***/
+#lightbox-container-image-box {
+  width: 90% !important;
+  margin: 0 auto !important;
+  height: auto !important;
+}
+#lightbox-container-image-box img {
+  width: 100% !important;
+}
+#lightbox-container-image-data-box {
+  width: 90% !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+/*--------- HEADER -----------*/
+
+/* Header wrapper background color */
+#header-wrapper,
+#header_logo,
+table tbody {
+  background-color: var(--header-bkgd-color);
+}
+
+#header-wrapper {
+  /*height: 350px;*/
+  background-color: var(--header-bkgd-color);
+  background-position: 50% 61%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+#header-wrapper > table.header > tbody {
+  border: 0;
+}
+
+/*------------ LINKS -----------*/
+
+a:hover,
+a:focus,
+a:link {
+  color: var(--links-txt-color-hover);
+}
+
+/* Mobile Header Bar */
+/*
+#red_header_bar{
+  padding-bottom: 2%;
+  background-color: #B51F5A;
+  border-bottom: 1px solid #4A4A4A;
+}
+*/
+
+/**************************************/
+/********DEEP LINKS 2018********/
+/*************************************/
+
+/*Code to control the wrapping of content*/
+
+#deep_link_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 auto;
+}
+
+.icon_txt {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+/*Set width to 100% for maximum number of icons showing on screen at smaller screens*/
+@media only screen and (max-width: 945px) {
+  #deep_link_container {
+    max-width: 100%;
+  }
+}
+
+/**adds space between icons as they wrap**/
+.deep_links_holder {
+  margin: 7px 7px 7px 7px;
+  background-color: #fff;
+}
+
+/*Used to Center single row of icons on small screens*/
+@media only screen and (max-width: 368px) {
+  #deep_link_container {
+    justify-content: center;
+  }
+}
+
+/*Keeps Main copy container center*/
+#newscopy-wrapper {
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/*--- dropdown select and input text fields modification ---*/
+select,
+input[type="text"],
+textarea {
+  border-radius: 6px;
+  border: 1px solid var(--header-bkgd-color);
+  padding: 6px 28px;
+}
+
+/* Custom Button */
+button {
+  border-radius: 6px !important;
+}
+
+/* align search icon with search bar */
+.select-items .item-search-block {
+  display: flex;
+  padding-top: 8px;
+}
+
+/*******************************************************************  
+* REMOVES BORDERS AND BACKGROUND COLORS FROM ALL PAGES
+* ******************************************************************/
+form > p {
+  font-size: 17px !important;
+  text-align: center;
+  padding-top: 25px;
+}
+
+form > table > tbody,
+form > table > tbody > tr {
+  border: 0;
+  color: var(--header-link-bkgd-color);
+  background-color: transparent;
+}
+
+form > table > tbody > tr > td.label {
+  border: 0;
+  color: var(--header-link-bkgd-color);
+  background-color: transparent;
+  width: 100%;
+}
+
+form > table > tbody > tr > td.label > label {
+  font-size: 17px;
+}
+
+form > table > tbody > tr > td {
+  border-bottom: 0;
+}
+
+form > table > tbody > tr > td.input > label {
+  font-size: 17px;
+}
+
+tbody,
+tbody tr,
+tbody tr td,
+tbody tr td div {
+  border: 0 !important;
+  border-bottom: 0;
+  color: whitesmoke !important;
+  background-color: transparent !important;
+  text-align: center;
+}
+
+#all_options {
+  border-style: none !important;
+}
+
+form table tbody,
+form table tbody td {
+  border: 0 !important;
+  border-bottom: 0;
+  color: white;
+  background-color: transparent !important;
+}
+
+/****************************************************************************************
+**************************************** LOGIN ******************************************
+****************************************************************************************/
+
+/****************************************************************************************
+************************************** PROFILE ******************************************
+****************************************************************************************/
+
+/****************************************************************************************
+************************************** DIVISIONS ****************************************
+****************************************************************************************/
+
+/* INCREASED LINE HEIGHT FROM 1 TO 2 BETWEEN DIVISIONS */
+.corp_divisions li {
+  line-height: 2 !important;
+}
+
+/****************************************************************************************
+************************************** SHIPTRACK ****************************************
+****************************************************************************************/
+
+/****************************************************************************************
+***************************************** CATALOG ***************************************
+****************************************************************************************/
+
+/* align carot icon with catalog tab name */
+.responsive_tabs .opened:before,
+.responsive_tabs .closed:before {
+  padding-top: 6px;
+}
+
+/* Buttons */
+.select-items #navTabs,
+.select-items #navTabs:focus,
+.select-items #navTabs:active,
+.select-items #navTabs:hover,
+#header-wrapper a#mobile_cart,
+#header-wrapper a#mobile_cart:focus,
+#header-wrapper a#mobile_cart:active,
+#header-wrapper a#mobile_cart:hover,
+#header-wrapper ul#mobile_xtra_links,
+#header-wrapper ul#mobile_xtra_links:focus,
+#header-wrapper ul#mobile_xtra_links:active,
+#header-wrapper ul#mobile_xtra_links:hover,
+#tab_responsive_tabs i#mobile_tab_closer,
+#tab_responsive_tabs i#mobile_tab_closer:focus,
+#tab_responsive_tabs i#mobile_tab_closer:active,
+#tab_responsive_tabs i#mobile_tab_closer:hover,
+#item_details_view span#mobile_link_closer,
+#item_details_view span#mobile_link_closer:focus,
+#item_details_view span#mobile_link_closer:active,
+#item_details_view span#mobile_link_closer:hover,
+.responsive_tabs-shell #submit_catalog_search,
+.responsive_tabs-shell #submit_catalog_search:focus,
+.responsive_tabs-shell #submit_catalog_search:active,
+.responsive_tabs-shell #submit_catalog_search:hover,
+.detail_closer {
+  color: var(--header-link-bkgd-color);
+}
+
+/* mobile cart item circle */
+.item_count {
+  border-color: var(--header-bkgd-color);
+}
+
+/*-- START: LnF Quotes - #all_options and amenities --*/
+#curr_item_name {
+  font-size: 22px;
+  font-weight: bold;
+}
+#all_options .label {
+  width: fit-content;
+  max-width: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+div[id^="details_select"] > div:not(.option_detail) {
+  border-radius: 8px !important;
+}
+#all_options .option_extra {
+  font-size: 0.85rem;
+  margin-top: 0px !important;
+}
+
+#all_options .option_extra .option_detail,
+#all_options .qtyspec_label {
+  padding-top: 4px;
+}
+
+#total_block #total_display {
+  font-size: 30px;
+  font-weight: bold;
+  padding: 4px 10px;
+}
+
+/*-- END: LnF Quotes - #all_options and amenities --*/
+
+/****************************************************************************************
+***************************************** IMPRINT ***************************************
+****************************************************************************************/
+
+/* Side By Side buttons for showing and hiding form */
+#mobile_form_show,
+#mobile_form_show:focus,
+#mobile_form_show:active,
+#mobile_form_show:hover,
+#mobile_form_hide:focus,
+#mobile_form_hide:active,
+#mobile_form_hide:hover,
+#mobile_form_hide {
+  color: black;
+  background: transparent;
+  box-shadow: 2px 3px 4px var(--header-bkgd-color);
+}
+
+/*Make X in tab popout not touch the tabs themselves*/
+.select-items .responsive_tabs div.off,
+.select-items .responsive_tabs div.on {
+  max-width: 80%;
+}
