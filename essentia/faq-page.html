@@ -1,0 +1,187 @@
+<style>
+  :root {
+    --color-primary: #ec7a08;
+    --color-secondary: #0a3046;
+    --color-text: #f7fcff;
+    --color-accent: #666666;
+  }
+
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: "Lato", sans-serif;
+    position: relative;
+    display: block;
+    clear: both;
+    isolation: isolate;
+  }
+
+  .faq-container h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--color-text);
+    font-size: 2rem;
+  }
+
+  .faq-item {
+    background-color: #ffffff;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: block;
+    contain: layout; /* isolating the items layout*/
+  }
+
+  .faq-question {
+    padding: 20px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    text-align: center;
+    margin: 0;
+    background-color: #ffffff;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question::after {
+    content: "+";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-secondary);
+  }
+
+  .faq-item[open] .faq-question::after {
+    content: "−";
+  }
+
+  .faq-item[open] .faq-question {
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .faq-answer-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    background-color: #ffffff;
+    color: #333333;
+    text-align: center;
+    padding: 0 40px;
+    transition:
+      max-height 0.35s ease-in-out,
+      opacity 0.35s ease-in-out,
+      padding 0.35s ease-in-out;
+  }
+
+  .faq-item[open] .faq-answer-content {
+    max-height: 600px;
+    opacity: 1;
+    padding: 25px 40px;
+  }
+
+  .faq-answer-content p {
+    margin-top: 0;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .faq-answer-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .faq-answer-content b {
+    color: #222222;
+  }
+
+  .faq-answer-content a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .faq-answer-content a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<div class="faq-container">
+  <h1>Frequently Asked Questions (FAQ)</h1>
+
+  <details class="faq-item">
+    <summary class="faq-question">What are my shipping options?</summary>
+    <div class="faq-answer-content">
+      <p>Orders may be shipped via UPS (using standard Ground rates).</p>
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary class="faq-question">When will my order ship?</summary>
+    <div class="faq-answer-content">
+      <p>
+        <b>Inventoried print materials</b> ship in 1-2 days.<br />
+        <b>On-demand print materials</b> will be produced and shipped within 5-7
+        business days.
+      </p>
+      <p>
+        To track the progress of your order, hover over your username in the
+        navigation bar and click on "My Orders", or
+        <a href="shiptrack_me.cgi">click here</a> to go directly to the tracking
+        page.
+      </p>
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary class="faq-question">Can I return or exchange an item?</summary>
+    <div class="faq-answer-content">
+      <p>
+        Please contact your Account Executive for all questions.<br />
+        <a href="tel:1111111111">111.111.1111</a> or by emailing
+        <a href="mailto:AGENT@strategicfactory.com"
+          >AGENT@strategicfactory.com</a
+        >.
+      </p>
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary class="faq-question">
+      There is a problem with my order/shipment. What should I do?
+    </summary>
+    <div class="faq-answer-content">
+      <p>
+        Please contact your Account Executive for all questions.<br />
+        <a href="tel:1111111111">111.111.1111</a> or by emailing
+        <a href="mailto:AGENT@strategicfactory.com"
+          >AGENT@strategicfactory.com</a
+        >.<br />
+        If AGENT is not available please contact
+        <a href="mailto:info@strategicfactory.com">info@strategicfactory.com</a>
+        or call <a href="tel:1111111111">111.111.1111</a>
+      </p>
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary class="faq-question">How do I reset my password?</summary>
+    <div class="faq-answer-content">
+      <p>
+        Under your <b>username</b> in the header, click
+        <b><a href="profile.cgi?force_view=1"> My Profile</a></b
+        >, then click <b>Edit Profile</b> to update your account password.
+      </p>
+    </div>
+  </details>
+</div>

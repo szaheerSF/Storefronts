@@ -751,3 +751,39 @@
     console.log("ql");
   });
 </script>
+
+<script>
+  // Salman's accordian function
+  document.addEventListener("DOMContentLoaded", function () {
+    // Find all top-level menu items
+    const menuItems = document.querySelectorAll(".tab-topmenu");
+
+    menuItems.forEach((item) => {
+      const link = item.querySelector("a");
+      const submenu = item.querySelector(".tab-submenu");
+
+      // Only apply click logic if the item actually has a dropdown menu
+      if (submenu) {
+        link.addEventListener("click", function (e) {
+          // Prevent the page from jumping if the link is just a "#"
+          if (
+            link.getAttribute("href") === "#" ||
+            link.getAttribute("href") === ""
+          ) {
+            e.preventDefault();
+          }
+
+          // OPTIONAL: Close other open submenus when opening a new one
+          menuItems.forEach((otherItem) => {
+            if (otherItem !== item && otherItem.classList.contains("is-open")) {
+              otherItem.classList.remove("is-open");
+            }
+          });
+
+          // Toggle the open class on the clicked item
+          item.classList.toggle("is-open");
+        });
+      }
+    });
+  });
+</script>

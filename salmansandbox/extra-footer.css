@@ -1,0 +1,11 @@
+/* Resize the header image for Destop View */
+.no_mobile {
+  width: 360px;
+  height: auto;
+}
+
+/* Resize the header image for Mobile View */
+.no_desktop {
+  height: 200px;
+  width: auto;
+}

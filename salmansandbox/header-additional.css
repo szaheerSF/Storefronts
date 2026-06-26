@@ -1,0 +1,340 @@
+/* --- */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400..900&display=swap");
+
+/* Custom Theme */
+:root {
+  --color-primary: ;
+  --color-secondary: ;
+  --color-accent: ;
+
+  --color-blue: #0092bc;
+  --color-blue-accent: #02b4cd;
+  --color-navy: #003b5c;
+  --color-gray: #53565a;
+  --color-dark-slate: #2c3e50;
+  --color-orange: #ed8b00;
+  --color-purple: #d94ede;
+  --color-white: #f7fcff;
+  --color-red: #a50021;
+  --color-dark-purple: #1e0011;
+
+  --border-sm: 4px;
+  --border-md: 8px;
+  --border-lg: 16px;
+}
+
+body {
+  background-color: var(--color-white);
+  font-family: "Lato", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  direction: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--color-dark-slate);
+  color: var(--color-white);
+  font-size: 1rem;
+  border: none;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 6px 12px;
+  border-radius: var(--border-md);
+  margin-top: 4px;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Remove button in catalog list */
+.basket-list-item button {
+  background-color: var(--color-red);
+}
+
+.shipping,
+.billing,
+.review,
+.done,
+.customer-service,
+.profile,
+.basket-view,
+.view-order,
+.shiptrack_view2,
+.waitingorders,
+.main.shiptrack.catalog--container,
+.login,
+.oops {
+  max-width: 1280px !important;
+  margin: 40px auto 0 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box !important;
+  box-shadow: -6px 16px 32px 4px var(--color-gray);
+  margin-bottom: 50px !important;
+  padding: 50px;
+}
+
+/* --- */
+
+/* Hide the old, default PageDNA header links and visual clutter */
+#header-links-container {
+  display: none !important;
+}
+#red_header_bar {
+  display: none !important;
+}
+
+/* HIDE cancel button in catalog */
+#footer_cancel {
+  display: none;
+}
+
+/* new navigation container */
+.modern-nav {
+  background-color: var(--color-dark-slate);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+}
+.modern-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.modern-nav li {
+  position: relative;
+}
+.modern-nav a {
+  display: block;
+  padding: 15px 20px;
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+.modern-nav a:hover {
+  background-color: var(--color-dark-slate);
+  color: var(--color-blue-accent); /* PageDNA default accent blue */
+}
+
+/* First-Level Dropdown Styling */
+.modern-nav .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  min-width: 220px;
+  flex-direction: column;
+  border-radius: 0 0 4px 4px;
+  border-top: 3px solid var(--color-blue-accent);
+}
+.modern-nav .dropdown-menu a {
+  color: #333333;
+  padding: 12px 20px;
+  border-bottom: 1px solid #f1f1f1;
+}
+.modern-nav .dropdown-menu a:hover {
+  background-color: #f8f9fa;
+  color: #02b4cd;
+}
+
+/* Show dropdown on hover */
+.modern-nav .has-dropdown:hover > .dropdown-menu {
+  display: flex;
+}
+
+/* Multi-Level (Nested) Dropdown Styling */
+.modern-nav .dropdown-menu .has-dropdown > .dropdown-menu {
+  top: 0;
+  left: 100%; /* Push to the right of the parent menu */
+  border-top: none;
+  border-left: 3px solid var(--color-blue-accent);
+  border-radius: 0 4px 4px 4px;
+}
+
+/* Utility: Push items to the right side of the nav (like Logout) */
+.modern-nav .my-profile {
+  margin-left: auto;
+}
+
+/* Mobile adjustments */
+@media only screen and (max-width: 1024px) {
+  .modern-nav {
+    display: none;
+  }
+}
+
+/* Main Sidebar Container Restyling */
+.responsive_tabs-shell {
+  background-color: #ffffff !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+  padding: 20px !important;
+  margin-top: 20px !important; /* Aligns with the top of the product images */
+  width: 260px !important;
+  border: 1px solid #f0f0f0 !important;
+}
+
+/* Search Block */
+.responsive_tabs-shell .item-search-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Hide the default, visually unappealing label and rely on the input placeholder */
+.responsive_tabs-shell .item-search-block label {
+  display: none !important;
+}
+
+.pagetitle,
+.hideit {
+  display: none !important;
+}
+
+.responsive_tabs-shell .item-search-block input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 15px !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 6px !important;
+  font-size: 14px !important;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease !important;
+  background-color: #fbfbfb !important;
+}
+
+.responsive_tabs-shell .item-search-block input[type="text"]:focus {
+  border-color: #02b4cd !important;
+  box-shadow: 0 0 0 3px rgba(2, 180, 205, 0.1) !important;
+  outline: none !important;
+  background-color: #ffffff !important;
+}
+
+.responsive_tabs-shell .item-search-block button {
+  width: 100% !important;
+  background-color: #02b4cd !important; /* PageDNA default accent blue */
+  color: #ffffff !important;
+  border: none !important;
+  padding: 12px 15px !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  cursor: pointer !important;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(2, 180, 205, 0.3) !important;
+}
+
+.responsive_tabs-shell .item-search-block button:hover {
+  background-color: #0299ad !important;
+  transform: translateY(-1px);
+}
+
+/* 3. Modernize the Tabs List */
+.responsive_tabs-shell .responsive_tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Remove default padding and background from PageDNA's inner layout divs */
+.responsive_tabs-shell .responsive_tabs div.on,
+.responsive_tabs-shell .responsive_tabs div.off {
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.responsive_tabs-shell .responsive_tabs dfn {
+  padding: 0 !important;
+}
+
+.responsive_tabs-shell .responsive_tabs a {
+  display: block;
+  padding: 12px 16px !important;
+  color: #4a5568 !important; /* Modern slate gray */
+  text-decoration: none !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  border: 1px solid transparent;
+}
+
+/* Hover states with a slight rightward shift */
+.responsive_tabs-shell .responsive_tabs a:hover {
+  background-color: #f7fafc !important;
+  color: #02b4cd !important;
+  border-color: #edf2f7;
+  transform: translateX(4px);
+}
+
+/* Active Tab Styling */
+.responsive_tabs-shell .responsive_tabs div.on a {
+  background-color: #e6f7fa !important; /* Very light accent blue */
+  color: #02b4cd !important;
+  border-left: 4px solid #02b4cd !important;
+  border-top-left-radius: 2px !important;
+  border-bottom-left-radius: 2px !important;
+  padding-left: 12px !important; /* Adjust padding to compensate for the left border */
+  font-weight: 600 !important;
+}
+
+/* Hide the default FontAwesome arrows PageDNA adds to the left of tabs */
+.responsive_tabs-shell .responsive_tabs .opened:before,
+.responsive_tabs-shell .responsive_tabs .closed:before {
+  display: none !important;
+}
+
+/* Basket text styling at the bottom of the sidebar */
+.responsive_tabs-shell .after {
+  margin-top: 25px !important;
+  padding-top: 20px !important;
+  border-top: 1px solid #f0f0f0 !important;
+}
+
+.responsive_tabs-shell .after #basket-list-title span {
+  color: #a0aec0 !important;
+  font-size: 12px !important;
+  text-align: center !important;
+  display: block;
+  font-weight: 500;
+}
+
+/* Hide the 'Cancel Order' button in Catalog */
+button#submit_cancel {
+  display: none;
+}
+
+/* This is div that wraps all the header components including Logo, NavBar etc*/
+#header-wrapper {
+  background-color: var(--color-dark-slate);
+}
+
+/* This is a table which contains the logo images */
+#header_logo {
+  padding: 16px;
+}
