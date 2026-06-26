@@ -1,0 +1,118 @@
+<!--Salman Zaheer sandbox new nav bar-->
+<div id="modern-nav-template" style="display: none">
+  <nav class="modern-nav">
+    <ul>
+      <li><a href="index.cgi">Home</a></li>
+
+      <li class="has-dropdown">
+        <a href="#">Products ▾</a>
+        <ul class="dropdown-menu">
+          <li>
+            <a
+              href="#"
+              onclick="
+                switchtab(document.f, 'tab', 'Business Cards', 'catalog.cgi')
+              "
+              >Business Cards</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="
+                switchtab(document.f, 'tab', 'Stationery', 'catalog.cgi')
+              "
+              >Stationery</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="
+                switchtab(document.f, 'tab', 'Stamps and Seals', 'catalog.cgi')
+              "
+              >Stamps & Seals</a
+            >
+          </li>
+
+          <li class="has-dropdown">
+            <a href="#">Marketing ▹</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a
+                  href="#"
+                  onclick="
+                    switchtab(
+                      document.f,
+                      'tab',
+                      'Marketing Materials',
+                      'catalog.cgi',
+                    )
+                  "
+                  >Marketing Materials</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onclick="
+                    switchtab(
+                      document.f,
+                      'tab',
+                      'Postcards and Mailing',
+                      'catalog.cgi',
+                    )
+                  "
+                  >Postcards & Mailing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onclick="
+                    switchtab(document.f, 'tab', 'Trade Shows', 'catalog.cgi')
+                  "
+                  >Trade Shows</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a
+              href="#"
+              onclick="switchtab(document.f, 'tab', 'Kits', 'catalog.cgi')"
+              >Kits</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="switchtab(document.f, 'tab', 'eDelivery', 'catalog.cgi')"
+              >eDelivery</a
+            >
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-right my-profile">
+        <a href="profile.cgi?force_view=1">My Profile</a>
+      </li>
+
+      <li class="nav-right"><a href="logout.cgi">Logout</a></li>
+    </ul>
+  </nav>
+</div>
+
+<script>
+  $(document).ready(function () {
+    // Grab the HTML string we built in the hidden template
+    var customNavHtml = $("#modern-nav-template").html();
+
+    // Append it to the header wrapper so it lives at the top of the page
+    $("#header-wrapper").append(customNavHtml);
+
+    // Delete the original hidden template from the footer to keep the DOM clean
+    $("#modern-nav-template").remove();
+  });
+</script>
