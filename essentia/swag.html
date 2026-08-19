@@ -1,0 +1,196 @@
+<style>
+  :root {
+    /* SALMAN CUSTOM CSS: Essentia colors */
+    --global-color-primary: #ec7a08;
+    --global-color-secondary: #0a3046;
+    --global-color-accent: #114381;
+    --global-color-text: #f7fcff;
+  }
+  #header_wrapper {
+    border: 0px solid transparent !important;
+  }
+
+  #all_items_view {
+    margin: 0 auto;
+  }
+  .UtileDisplayMedium {
+    font-family: UtileDisplayMedium, sans-serif !important;
+  }
+
+  .landing-page-header {
+    width: 760px;
+    font-size: 5rem !important;
+    color: #ec7a08 !important;
+    line-height: 1.15;
+    font-family: "Lato", sans-serif !important;
+    text-align: center;
+  }
+
+  .catalog-tab-blurb:has(.landingBG) {
+    width: 95% !important;
+    padding: 0 !important;
+  }
+
+  .landingBG {
+    place-items: center;
+  }
+
+  img.landingSE {
+    width: 90%;
+    margin: 20px 50px 6px;
+  }
+
+  img.landingPB {
+    width: 25%;
+    margin: 20px 50px 6px;
+  }
+
+  .useTxt {
+    width: 455px;
+    text-align: center;
+    padding: 30px 0px;
+    font-size: 1.5rem;
+    line-height: 115%;
+    margin: auto;
+    color: #f7fcff;
+  }
+
+  .explore-catalog-btn {
+    box-shadow: inset 0px 0px 15px 3px var(--global-color-secondary);
+    background: linear-gradient(to bottom, #0a3046 5%, #155a82 100%);
+    background-color: var(--global-color-secondary);
+    border-radius: 12px;
+    border: 2px solid var(--global-color-primary);
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 1rem;
+    color: var(--global-color-primary);
+    font-size: 20px;
+    padding: 12px 32px;
+    text-decoration: none;
+    text-shadow: 1px 2px 1px 2px #e79b4e;
+  }
+
+  .explore-catalog-btn:hover {
+    background: linear-gradient(to bottom, #155a82 5%, #0a3046 100%);
+    background-color: #155a82;
+    transition: 0.5s all ease-in-out;
+  }
+
+  .explore-catalog-btn a,
+  a:hover,
+  a:active {
+    text-decoration: none;
+    color: inherit; /*Forcing the color to stay the same as the parent container. Which should be questionTxt here*/
+  }
+
+  .explore-catalog-btn:active {
+    position: relative;
+    top: 1px;
+  }
+
+  .useTxt a,
+  .questionTxt a {
+    color: #0a3046;
+    text-decoration: none;
+  }
+
+  .questionTxt {
+    width: 475px;
+    text-align: center;
+    display: block;
+    font-size: 0.85rem;
+    padding-bottom: 12px;
+    color: var(--global-color-text);
+    margin: auto;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-image: linear-gradient(
+        to right,
+        #96bec800 30%,
+        #ec7a08,
+        #96bec800 70%
+      )
+      1;
+  }
+
+  .faq-link {
+    cursor: pointer;
+    text-align: center;
+    margin: auto;
+    color: var(--global-color-primary) !important;
+  }
+
+  .faq-link:hover,
+  .faq-link:active {
+    color: #ec7a08;
+  }
+
+  div.landing-body-top {
+    /* margin: 0; */
+    display: block;
+    float: left;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    width: 65%;
+  }
+
+  .landing-body-bottom {
+    display: block;
+  }
+
+  .landing-body-middle {
+    margin: 0;
+    display: block;
+    width: 75%;
+    justify-items: center;
+  }
+
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+</style>
+
+<div class="landingBG">
+  <div class="landing-body-middle">
+    <div class="landing-page-header">SWAG!!!</div>
+    <div class="useTxt">Check out our latest offerings</div>
+  </div>
+  <div class="landing-body-bottom">
+    <span class="questionTxt"
+      >If you have any questions when you are done browsing, or if you are
+      unable to find what you are looking for, please take a look at the
+      <a
+        class="faq-link"
+        href="https://www.nationsprint.com/clients/essentia-inc/catalog.cgi?tab=FAQ"
+      >
+        FAQ page.</a
+      ></span
+    >
+    <div class="buttons-container">
+      <button class="explore-catalog-btn">
+        <a
+          onclick="
+            switchtab(document.f, 'tab', 'Swag||Envelopes', 'catalog.cgi')
+          "
+          >Essentia</a
+        >
+      </button>
+      <button class="explore-catalog-btn">
+        <a
+          onclick="
+            switchtab(
+              document.f,
+              'tab',
+              'Kits||Checks/Deposit Slips',
+              'catalog.cgi',
+            )
+          "
+          >D8Averse</a
+        >
+      </button>
+    </div>
+  </div>
+</div>

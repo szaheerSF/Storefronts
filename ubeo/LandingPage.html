@@ -1,0 +1,245 @@
+<style>
+  :root {
+    /* UBEO Color Theme */
+    --cyan: #00aeef;
+    --magenta: #ec208a;
+    --magenta-dark: #791046;
+    --yellow: #fdd213;
+    --gold: #fdb813;
+    --navy: #0c2340;
+    --black: #1a1a1a;
+    --gray-dark: #6c757d;
+    --gray-light: #e9ecef;
+    --white: #f8f9fa;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  #header_wrapper {
+    border: 0px solid transparent !important;
+  }
+
+  #all_items_view {
+    margin: 0 auto;
+  }
+  .UtileDisplayMedium {
+    font-family: UtileDisplayMedium, sans-serif !important;
+  }
+
+  .landing-page-header {
+    width: 760px;
+    font-size: 5rem !important;
+    color: var(--cyan) !important;
+    line-height: 1.15;
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 700;
+    opacity: 0;
+    animation: 0.5s ease-out 1s 1 fadeIn forwards;
+    text-align: center;
+  }
+  .landing-page-header span {
+    letter-spacing: -24px;
+  }
+  /*   .landing-page-header span:hover {
+    font-size: 6rem;
+    padding: 1rem;
+    transform: translateY(10);
+    transition: all 0.5s ease-in-out;
+  } */
+
+  .catalog-tab-blurb:has(.landingBG) {
+    width: 95% !important;
+    padding: 0 !important;
+  }
+
+  .landingBG {
+    place-items: center;
+  }
+
+  img.landingSE {
+    width: 90%;
+    margin: 20px 50px 6px;
+  }
+
+  img.landingPB {
+    width: 25%;
+    margin: 20px 50px 6px;
+  }
+
+  .useTxt {
+    width: 455px;
+    text-align: center;
+    padding: 30px 0px;
+    font-size: 1.5rem;
+    line-height: 115%;
+    margin: auto;
+    color: var(--black);
+    opacity: 0;
+    animation: 1s ease-out 1.5s 1 fadeIn forwards;
+  }
+
+  .explore-catalog-btn {
+    box-shadow: inset 0px 0px 15px 3px var(--global-color-secondary);
+    background: linear-gradient(to bottom, #0a3046 5%, #155a82 100%);
+    background-color: var(--magenta);
+    border-radius: 12px;
+    border: 2px solid var(--gold);
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 1rem;
+    color: var(--white);
+    font-size: 20px;
+    padding: 12px 32px;
+    text-decoration: none;
+    text-shadow: 1px 2px 1px 2px var(--magenta);
+    opacity: 0;
+    animation: 0.5s ease-in-out 3s 1 fadeIn forwards;
+  }
+
+  .explore-catalog-btn:hover {
+    background: linear-gradient(to bottom, #155a82 5%, #0a3046 100%);
+    background-color: var(--magenta-dark);
+    transition: 0.5s all ease-in-out;
+  }
+
+  .explore-catalog-btn a,
+  a:hover,
+  a:active {
+    text-decoration: none;
+    color: inherit; /*Forcing the color to stay the same as the parent container. Which should be questionTxt here*/
+  }
+
+  .explore-catalog-btn:active {
+    position: relative;
+    top: 1px;
+  }
+
+  .useTxt a,
+  .questionTxt a {
+    color: #0a3046;
+    text-decoration: none;
+  }
+
+  .questionTxt {
+    width: 475px;
+    text-align: center;
+    display: block;
+    font-size: 0.85rem;
+    padding-bottom: 12px;
+    color: var(--global-color-text);
+    margin: auto;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    opacity: 0;
+    animation: 0.5s ease-out 2.5s 1 fadeIn forwards;
+    border-image: linear-gradient(
+        to right,
+        #96bec800 30%,
+        #ec208a,
+        #96bec800 70%
+      )
+      1;
+  }
+
+  .faq-link {
+    cursor: pointer;
+    text-align: center;
+    margin: auto;
+    color: var(--navy) !important;
+  }
+
+  .faq-link:hover,
+  .faq-link:active {
+    color: var(--magenta-dark);
+  }
+
+  div.landing-body-top {
+    /* margin: 0; */
+    display: block;
+    float: left;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    width: 65%;
+  }
+
+  .landing-body-bottom {
+    display: block;
+  }
+
+  .landing-body-middle {
+    margin: 0;
+    display: block;
+    width: 75%;
+    justify-items: center;
+  }
+
+  .u-text {
+    color: var(--cyan);
+  }
+
+  .b-text {
+    color: var(--magenta);
+  }
+  .e-text {
+    color: var(--yellow);
+  }
+  .o-text {
+    color: #000;
+  }
+  /* 
+  .u-text:hover {
+    font-size: 6rem;
+    padding: 1rem;
+    transform: translateY(10);
+    transition: all 0.5s ease;
+  }
+
+  .b-text:hover {
+    font-size: 6rem;
+    padding: 1rem;
+    transform: translateY(10);
+    transition: all 0.5s ease;
+  }
+  .e-text:hover {
+    font-size: 6rem;
+    padding: 1rem;
+    transform: translateY(10);
+    transition: all 0.5s ease;
+  }
+  .o-text:hover {
+    font-size: 6rem;
+    padding: 1rem;
+    transform: translateY(10);
+    transition: all 0.5s ease;
+  } */
+</style>
+
+<div class="landingBG">
+  <div class="landing-body-middle">
+    <div class="landing-page-header">
+      <span class="u-text">u</span>
+      <span class="b-text">b</span>
+      <span class="e-text">e</span>
+      <span class="o-text">o</span>
+      <br />
+      Storefront
+    </div>
+  </div>
+  <div class="landing-body-bottom">
+    <span class="questionTxt"
+      >If you have any questions when you are done browsing, or if you are
+      unable to find what you are looking for, please take a look at the
+      <a
+        class="faq-link"
+        href="https://www.nationsprint.com/clients/ubeo/catalog.cgi?tab=FAQ"
+      >
+        FAQ page.</a
+      ></span
+    >
+  </div>
+</div>
