@@ -31,7 +31,6 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     display: block;
-    contain: layout; /* isolating the items layout*/
   }
 
   .faq-question {
@@ -71,7 +70,8 @@
   }
 
   .faq-answer-content {
-    max-height: 0;
+    display: grid;
+    grid-template-rows: 0fr;
     opacity: 0;
     overflow: hidden;
     background-color: #ffffff;
@@ -79,13 +79,17 @@
     text-align: center;
     padding: 0 40px;
     transition:
-      max-height 0.35s ease-in-out,
+      grid-template-rows 0.35s ease-in-out,
       opacity 0.35s ease-in-out,
       padding 0.35s ease-in-out;
   }
 
+  .faq-answer-content > * {
+    overflow: hidden;
+  }
+
   .faq-item[open] .faq-answer-content {
-    max-height: 600px;
+    grid-template-rows: 1fr;
     opacity: 1;
     padding: 25px 40px;
   }
@@ -148,9 +152,9 @@
     <div class="faq-answer-content">
       <p>
         Please contact your Account Executive for all questions.<br />
-        <a href="tel:1111111111">111.111.1111</a> or by emailing
-        <a href="mailto:AGENT@strategicfactory.com"
-          >AGENT@strategicfactory.com</a
+        <a href="tel:4435893106">443.589.3106</a> or by emailing
+        <a href="mailto:bmiller@strategicfactory.com"
+          >bmiller@strategicfactory.com</a
         >.
       </p>
     </div>
@@ -162,14 +166,15 @@
     </summary>
     <div class="faq-answer-content">
       <p>
-        Please contact your Account Executive for all questions.<br />
-        <a href="tel:1111111111">111.111.1111</a> or by emailing
-        <a href="mailto:AGENT@strategicfactory.com"
-          >AGENT@strategicfactory.com</a
+        Please contact your Account Executive (<strong>Brady Miller</strong>)
+        for all questions.<br />
+        <a href="tel:4435893106">443.589.3106</a> or by emailing
+        <a href="mailto:bmiller@strategicfactory.com"
+          >bmiller@strategicfactory.com</a
         >.<br />
-        If AGENT is not available please contact
+        If the AE is not available please contact
         <a href="mailto:info@strategicfactory.com">info@strategicfactory.com</a>
-        or call <a href="tel:1111111111">111.111.1111</a>
+        or call <a href="tel:4435483500">443.548.3500</a>
       </p>
     </div>
   </details>

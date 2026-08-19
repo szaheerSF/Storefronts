@@ -1,31 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Notch:wght@200..700&display=swap");
 
 :root {
-  /* Site background header color */
-  --header-bkgd-color: #ec7a08;
-  --header-link-bkgd-color: #990000;
-
-  /* Static site text header link color */
-  --header-link-txt-color: #4ea8de;
-  --header-link-txt-color-hover: #d94ede;
-  --header-link-bkgd-color-hover: transparent;
-  --header-link-border-color-hover: #ffffff;
-
-  /* NOTE: Add html font url link source to Site-Wide Appearance > Site Header > Site Meta Data > Other Metdata */
-  --custom-font: "Lato", sans-serif;
-
-  /* SALMAN CUSTOM CSS: Essentia colors */
-  --global-color-primary: #ec7a08;
-  --global-color-secondary: #0a3046;
-  --global-color-accent: #114381;
-  --global-color-text: #f7fcff;
+  /* UBEO Color Theme */
+  --cyan: #00aeef;
+  --magenta: #ec208a;
+  --magenta-dark: #791046;
+  --yellow: #fdd213;
+  --gold: #fdb813;
+  --navy: #0c2340;
+  --black: #1a1a1a;
+  --gray-dark: #6c757d;
+  --gray-light: #e9ecef;
+  --white: #f8f9fa;
 }
 
 body {
-  color: var(--global-color-text);
-  background-color: var(--global-color-secondary);
-  font-family: "Lato", sans-serif;
+  color: var(--black);
+  background-color: var(--white);
+  font-family: "Montserrat", sans-serif;
   font-size: 1.5rem;
+  font-weight: 400;
 }
 
 button {
@@ -33,13 +28,12 @@ button {
 }
 
 .button {
-  background-color: var(--global-color-primary);
-  border-radius: 3px;
-  color: var(--global-color-text);
-  font-family: Lato, sans-serif;
-  font-size: 15px;
+  background-color: var(--yellow);
+  border-radius: 12px;
+  color: var(--black);
+  font-size: 16px;
   font-weight: 600;
-  letter-spacing: 1.3px;
+  letter-spacing: 1.5px;
   padding: 6px 12px;
   text-transform: uppercase;
   transition: 0.3s all ease-in-out;
@@ -48,24 +42,23 @@ button {
 #submit_catalog_search_cancel,
 #submit_updatebasket,
 #button_addproducts {
-  background-color: var(--global-color-accent);
-  color: var(--global-color-text);
+  background-color: var(--cyan);
+  color: var(--white);
 }
 
 .button:hover,
 #submit_catalog_search_cancel:hover,
 #submit_updatebasket:hover,
 #button_addproducts:hover {
-  background-color: var(--global-color-secondary);
-  color: var(--global-color-primary);
-  border: 2px solid var(--global-color-primary);
+  background-color: var(--black);
+  color: var(--white);
+  border: 2px solid var(--gold);
   transition: 0.3s all ease-in-out;
 }
 
 .pagetitle {
-  color: var(--global-color-text);
-  font-family: Afacad, sans-serif;
-  font-size: 30px;
+  color: var(--black);
+  font-size: 2rem;
   font-weight: 600;
   text-align: center;
 }
@@ -78,48 +71,34 @@ button {
 
 .tabs-nav {
   display: flex;
-  font-family: Lato, sans-serif;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 600;
-  justify-content: center;
   letter-spacing: 1.4px;
   list-style: none;
-  margin-block-end: 0;
-  margin-block-start: 0;
-  padding-inline-start: 0;
-  text-transform: uppercase;
 }
 
 .tabs-nav > li {
-  margin: 0 30px;
+  margin: 0 2rem;
+  padding: 1rem 0;
 }
 
 .tabs-nav a {
-  color: var(--global-color-text);
-  display: flex;
-  padding: 0 10px;
+  color: var(--black);
   text-decoration: none;
 }
 
 .tab-topmenu {
   position: relative;
-  background-color: var(--global-color-primary);
-}
-
-.tab-topmenu i {
-  margin-left: 5px;
+  background-color: var(--white);
 }
 
 .tab-submenu {
-  background-color: var(--global-color-primary);
+  background-color: var(--gray-light);
+  box-shadow: -5px 5px 6.9px rgba(0, 0, 0, 0.12);
   display: block;
-  font-family: Afacad, sans-serif;
-  font-size: 17px;
-  font-weight: 400;
+  padding: 10px 0;
   list-style: none;
-  border: 0 2px 4px 2px solid var(--global-color-primary);
-  border-radius: 0 0 6px 6px;
-  margin: 23px 0 0;
+  margin: 12px 0 0;
   min-width: 220px;
   opacity: 0;
   padding-inline-start: 0;
@@ -132,43 +111,36 @@ button {
 }
 
 .tab-submenu a {
-  color: var(--global-color-secondary);
-  border: 1px solid var(--global-color-primary);
+  color: var(--black);
   border-radius: 2px;
   display: block;
   padding: 7px 10px;
 }
 
 .tab-submenu a:hover {
-  background-color: var(--global-color-secondary);
+  background-color: var(--navy);
+  color: var(--white);
   transition: 0.5s all ease-in-out;
+  border: solid 1px #000000;
 }
 
 /* ****************************************** FOOTER ******************************************* */
 
 .footnote {
-  background-color: var(--global-color-primary);
-  color: var(--global-color-text);
+  background-color: var(--gold);
+  color: var(--black);
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .footer_row3 {
   display: flex;
-  gap: 30px;
-  font-family: "Noto Sans";
-  font-size: 14px;
+  gap: 50%;
   justify-content: center;
-  padding: 30px 0;
-}
-
-.footer_row3 a {
-  color: var(--global-color-text);
+  padding: 1rem 0;
 }
 
 /* ****************************************** CATALOG ****************************************** */
-
-.height-adjuster {
-  color: var(--global-color-text);
-}
 
 .main.catalog--container {
   /* margin-top: -30px; */
@@ -195,44 +167,16 @@ button {
   outline: none;
 }
 
-.stretchy_cols.responsive-item {
-  min-width: 340px !important;
-  width: 300px !important;
-  min-height: 600px !important; /*Testing with product description*/
-}
-
-.responsive-longname {
-  font-size: 17px;
-  color: var(--global-color-primary);
-}
-
-.responsive-pricing {
-  font-family: Afacad, sans-serif;
-}
-
-.responsive-tagcheck {
-  color: var(--global-color-text);
-}
-.responsive-choose-info {
-  color: var(--global-color-text);
-  max-height: 10.5rem !important;
-  text-align-last: left;
-}
-
-.onhand_lbl {
-  color: var(--global-color-text);
-}
-
 /* **************************************** BASKET_VIEW **************************************** */
 
 .items-table th {
-  color: var(--global-color-text);
+  color: var(--black);
   font-size: 17px;
 }
 
 .items-table td {
-  background-color: transparent !important;
-  color: var(--global-color-text);
+  background-color: var(--gray-light) !important;
+  color: var(--black);
   font-size: 17px;
 }
 
@@ -243,8 +187,7 @@ button {
 /* ********************** EXTRA ELEMENTOR STYLES ********************** */
 
 .elementor-icon-box-title {
-  color: var(--global-color-text);
-  /* font-family: Afacad, sans-serif; */
+  color: var(--black);
   font-size: 20px;
   font-weight: 600;
   letter-spacing: 1.4px;
@@ -264,8 +207,8 @@ button {
 
 /* Make Admin Menu Bar opaque to see the logo */
 .menu-knob-bar {
-  opacity: 0.8;
-  color: var(--global-color-primary);
+  opacity: 0.6;
+  color: var(--black);
 }
 
 /* Sometimes on sites, you’ll see the catalog move down, then back up, 
@@ -275,8 +218,7 @@ this will load cleaner */
 }
 
 .main {
-  margin-top: 30px;
-  margin: 20px auto 0 !important;
+  margin: 16px auto 0 !important;
 }
 
 .select-items {
@@ -296,23 +238,24 @@ this will load cleaner */
 
 /* Add border to preview image on Basket, Review, Accept pages */
 .previewcell img {
-  border: 1px solid #ccc !important;
+  border: 1px solid var(--gold) !important;
 }
 
 /* ****************************** HEADER ****************************** */
-
+/*
 h2.pagetitle,
 .pagetitle {
   text-shadow: none;
 }
+*/
 
 #header-wrapper {
-  background-color: var(--header-bkgd-color);
-  background-image: var(--custom-header-image);
+  background-color: var(--white);
+  /*   background-image: var(--custom-header-image);
   background-position: 50% 10%;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  position: relative; */
 }
 
 .header {
@@ -324,11 +267,10 @@ h2.pagetitle,
   padding-right: 2rem;
 }
 
-.header-links {
+/* .header-links {
   position: absolute;
   top: 35px;
   right: 15px;
-  font-family: var(--custom-font);
   font-weight: 400;
   text-transform: uppercase;
   font-size: 16px;
@@ -352,14 +294,14 @@ h2.pagetitle,
 #logout_userid {
   color: var(--header-link-txt-color);
   padding: 0 15px;
-}
+} */
 
 /* Dropdown select and input text fields modification */
 input#passwd,
 input#passwd,
 textarea {
   border-radius: 6px;
-  border: 1px solid var(--global-color-primary);
+  border: 1px solid var(--magenta);
   color: #000000;
   padding: 6px;
 }
@@ -374,13 +316,13 @@ textarea {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  margin: 0px auto;
-  padding: 15px 0;
+  margin: 5px auto;
+  padding: 1.7rem 0;
   width: 90%;
 }
 
 #logoHeader img {
-  width: 250px;
+  width: 169px;
 }
 
 #searchWrapper {
@@ -394,21 +336,21 @@ textarea {
 }
 
 .search-flex input {
-  border: 1px solid var(--global-color-primary) !important;
+  border: 1px solid var(--magenta) !important;
   border-radius: 4px;
   flex-basis: 100%;
   padding: 16px;
 }
 
 .head-search {
-  background-color: var(--global-color-primary);
+  background-color: var(--cyan);
   border: none;
-  border-radius: 6px;
-  color: var(--global-color-text);
-  font-family: Lato, sans-serif;
+  border-radius: 4px;
+  color: var(--white);
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 600;
-  letter-spacing: 1.3px;
+  letter-spacing: 1.1px;
   line-height: 24px;
   margin-left: 8px;
   padding: 16px 10px;
@@ -419,25 +361,31 @@ textarea {
 .head-search-toggle {
   background-color: transparent;
   border: none;
-  color: var(--global-color-primary);
+  color: var(--black);
   font-size: 30px;
   padding: 10px;
-  transition: 0.3s all ease-out;
+  transition: 0.2s all ease-out;
 }
 
 .head-search-toggle:hover {
-  color: var(--global-color-text);
-  transition: 0.5s all ease-in-out;
+  color: var(--magenta);
+  transform: scale(1.2);
+  transition: 0.2s all ease-in-out;
 }
 
 .tabs-header {
-  background-color: var(--global-color-primary);
+  background-color: var(--white);
   height: 4rem;
-  align-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .tabs-nav a:hover {
-  color: var(--global-color-secondary);
+  color: var(--white);
+  padding: 4px;
+  background-color: var(--magenta);
+  box-shadow: -5px 5px 0.5px var(--magenta-dark);
   transition: 0.2s all ease-in-out;
 }
 
@@ -447,11 +395,7 @@ textarea {
 }
 
 .tab-submenu li:has(a:hover) {
-  background-color: var(--global-color-secondary);
-}
-
-.tab-submenu a:hover {
-  color: var(--global-color-text);
+  background-color: var(--gray-dark);
 }
 
 /************************************************************************/
@@ -640,7 +584,7 @@ button:hover span.button_arrow_right {
 }
 
 #all_items_view {
-  width: 100% !important; /* must be !important in order to override the... sigh... inline width >:( */
+  width: 100% !important;
 }
 
 #all_items_view .main-section {

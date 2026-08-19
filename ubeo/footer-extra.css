@@ -1,3 +1,17 @@
+:root {
+  /* UBEO Color Theme */
+  --cyan: #00aeef;
+  --magenta: #ec208a;
+  --magenta-dark: #791046;
+  --yellow: #fdd213;
+  --gold: #fdb813;
+  --navy: #0c2340;
+  --black: #1a1a1a;
+  --gray-dark: #6c757d;
+  --gray-light: #e9ecef;
+  --white: #f8f9fa;
+}
+
 body {
   min-height: 100vh;
 }
@@ -13,7 +27,7 @@ input[type="password"],
 select,
 input[type="password"]#passwd {
   border-radius: 6px !important;
-  border: 1px solid #ec7a08;
+  border: 1px solid var(--magenta);
   padding: 6px;
 }
 
@@ -78,7 +92,7 @@ div:has(> .top-button-container) {
     1;
   margin: unset;
   overflow: visible;
-  transition: 0.6s all ease;
+  transition: 0.3s all ease;
 }
 
 .stretchy_cols:hover {
@@ -98,11 +112,17 @@ div:has(> .top-button-container) {
   display: none;
 }
 
-/* *********************************************************** SHIPPING */
-
-.ship-address:has(#ship_company) {
-  display: none;
+.the_actual_qty_select select,
+.add-to-basket-qty-select select {
+  width: 45%;
+  display: flex;
 }
+
+.the_actual_qty_select input[type="text"] {
+  width: 43%;
+}
+
+/* *********************************************************** SHIPPING */
 
 input#ship_company {
   width: 239px;
@@ -148,6 +168,10 @@ div.form-body div.title > h1 {
   padding: 0;
 }
 
+.form-body th {
+  text-align: center !important;
+}
+
 .main {
   flex-grow: 1;
   width: 50vw;
@@ -169,15 +193,28 @@ button:disabled:hover {
 }
 
 #billing-info p {
-  border-top: 5px solid #ec7a08;
+  border-top: 5px solid var(--cyan);
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
   font-weight: normal;
   padding: 20px;
 }
 
 .approve_order_text .standout {
-  color: #f7fcff;
+  color: var(--black);
   display: block;
   font-weight: bold;
   margin-top: 10px;
+}
+
+.legend .waiting,
+.tabular .waiting {
+  background-color: var(--global-color-secondary);
+}
+
+.footer_cr a {
+  color: var(--black);
+}
+
+.footer_cr a:hover {
+  color: var(--magenta);
 }

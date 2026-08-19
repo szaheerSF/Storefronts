@@ -128,6 +128,18 @@ h5 {
   /* text-transform: uppercase; */
 }
 
+.label .ic-msg {
+  color: var(--color-primary);
+}
+
+.leftSideFieldContainer .label .ic-msg {
+  color: var(--color-primary-light);
+}
+
+.checkbox-table label {
+  color: var(--color-primary-light);
+}
+
 h1 {
   font-size: 29px;
 }
@@ -186,7 +198,7 @@ button {
   /* text-decoration: none !important; */
   position: relative !important;
   min-width: max-content !important;
-  color: var(--color-primary) !important;
+  color: var(--color-secondary) !important;
   /* border-radius: 25px; */
   background-color: var(--color-accent);
   font-family: var(--font-sans) !important;
@@ -198,16 +210,15 @@ button {
   /* text-transform: uppercase; */
   border: 1px solid var(--color-accent);
   border-radius: var(--radius-sm);
-  transition: background-color 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 button#button_file_upload_remove:hover,
 button:hover,
 button#submit_catalog_search:hover {
-  color: var(--color-primary) !important;
-  border: 1px solid var(--color-primary);
+  color: var(--color-secondary) !important;
+  border: 1px solid var(--color-primary-hover);
   /* -webkit-transition: background-color 0.3s ease-in-out; */
-  transition: background-color 0.3s ease-in-out;
 }
 
 /*button#button_file_upload_remove:before, button:not(#submit_catalog_search):before {*/
@@ -1699,7 +1710,7 @@ form {
   }
 
   #header_logo {
-    padding: 30px 0;
+    padding: 10px 0;
   }
 
   #header_logo > img.no_mobile {
@@ -1895,8 +1906,10 @@ form {
     /* min-height: 262px; */
     overflow: hidden;
     max-width: 100% !important;
-
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
 
   /*div#header-wrapper {
@@ -1924,11 +1937,6 @@ form {
     justify-content: center;
     box-shadow: var(--shadow-primary);
     padding: 10px !important;
-  }
-
-  .error,
-  .copy3,
-  #catalog-tab-blurb {
   }
 
   .item_count,
@@ -2111,7 +2119,7 @@ form {
 
   #faqContainer {
     background-color: white;
-    width: var(--nav-width);
+    width: inherit;
     margin: auto;
     padding: 25px;
     margin-top: 10px;
@@ -2119,6 +2127,7 @@ form {
     text-align: left;
     margin: 20px auto auto;
     flex-direction: column;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   #cancelPage {
@@ -2134,6 +2143,10 @@ form {
     box-shadow: 0px 61px 90px 41px var(--color-primary);
     margin-bottom: 50px !important;
     padding: 50px;
+  }
+
+  .form-body label.label {
+    color: var(--color-primary-light);
   }
   /*********************************************************************************************************/
 }
@@ -2179,6 +2192,10 @@ form {
   .fa-search:before {
     content: "\f002";
     font-size: 25px;
+  }
+
+  .leftSideFieldContainer .label .ic-msg {
+    color: var(--color-primary);
   }
 
   .select-items #searchfield_input {

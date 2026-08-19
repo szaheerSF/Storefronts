@@ -1,0 +1,332 @@
+<style>
+  :root {
+    /* UBEO Color Theme */
+    --cyan: #00aeef;
+    --magenta: #ec208a;
+    --magenta-dark: #791046;
+    --yellow: #fdd213;
+    --gold: #fdb813;
+    --navy: #0c2340;
+    --black: #1a1a1a;
+    --gray-dark: #6c757d;
+    --gray-light: #e9ecef;
+    --white: #f8f9fa;
+  }
+  .landing-body {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  h2.section-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 2rem !important;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--magenta) !important;
+    margin-bottom: 0.5rem;
+    padding: 0 2rem;
+  }
+
+  h1.section-heading {
+    font-size: clamp(1.6rem, 4vw, 3rem); /*clamp(min, preferred, max)*/
+    font-weight: 600;
+    color: #111 !important;
+    margin-bottom: 2.5rem;
+    padding: 0 2rem;
+    line-height: 1.15;
+    letter-spacing: -0.15em;
+  }
+  .u-text {
+    color: var(--cyan);
+  }
+
+  .b-text {
+    color: var(--magenta);
+  }
+  .e-text {
+    color: var(--yellow);
+  }
+  .o-text {
+    color: #000 !important;
+  }
+
+  /* Scroll track */
+  .cards-track-wrapper {
+    width: 80%;
+    position: relative;
+    overflow: hidden;
+  }
+  .cards-track {
+    display: flex;
+    gap: 0;
+    overflow: visible;
+    will-change: transform;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    justify-content: center;
+  }
+  .cards-track.is-dragging {
+    cursor: grabbing;
+  }
+
+  /* Single Card */
+  .card {
+    flex: 0 0 clamp(228px, 15vw, 330px);
+    height: clamp(200px, 25vw, 420px);
+    position: relative;
+    overflow: hidden;
+    cursor: grab;
+  }
+
+  .card__bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .card:hover .card__bg {
+    transform: scale(1.06);
+  }
+
+  /* Dark gradient overlay – bottom-heavy like JL */
+  .card__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.05) 0%,
+      rgba(0, 0, 0, 0.12) 40%,
+      rgba(0, 0, 0, 0.72) 100%
+    );
+    transition: background 0.4s ease;
+  }
+  .card:hover .card__overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.2) 40%,
+      rgba(0, 0, 0, 0.78) 100%
+    );
+  }
+
+  /* Icon top-left */
+  .card__icon {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    width: 44px;
+    height: 44px;
+    opacity: 0.9;
+  }
+  .card__icon svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: #fff !important;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* Text content – bottom of card */
+  .card__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    color: #d1d1d1 !important;
+    transform: translateY(0);
+    transition: transform 0.35s ease;
+  }
+
+  .card__eyebrow {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 0.35rem;
+    display: block;
+  }
+
+  .card__title {
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Description – hidden until hover */
+  .card__desc {
+    font-size: 0.825rem;
+    line-height: 1.55;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition:
+      opacity 0.3s ease 0.05s,
+      max-height 0.35s ease;
+    color: rgba(250, 245, 235, 0.85) !important;
+    margin-bottom: 0;
+  }
+  .card:hover .card__desc {
+    opacity: 1;
+    max-height: 80px;
+    margin-bottom: 0.75rem;
+  }
+
+  /* CTA Button */
+  .card__btn {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white) !important;
+    background: var(--cyan) !important;
+    padding: 0.5rem 1.1rem;
+    text-decoration: none;
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease;
+  }
+  .card__btn:hover {
+    background: #1479b8 !important;
+    color: var(--black) !important;
+    transform: translateY(-1px);
+  }
+
+  /* ── NAVIGATION ARROWS (appear on hover of the track) ── */
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity 0.25s ease,
+      background 0.2s ease;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.61);
+  }
+  .nav-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke: #000000 !important;
+    stroke-width: 2;
+    fill: none;
+  }
+</style>
+<div class="landing-body">
+  <h2 class="section-label">Enterprise Printing Solutions</h2>
+  <!-- 
+      <h1 class="section-heading">
+        <span class="u-text">u</span>
+        <span class="b-text">b</span>
+        <span class="e-text">e</span>
+        <span class="o-text">o</span>
+      </h1>
+      -->
+
+  <div class="cards-track-wrapper" id="trackWrapper">
+    <div class="cards-track" id="cardsTrack">
+      <!-- Card 1 - Profile -->
+      <div class="card" data-href="#profile-page">
+        <div
+          class="card__bg"
+          style="
+            background-image: url(&quot;https://images.unsplash.com/photo-1759756655356-c38229d186a6?q=80&w=736&quot;);
+          "
+        ></div>
+        <div class="card__overlay"></div>
+        <div class="card__icon">
+          <!-- Profile Icon -->
+          <svg viewBox="0 0 24 24">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        </div>
+        <div class="card__content">
+          <span class="card__eyebrow">Update</span>
+          <h3 class="card__title">My Profile</h3>
+          <p class="card__desc">
+            Update your profile, reset your password. Your profile management
+            exists here.
+          </p>
+          <a class="card__btn" href="#profile-page">My Profile &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Card 2 - Catalog page -->
+      <div class="card" data-href="#commercial">
+        <div
+          class="card__bg"
+          style="
+            background-image: url(&quot;https://images.unsplash.com/photo-1693592772086-e80960b134ed?q=80&w=800&quot;);
+          "
+        ></div>
+        <div class="card__overlay"></div>
+        <div class="card__icon">
+          <!-- Catalog Icon -->
+          <svg viewBox="0 0 24 24">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+          </svg>
+        </div>
+        <div class="card__content">
+          <span class="card__eyebrow">Explore</span>
+          <h3 class="card__title">Product Catalog</h3>
+          <p class="card__desc">
+            Discover the newest items &amp; place orders with ease.
+          </p>
+          <a class="card__btn" href="#catalog">Catalog &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card" data-href="#strata">
+        <div
+          class="card__bg"
+          style="
+            background-image: url(&quot;https://images.unsplash.com/photo-1765112879694-04d88759cb19?q=80&w=800&quot;);
+          "
+        ></div>
+        <div class="card__overlay"></div>
+        <div class="card__icon">
+          <!-- FAQ Icon -->
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+        </div>
+        <div class="card__content">
+          <span class="card__eyebrow">Ask</span>
+          <h3 class="card__title">Frequently Asked Questions</h3>
+          <p class="card__desc">Have questions? We have answers.</p>
+          <a class="card__btn" href="#strata">FAQ &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <!-- /.cards-track -->
+    <!-- /.cards-track-wrapper -->
+  </div>
+</div>

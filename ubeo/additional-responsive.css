@@ -1,0 +1,221 @@
+/* ==========================================================================
+   MOBILE RESPONSIVE OVERRIDES (Max-width: 768px)
+   ========================================================================== */
+
+@media screen and (max-width: 768px) {
+  /* ----------------------------------------------------------------------
+     GLOBAL & BASE
+     ---------------------------------------------------------------------- */
+  body {
+    font-size: 1.1rem; /* Slightly scale down base font for smaller screens */
+  }
+
+  img,
+  input,
+  select,
+  textarea {
+    max-width: 100% !important; /* Prevent elements from overflowing the screen */
+  }
+
+  .main {
+    margin: 10px auto 0 !important;
+  }
+
+  .pageinstructions {
+    width: 95%; /* Use more screen real estate */
+  }
+
+  /* ----------------------------------------------------------------------
+     HEADER & NAVIGATION (MODERN ACCORDION)
+     ---------------------------------------------------------------------- */
+
+  /* Unify the main menu container */
+  .tabs-nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .tabs-nav > li {
+    margin: 0;
+    width: 100%;
+    text-align: left; /* Left align is much cleaner for mobile menus */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle divider */
+  }
+
+  .tabs-nav > li:last-child {
+    border-bottom: none;
+  }
+
+  /* Main Menu Links */
+  .tabs-nav a {
+    display: flex;
+    justify-content: space-between; /* Pushes dropdown arrow to the right */
+    align-items: center;
+    padding: 4px 5px;
+    font-size: 1.1rem;
+  }
+
+  /* Active state when the accordion is clicked */
+  .tab-topmenu.is-open > a {
+    background-color: var(--global-color-primary); /* Orange highlight */
+    color: #ffffff;
+  }
+
+  /* Animate the dropdown icon (assuming you use an <i> tag for it) */
+  .tabs-nav a i {
+    transition: transform 0.3s ease;
+  }
+
+  .tab-topmenu.is-open > a i {
+    transform: rotate(180deg); /* Flips the arrow upside down when open */
+  }
+
+  /* ----------------------------------------------------------------------
+     THE SUBMENU ACCORDION ANIMATION
+     ---------------------------------------------------------------------- */
+
+  /* Override the desktop hover styles */
+  .tab-topmenu:hover .tab-submenu,
+  .tab-topmenu:active .tab-submenu {
+    display: block; /* Ensure it stays block so max-height can do the work */
+  }
+
+  .tab-submenu {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    min-width: 100%;
+    margin: 0;
+    border: none;
+
+    /* Animation magic */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.2
+    ); /* Slightly darker blue to inset the submenu */
+  }
+
+  /* When JS adds the .is-open class, expand the height */
+  .tab-topmenu.is-open .tab-submenu {
+    max-height: 500px; /* Adjust this if your submenus are exceptionally long */
+  }
+
+  /* Submenu Link Styling */
+  .tab-submenu a {
+    padding: 12px 20px 12px 40px; /* Indent the sub-items so they look nested */
+    font-size: 1rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  }
+
+  .tab-submenu a:hover {
+    color: var(--global-color-primary);
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  /* Hide the landing page on mobile */
+  .landingBG {
+    display: none;
+  }
+
+  /* ----------------------------------------------------------------------
+     CATALOG & BUNDLES
+     ---------------------------------------------------------------------- */
+  /* Remove fixed 300px constraints */
+  .stretchy_cols.responsive-item {
+    min-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Remove fixed percentage widths that get too small on mobile */
+  .detail_text_wrapper,
+  .detail_tagcheck_wrapper {
+    width: 100% !important;
+    display: block;
+  }
+
+  /* Remove heavy left margins pushing content off-screen */
+  .bundle_subitem {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  .bundle_subitem_longname {
+    margin-left: 0 !important;
+  }
+
+  #all_items_view .main-section {
+    flex-direction: column; /* Stack catalog items vertically */
+  }
+
+  /* ----------------------------------------------------------------------
+     QUOTES & OPTIONS
+     ---------------------------------------------------------------------- */
+  #all_options,
+  #all_options_container {
+    margin-left: 0 !important;
+    width: 100%;
+  }
+
+  #all_options tbody {
+    width: 100%;
+  }
+
+  #all_options td.input {
+    flex-direction: column; /* Stack inputs vertically instead of side-by-side */
+  }
+
+  #all_options input[type="text"],
+  #all_options select {
+    flex-basis: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  /* ----------------------------------------------------------------------
+     FORMS: BILLING, SHIPPING, REVIEW, ACCEPT
+     ---------------------------------------------------------------------- */
+  /* Override the rigid 740px billing width */
+  .billing .form-body {
+    width: 100%;
+  }
+
+  .shipping .form-body {
+    width: 100%;
+  }
+
+  .done .accept-proofs .form-body,
+  .accept-proofs table {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Ensure tables scroll horizontally instead of breaking the layout */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  /* ----------------------------------------------------------------------
+     FOOTER
+     ---------------------------------------------------------------------- */
+  .footer_row3 {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    text-align: center;
+  }
+}

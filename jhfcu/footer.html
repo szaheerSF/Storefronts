@@ -1,24 +1,3 @@
-<!-- Below is the Copyright for the Confetti on the checkout page. It is permissiable without fee to be usedfor commercial use, distribution, modification, and private use -->
-<!--
-  ISC License
-
-  Copyright (c) 2020, Kiril Vatev
-
-  Permission to use, copy, modify, and/or distribute this software for any
-  purpose with or without fee is hereby granted, provided that the above
-  copyright notice and this permission notice appear in all copies.
-
-  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
-  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES
-  OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
-  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
-  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
-  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
-  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
--->
-
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
-
 <!-- Rob Carberry 3/7/2024 -->
 <div class="footer_row3">
   <div>
@@ -435,36 +414,50 @@
       // *********************************************************************************************
 
       // Set height of img wraps based on tallest img so items can be top aligned
-      var maxH = 0;
-      $("div.imgwrap").each(function () {
-        if ($(this).height() > maxH) {
-          maxH = $(this).height();
-        }
-      });
-      if (maxH > 0) {
-        maxH += 1;
-      }
-      maxH = maxH + "px";
-      $("div.imgwrap").css(
-        "min-height",
-        maxH,
-      ); /* set all the wrapped heights to the tallest img height */
+      // salman zaheer - commenting out this portion to test styling
+      //   var maxH = 0;
+      //   $("div.imgwrap").each(function () {
+      //     if ($(this).height() > maxH) {
+      //       maxH = $(this).height();
+      //     }
+      //   });
+      //   if (maxH > 0) {
+      //     maxH += 1;
+      //   }
+      //   maxH = maxH + "px";
+      //   $("div.imgwrap").css(
+      //     "min-height",
+      //     maxH,
+      //   ); /* set all the wrapped heights to the tallest img height */
 
       // If multi-page img thumbs exist set that area height the same for all items
-      maxH = 0;
-      $("div.multi_preview").each(function () {
-        if ($(this).height() > maxH) {
-          maxH = $(this).height();
-        }
-      });
-      if (maxH > 0) {
-        maxH += 1;
-      }
-      maxH = maxH + "px";
-      $("div.multi_preview").css("min-height", maxH);
+      // var maxH = 0;
+      // $("div.multi_preview").each(function () {
+      //   if ($(this).height() > maxH) {
+      //     maxH = $(this).height();
+      //   }
+      // });
+      // if (maxH > 0) {
+      //   maxH += 1;
+      // }
+      // maxH = maxH + "px";
+      // $("div.multi_preview").css("min-height", maxH);
+
+      // {SZ} Make height same for all items based on the add to cart button
+      // var maxH = 0;
+      // $("div.add-to-basket-btn").each(function () {
+      //   if ($(this).height() > maxH) {
+      //     maxH = $(this).height();
+      //   }
+      // });
+      // if (maxH > 0) {
+      //   maxH += 1;
+      // }
+      // maxH = maxH + "px";
+      // $("div.multi_preview").css("min-height", maxH);
 
       // If Responsive Longname exist set that area height the same for all items
-      maxH = 0;
+      /* maxH = 0;
       $("div.responsive-longname").each(function () {
         if ($(this).height() > maxH) {
           maxH = $(this).height();
@@ -487,65 +480,65 @@
         maxH += 1;
       }
       maxH = maxH + "px";
-      $("div.responsive-choose-info").css("min-height", maxH);
+      $("div.responsive-choose-info").css("min-height", maxH); */
 
       // If .note.responsive-pricing exist set that area height the same for all items
-      maxH = 0;
-      $("div.note.responsive-pricing").each(function () {
-        if ($(this).height() > maxH) {
-          maxH = $(this).height();
-        }
-      });
-      if (maxH > 0) {
-        maxH += 1;
-      }
-      maxH = maxH + "px";
-      $("div.note.responsive-pricing").css("min-height", maxH);
+      // maxH = 0;
+      // $("div.note.responsive-pricing").each(function () {
+      //   if ($(this).height() > maxH) {
+      //     maxH = $(this).height();
+      //   }
+      // });
+      // if (maxH > 0) {
+      //   maxH += 1;
+      // }
+      // maxH = maxH + "px";
+      // $("div.note.responsive-pricing").css("min-height", maxH);
 
-      // If onhand exist set that area height the same for all items
-      maxH = 0;
-      $("div.note.responsive-onhand").each(function () {
-        if ($(this).height() > maxH) {
-          maxH = $(this).height();
-        }
-      });
-      // console.log('1: ' + maxH);
-      if (maxH > 0) {
-        maxH += 1;
-      }
-      // console.log('2: ' + maxH);
-      maxH = maxH + "px";
-      $("div.note.responsive-onhand").css("min-height", maxH);
+      // // If onhand exist set that area height the same for all items
+      // maxH = 0;
+      // $("div.note.responsive-onhand").each(function () {
+      //   if ($(this).height() > maxH) {
+      //     maxH = $(this).height();
+      //   }
+      // });
+      // // console.log('1: ' + maxH);
+      // if (maxH > 0) {
+      //   maxH += 1;
+      // }
+      // // console.log('2: ' + maxH);
+      // maxH = maxH + "px";
+      // $("div.note.responsive-onhand").css("min-height", maxH);
 
-      // If responsive-tagcheck.tagcheck-bottom exist set that area height the same for all items
-      maxH = 0;
-      $("span.responsive-tagcheck.tagcheck-bottom").each(function () {
-        if ($(this).height() > maxH) {
-          maxH = $(this).height();
-        }
-      });
-      // console.log('1: ' + maxH);
-      if (maxH > 0) {
-        maxH += 1;
-      }
-      // console.log('2: ' + maxH);
-      maxH = maxH + "px";
-      $("span.responsive-tagcheck.tagcheck-bottom").css("min-height", maxH);
+      // // If responsive-tagcheck.tagcheck-bottom exist set that area height the same for all items
+      // maxH = 0;
+      // $("span.responsive-tagcheck.tagcheck-bottom").each(function () {
+      //   if ($(this).height() > maxH) {
+      //     maxH = $(this).height();
+      //   }
+      // });
+      // // console.log('1: ' + maxH);
+      // if (maxH > 0) {
+      //   maxH += 1;
+      // }
+      // // console.log('2: ' + maxH);
+      // maxH = maxH + "px";
+      // $("span.responsive-tagcheck.tagcheck-bottom").css("min-height", maxH);
 
-      // If div.image-container exist set that area height the same for all items
-      maxH = 0;
-      $("div.image-container").each(function () {
-        if ($(this).height() > maxH) {
-          maxH = $(this).height();
-        }
-      });
-      // console.log('1: ' + maxH);
-      if (maxH > 0) {
-        maxH += 1;
-      }
-      // console.log('2: ' + maxH);
-      maxH = maxH + "px";
-      $("div.image-container").css("min-height", maxH);
+      // // If div.image-container exist set that area height the same for all items
+      // maxH = 0;
+      // $("div.image-container").each(function () {
+      //   if ($(this).height() > maxH) {
+      //     maxH = $(this).height();
+      //   }
+      // });
+      // // console.log('1: ' + maxH);
+      // if (maxH > 0) {
+      //   maxH += 1;
+      // }
+      // // console.log('2: ' + maxH);
+      // maxH = maxH + "px";
+      // $("div.image-container").css("min-height", maxH);
 
       // *****************************************************************************************
 
@@ -1434,10 +1427,10 @@
   // David Oguh 06/01/2025
   // Edited for American Pest 2/6/2026
   $("head").append(
-    '<link rel="icon" href="con/	Full Color Horizontal.ico" sizes="32x32" />',
+    '<link rel="icon" href="con/	JHFCU_Favicon.png" sizes="32x32" />',
   );
   $("head").append(
-    '<link rel="apple-touch-icon" href="con/Full Color Horizontal.ico" />',
+    '<link rel="apple-touch-icon" href="con/JHFCU_Favicon.png" />',
   );
 </script>
 <script>

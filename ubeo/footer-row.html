@@ -1,13 +1,21 @@
 <div class="footer_row3">
-  <div>
+  <div style="display: grid; place-items: center">
     <img
-      src="con/SF-PoweredBy2024-260w-White.png"
+      src="con/SF-Logo-2023_black.png"
       alt="Online Storefront Powered by Strategic Factory"
-      class="img-fluid mt-3"
+      style="width: 360px; height: auto"
     />
   </div>
 
-  <p class="footer_cr">
+  <p
+    class="footer_cr"
+    style="
+      font-family: &quot;Montserrat&quot;, sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #000;
+    "
+  >
     Strategic Factory<br />
     11195 Dolfield Boulevard<br />
     Owings Mills, Maryland 21117<br />
@@ -50,10 +58,10 @@
   }
 
   .image-wrapper img {
-    border: 1px solid #ccc;
+    border: 1px solid var(--gold);
     /* Prepares for zoom handling. */
     cursor: zoom-in;
-    transition: transform 0.25s;
+    transition: transform 0.2s;
     /* Scales the image down while keeping the aspect ratio. */
     max-height: 200px;
     object-fit: scale-down;
